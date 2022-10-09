@@ -57,7 +57,7 @@ public class Maps {
     }
 
     public float[][] getTimeMatrix() throws Exception {
-        int n = 10;
+        int n = data.locations.length;
         timeMatrix = new float[n][n];
         for (int i =0; i < n; i++) {
             for (int j = 0; j < n; j++) {
