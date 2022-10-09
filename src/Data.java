@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class Data {
 
-    public int n = 8;//number of customers
+    public int n = 40;//number of customers
     public int k = 9; //Number
     public int clusterCount = 100;
     public int maxClusterNodes = 12;

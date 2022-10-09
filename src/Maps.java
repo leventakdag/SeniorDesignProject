@@ -57,19 +57,18 @@ public class Maps {
     }
 
     public float[][] getTimeMatrix() throws Exception {
-        int n = data.locations.length;
+        int n = 10;
         timeMatrix = new float[n][n];
-        for (int i =0; i < n; i++)
+        for (int i =0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i != j) {
-                    System.out.println(data.indicesOfLocations.get(i));
-                   // String response = getData(String.valueOf(data.locations[i].getX())+"," + String.valueOf(data.locations[i].getY()), String.valueOf(data.locations[j].getX())+"," + String.valueOf(data.locations[j].getY()));
-                  //  parse(response,i,j);
-                }
-                else {
+                     String response = getData(String.valueOf(data.locations[i].getX())+"," + String.valueOf(data.locations[i].getY()), String.valueOf(data.locations[j].getX())+"," + String.valueOf(data.locations[j].getY()));
+                      parse(response,i,j);
+                } else {
                     timeMatrix[i][j] = 1000000;
                 }
             }
+        }
         return timeMatrix;
     }
 }
