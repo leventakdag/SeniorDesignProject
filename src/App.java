@@ -5,7 +5,7 @@ public class App {
 	
 	public static void main(String[] args) throws Exception {
 
-        //Burak Kara
+
         Data data = readData();
         //ExactSolution exactsolution = new ExactSolution(data);
         Heuristic heuristic1 = new Heuristic(data);
