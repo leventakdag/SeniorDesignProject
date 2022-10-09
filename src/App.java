@@ -9,18 +9,21 @@ public class App {
         Data data = readData();
         //ExactSolution exactsolution = new ExactSolution(data);
         Heuristic heuristic1 = new Heuristic(data);
-        Maps maps = new Maps(data);
+
+        ArrayList<Data> dataList = heuristic1.createClusterData(heuristic1.limitedClustering(100,12), data);
+//        ExactSolution exactsolution = new ExactSolution(dataList.get(i));
+       // Maps maps = new Maps(data);
 
         //exactsolution.solveExact();
 
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
-        String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
+     //   String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
         String filePathRoutes =  "./outputs/Routes.csv";
 
         //writePointData(heuristic1.limitedClustering(), filePathLimited);
         //writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
-        writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
+       // writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
         //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
     private static void writeTimeMatrix(float[][] timeMatrix, String filePath) {

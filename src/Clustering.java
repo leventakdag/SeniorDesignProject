@@ -3,16 +3,27 @@ import java.util.ArrayList;
 public class Clustering {
 
 	private Data data;
+	private int clusterCount;
+	private int maxClusterNodes;
 
 	public Clustering(Data Data) {
 		// TODO Auto-generated constructor stub
 		this.data = Data;
+		//this.clusterCount = clusterCount;
+		//this.maxClusterNodes = maxClusterNodes;
 	}
 
-	public ArrayList<ArrayList<Point>> limitedKMeans() {
+	public void setClusterCount(int newCount){
+		this.clusterCount = newCount;
+	}
+	public void setMaxClusterCount(int newMaxCount){
+		this.maxClusterNodes = newMaxCount;
+	}
 
-
-    	//Point[] points = data.locations;
+	public ArrayList<ArrayList<Point>> limitedKMeans(int clusterCount, int maxClusterNodes) {
+		setClusterCount(clusterCount);
+		setMaxClusterCount(maxClusterNodes);
+	//Point[] points = data.locations;
     	
     	Point[] points = new Point[1000];
     	
@@ -25,7 +36,7 @@ public class Clustering {
 
         ArrayList<Point> clusterCenters = new ArrayList<Point>();
         
-        for(int i = 0; i < data.clusterCount; i++) {
+        for(int i = 0; i < this.clusterCount; i++) {
         	//clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
         	clusterCenters.add(new Point((100000 * Math.random()), (100000 * Math.random()), (-i)));
         }
@@ -97,8 +108,8 @@ public class Clustering {
         //limit # of nodes in a cluster
 
 		for(int i=0;i<cList.size();i++){
-			if(cList.get(i).size()>data.maxClusterNodes){
-				int gap = cList.get(i).size() - data.maxClusterNodes;
+			if(cList.get(i).size()>this.maxClusterNodes){
+				int gap = cList.get(i).size() - this.maxClusterNodes;
 				//double centerX = clusterCenters.get(i).getX();
 				//double centerY = clusterCenters.get(i).getY();
 
@@ -116,7 +127,7 @@ public class Clustering {
 						int clusterToAdd = 3131;
 						for (int k=0;k<cList.size();k++) {
 							if(k!=i){
-								if(cList.get(k).size()<data.maxClusterNodes){
+								if(cList.get(k).size()<this.maxClusterNodes){
 									double newCenterX = clusterCenters.get(k).getX();
 									double newCenterY = clusterCenters.get(k).getY();
 									double s = Math.sqrt((newCenterX - pointX) * (newCenterX - pointX) + (newCenterY - pointY) * (newCenterY - pointY));
@@ -156,7 +167,7 @@ public class Clustering {
 
 		ArrayList<Point> clusterCenters = new ArrayList<Point>();
 
-		for(int i = 0; i < data.clusterCount; i++) {
+		for(int i = 0; i < this.clusterCount; i++) {
 			clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
 		}
 

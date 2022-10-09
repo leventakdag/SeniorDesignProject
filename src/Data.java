@@ -5,8 +5,7 @@ public class Data {
 
     public int n = 40;//number of customers
     public int k = 9; //Number
-    public int clusterCount = 100;
-    public int maxClusterNodes = 12;
+
 
     public double c = 2.0; //Cost per km of Vehicles
     //public double T=540; //Real time Limit for each vehicle
