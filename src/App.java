@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class App {
+
 	
 	public static void main(String[] args) throws Exception {
 
@@ -10,23 +11,36 @@ public class App {
         //ExactSolution exactsolution = new ExactSolution(data);
         Heuristic heuristic1 = new Heuristic(data);
 
+
         ArrayList<Data> dataList = new ArrayList<Data>();
         dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
 
 
-        for(int i=0;i<dataList.size()-1;i++){
+        System.out.println(dataList.size());
+        System.out.println(dataList.get(0).locations.length);
+
+
+        for(int i=0;i<dataList.size();i++){
+            System.out.print(i+": ");
             for(int j=0;j<dataList.get(i).locations.length;j++){
 
-                    System.out.print("Locations: ");
-                    System.out.print(dataList.get(i).locations[j].getID()+", ");
-                    if(j!=0){
-                        System.out.print("Weights: ");
-                        System.out.print(dataList.get(i).weight[j]+", ");
-                    }
+                System.out.print(dataList.get(i).locations[j].getID()+", ");
+                System.out.print("Weights: ");
+                System.out.print(dataList.get(i).weight[j]+", ");
+
             }
+            System.out.println();
         }
 
+        /*ArrayList<ArrayList<Point>> arr = heuristic1.limitedClustering(4,12);
 
+        for(int i = 0; i<arr.size();i++){
+            System.out.println("cluster "+i+": ");
+            for(int j=0;j<arr.get(i).size();j++){
+                System.out.print(arr.get(i).get(j).getID()+",");
+            }
+            System.out.println();
+        }*/
        //ExactSolution exactsolution = new ExactSolution(dataList.get(i));
        // Maps maps = new Maps(data);
 
@@ -37,7 +51,7 @@ public class App {
      //   String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
         String filePathRoutes =  "./outputs/Routes.csv";
 
-        //writePointData(heuristic1.limitedClustering(), filePathLimited);
+        //writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
         //writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
        // writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
         //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
@@ -92,7 +106,22 @@ public class App {
     }
 
     private static Data readData() {
+        int n=40;
+        int k=9;
         Data data = new Data();
+        data.locations = new Point[41];
+        data.n = n;
+        data.k = k;
+        data.distance = new double[n+1][n+1];
+        data.duration = new int[n+1][n+1];
+        data.tu = new double[n+1];
+        data.weightCapacity = new double[k];
+        data.volumeCapacity = new double[k];
+        data.weight = new double[n+1];
+        data.volume = new double[n+1];
+        data.sapLocations = new String[n+1];
+        data.vehiclePlates = new String[k];
+
         FileReader fileReader1;
         FileReader fileReader2;
         FileReader fileReader3;
@@ -170,7 +199,9 @@ public class App {
                 String[] DurationCells=DurationLine.split(",");
                 for(int j=0;j<data.duration.length;j++){
                     data.duration[i][j] = Integer.parseInt(DurationCells[j]);
+                    //System.out.print(data.duration[i][j]+",");
                 }
+                //System.out.println();
             }
             for(int j=1;j<data.sapLocations.length;j++){
                 data.tu[j]=data.volume[j]*15;

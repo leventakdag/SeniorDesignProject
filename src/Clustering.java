@@ -24,90 +24,86 @@ public class Clustering {
 		setClusterCount(clusterCount);
 		setMaxClusterCount(maxClusterNodes);
 		Point[] points = data.locations;
-    	
-    //	Point[] points = new Point[1000];
-    /*	for(int i = 0; i < points.length; i++) {
-    		points[i] = new Point(Math.round((100000 * Math.random())), Math.round((100000 * Math.random())), i);
-    	}
-    	//TEST RANDOM
-     */
+
+		//Point[] points = new Point[1000];
+
+
 
 // find max-min values of X and Y values of locations
 //in order to randomize cluster centers!!!
 
-        ArrayList<Point> clusterCenters = new ArrayList<Point>();
-        
-        for(int i = 0; i < this.clusterCount; i++) {
-        	clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
-			//TEST
-        	//clusterCenters.add(new Point((100000 * Math.random()), (100000 * Math.random()), (-i)));
-        }
-                
-        ArrayList<ArrayList<Point> > cList = new ArrayList<ArrayList<Point> >();
-        ArrayList<ArrayList<Point> > formerCList = new ArrayList<ArrayList<Point> >();
-        
-        for(int i = 0; i < clusterCenters.size(); i++) {
-        	cList.add(new ArrayList<Point>());
-        }
-       
-        for(int i = 0; i < clusterCenters.size(); i++) {
-        	formerCList.add(new ArrayList<Point>());
-        }
-        
-        boolean isEqual = false;
+		ArrayList<Point> clusterCenters = new ArrayList<Point>();
 
-        while(!isEqual) {
+		for(int i = 0; i < this.clusterCount; i++) {
+			clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
+			//clusterCenters.add(new Point((100000 * Math.random()), (100000 * Math.random()), (-i)));
+		}
 
-        	  for(int i = 1; i < points.length; i++) {
-                  double minL = 1000000;
-                  int clusterToAssign = 1000;
-                  for(int j = 0; j < clusterCenters.size(); j++) {
-                      double s = Math.sqrt((points[i].getY() - clusterCenters.get(j).getY()) * (points[i].getY() - clusterCenters.get(j).getY()) + (points[i].getX() - clusterCenters.get(j).getX()) * (points[i].getX() - clusterCenters.get(j).getX()));
-                      if(s < minL) {
-                          clusterToAssign = j;
-                          minL = s;
-                      }
-                  }
-                  System.out.println(points[i]);
-                  System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
-                  cList.get(clusterToAssign).add(points[i]);
-                  
-              }
+		ArrayList<ArrayList<Point> > cList = new ArrayList<ArrayList<Point> >();
+		ArrayList<ArrayList<Point> > formerCList = new ArrayList<ArrayList<Point> >();
 
-              for(int i = 0; i < clusterCenters.size(); i++) {
-              	clusterCenters.set(i, centroid(cList.get(i)));
-                  System.out.println("Cluster "+ i + " will be located at " + clusterCenters.get(i) + " in the next iteration");
-              }
-              
-              int numbersNotFit = 0;
-              
-    		  for(int i = 0; i < cList.size(); i++) {
-            	  for(int j = 0; j < cList.get(i).size(); j++) {
-            		  
-            			  if(formerCList.get(i).contains(cList.get(i).get(j)) == false) {
-                			  numbersNotFit++;
-                		  }
-            	  }
-              }
-			  
-			  if(numbersNotFit == 0) {
-            	  isEqual = true;
-              }
-			  else{
-            	  for(int i = 0;i < formerCList.size(); i++) {
-                	  formerCList.get(i).clear();
-                  }
-            	  for(int i = 0; i < cList.size(); i++) {
-                	  for(int j = 0; j< cList.get(i).size(); j++) {
-                		  formerCList.get(i).add(cList.get(i).get(j));
-                		  }
-                	  }
-            	  for(int i = 0;i < cList.size(); i++) {
-                	  cList.get(i).clear();
-                  }
-			  }
-        }
-        //limit # of nodes in a cluster
+		for(int i = 0; i < clusterCenters.size(); i++) {
+			cList.add(new ArrayList<Point>());
+		}
+
+		for(int i = 0; i < clusterCenters.size(); i++) {
+			formerCList.add(new ArrayList<Point>());
+		}
+
+		boolean isEqual = false;
+
+		while(!isEqual) {
+
+			for(int i = 1; i < points.length; i++) {
+				double minL = 1000000;
+				int clusterToAssign = 1000;
+				for(int j = 0; j < clusterCenters.size(); j++) {
+					double s = Math.sqrt((points[i].getY() - clusterCenters.get(j).getY()) * (points[i].getY() - clusterCenters.get(j).getY()) + (points[i].getX() - clusterCenters.get(j).getX()) * (points[i].getX() - clusterCenters.get(j).getX()));
+					if(s < minL) {
+						clusterToAssign = j;
+						minL = s;
+					}
+				}
+				//System.out.println(points[i]);
+				//System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
+				cList.get(clusterToAssign).add(points[i]);
+
+			}
+
+			for(int i = 0; i < clusterCenters.size(); i++) {
+				clusterCenters.set(i, centroid(cList.get(i)));
+				//System.out.println("Cluster "+ i + " will be located at " + clusterCenters.get(i) + " in the next iteration");
+			}
+
+			int numbersNotFit = 0;
+
+			for(int i = 0; i < cList.size(); i++) {
+				for(int j = 0; j < cList.get(i).size(); j++) {
+
+					if(formerCList.get(i).contains(cList.get(i).get(j)) == false) {
+						numbersNotFit++;
+					}
+				}
+			}
+
+			if(numbersNotFit == 0) {
+				isEqual = true;
+			}
+			else{
+				for(int i = 0;i < formerCList.size(); i++) {
+					formerCList.get(i).clear();
+				}
+				for(int i = 0; i < cList.size(); i++) {
+					for(int j = 0; j< cList.get(i).size(); j++) {
+						formerCList.get(i).add(cList.get(i).get(j));
+					}
+				}
+				for(int i = 0;i < cList.size(); i++) {
+					cList.get(i).clear();
+				}
+			}
+		}
+		//limit # of nodes in a cluster
 
 		for(int i=0;i<cList.size();i++){
 			if(cList.get(i).size()>this.maxClusterNodes){
@@ -156,12 +152,13 @@ public class Clustering {
 				}
 			}
 		}
+
 		for(int i=0;i<cList.size();i++){
 			cList.get(i).add(0,data.locations[0]);
 		}
 
-        return cList;
-    }
+		return cList;
+	}
 
 	public ArrayList<ArrayList<Point>> unlimitedKMeans() {
 
@@ -246,18 +243,19 @@ public class Clustering {
 	}
 
 	private Point centroid(ArrayList<Point> arrayList) {
-		 double centroidX = 0, centroidY = 0;
+		double centroidX = 0, centroidY = 0;
 
-	        for(Point p : arrayList) {
-	            centroidX += p.getX();
-	            centroidY += p.getY();
-	        }
-	        
-	        Point point = new Point(centroidX / arrayList.size(), centroidY / arrayList.size(), 0);
-	        
-	    return point;
+		for(Point p : arrayList) {
+			centroidX += p.getX();
+			centroidY += p.getY();
+		}
+
+		Point point = new Point(centroidX / arrayList.size(), centroidY / arrayList.size(), 0);
+
+		return point;
 	}
 
 
-   
+
 }
+

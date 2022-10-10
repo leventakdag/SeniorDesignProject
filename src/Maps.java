@@ -26,6 +26,7 @@ public class Maps {
     }
 
     public String getData(String source, String destination)throws Exception{
+
          var url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + source + "&destinations=" + destination + "&key=" + API_KEY;
          var request = HttpRequest.newBuilder().GET().uri(URI.create(url)).build();
          var client = HttpClient.newBuilder().build();
