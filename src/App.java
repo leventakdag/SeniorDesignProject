@@ -10,8 +10,24 @@ public class App {
         //ExactSolution exactsolution = new ExactSolution(data);
         Heuristic heuristic1 = new Heuristic(data);
 
-        ArrayList<Data> dataList = heuristic1.createClusterData(heuristic1.limitedClustering(100,12), data);
-//        ExactSolution exactsolution = new ExactSolution(dataList.get(i));
+        ArrayList<Data> dataList = new ArrayList<Data>();
+        dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
+
+
+        for(int i=0;i<dataList.size()-1;i++){
+            for(int j=0;j<dataList.get(i).locations.length;j++){
+
+                    System.out.print("Locations: ");
+                    System.out.print(dataList.get(i).locations[j].getID()+", ");
+                    if(j!=0){
+                        System.out.print("Weights: ");
+                        System.out.print(dataList.get(i).weight[j]+", ");
+                    }
+            }
+        }
+
+
+       //ExactSolution exactsolution = new ExactSolution(dataList.get(i));
        // Maps maps = new Maps(data);
 
         //exactsolution.solveExact();
@@ -122,7 +138,7 @@ public class App {
                 String Locations = bufferedReader5.readLine();
                 String[] LocationCells = Locations.split(",");
                 
-                data.locations[i]= new Point(Double.parseDouble(LocationCells[2]), Double.parseDouble(LocationCells[3]), Integer.parseInt(LocationCells[1]));
+                data.locations[i]= new Point(Double.parseDouble(LocationCells[2]), Double.parseDouble(LocationCells[3]), (Integer.parseInt(LocationCells[1]))-1);
                 //System.out.println(data.locations[i]);
             }
             

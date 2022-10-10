@@ -23,7 +23,7 @@ public class Point {
         return x;
     }
  
-	public double getID() {
+	public int getID() {
         return id;
     }
 	

@@ -23,13 +23,14 @@ public class Clustering {
 	public ArrayList<ArrayList<Point>> limitedKMeans(int clusterCount, int maxClusterNodes) {
 		setClusterCount(clusterCount);
 		setMaxClusterCount(maxClusterNodes);
-	//Point[] points = data.locations;
+		Point[] points = data.locations;
     	
-    	Point[] points = new Point[1000];
-    	
-    	for(int i = 0; i < points.length; i++) {
+    //	Point[] points = new Point[1000];
+    /*	for(int i = 0; i < points.length; i++) {
     		points[i] = new Point(Math.round((100000 * Math.random())), Math.round((100000 * Math.random())), i);
     	}
+    	//TEST RANDOM
+     */
 
 // find max-min values of X and Y values of locations
 //in order to randomize cluster centers!!!
@@ -37,8 +38,9 @@ public class Clustering {
         ArrayList<Point> clusterCenters = new ArrayList<Point>();
         
         for(int i = 0; i < this.clusterCount; i++) {
-        	//clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
-        	clusterCenters.add(new Point((100000 * Math.random()), (100000 * Math.random()), (-i)));
+        	clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
+			//TEST
+        	//clusterCenters.add(new Point((100000 * Math.random()), (100000 * Math.random()), (-i)));
         }
                 
         ArrayList<ArrayList<Point> > cList = new ArrayList<ArrayList<Point> >();
@@ -153,6 +155,9 @@ public class Clustering {
 					gap--;
 				}
 			}
+		}
+		for(int i=0;i<cList.size();i++){
+			cList.get(i).add(0,data.locations[0]);
 		}
 
         return cList;
