@@ -13,7 +13,7 @@ public class App {
 
 
         ArrayList<Data> dataList = new ArrayList<Data>();
-        dataList = heuristic1.createClusterData(heuristic1.limitedClustering(3,4), data);
+        dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
 
 
         //Checking Clusters and DATA!!!
@@ -21,7 +21,7 @@ public class App {
             System.out.print(data.locations[i].getID()+"-");
         }*/
         System.out.println();
-        for(int i=0;i<dataList.size();i++){
+        /*for(int i=0;i<dataList.size();i++){
             System.out.print(i+": ");
             for(int j=0;j<dataList.get(i).locations.length;j++){
                 System.out.print("++++"+dataList.get(i).locations[j].getID()+", ");
@@ -30,13 +30,16 @@ public class App {
 
             }
             System.out.println();
-        }
+        }*/
+        ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
 
         for(int i =0;i<dataList.size();i++){
-            System.out.println("Cluster "+i);
+            //System.out.println("Cluster "+i);
+            ArrayList<ArrayList<Point>> tempList = new ArrayList<ArrayList<Point>>();
+            sList.add(tempList);
             ExactSolution exactsolution = new ExactSolution(dataList.get(i));
-            exactsolution.solveExact();
-
+            tempList = exactsolution.solveExact();
+            sList.add(tempList);
         }
         //ExactSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
@@ -52,7 +55,9 @@ public class App {
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
         String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
         String filePathRoutes =  "./outputs/Routes.csv";
+        String filePathSolution =  "./outputs/Solution.csv";
 
+        writeSolutionData(sList, filePathSolution);
         //writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
         //writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
        // writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
@@ -107,8 +112,39 @@ public class App {
         }
     }
 
+    private static void writeSolutionData(ArrayList<ArrayList<ArrayList<Point>>> sList, String filePath) {
+        try {
+            FileWriter fw = new FileWriter(filePath,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+
+            for(int i = 0; i < sList.size(); i++) {
+                for(int j = 0; j < sList.get(i).size(); j++) {
+                    for(int k = 0; k<sList.get(i).get(j).size();k++){
+                        pw.print(i);
+                        pw.print(",");
+                        pw.print(j);
+                        pw.print(",");
+                        pw.print(sList.get(i).get(j).get(k).getX());
+                        pw.print(",");
+                        pw.print(sList.get(i).get(j).get(k).getY());
+                        pw.print(",");
+                        pw.print((int)sList.get(i).get(j).get(k).getID());
+                        pw.println();
+                    }
+                }
+            }
+
+            pw.flush();
+            pw.close();
+
+        } catch (Exception E) {
+
+        }
+    }
+
     private static Data readData() {
-        int n=12;
+        int n=40;
         int k=9;
         Data data = new Data();
         data.locations = new Point[n+1];

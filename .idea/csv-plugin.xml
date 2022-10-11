@@ -10,7 +10,7 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/outputs/OutputLimited.csv">
+        <entry key="/outputs/Solution.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

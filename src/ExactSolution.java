@@ -9,10 +9,9 @@ public class ExactSolution {
 
     ExactSolution(Data data) {
         this.data = data;
-
     }
 
-    public void solveExact() {
+    public ArrayList<ArrayList<Point>> solveExact() {
         try {
             GRBEnv env = new GRBEnv("VRP.log");
             GRBModel model = new GRBModel(env);
@@ -397,7 +396,7 @@ public class ExactSolution {
             System.out.println("Error code: " + e.getErrorCode() + ". " +
                     e.getMessage());
         }
-
+        return routeOfTrucks;
     }
 
     public void getRoute(int[][] routeMatrix, int v,int k){
