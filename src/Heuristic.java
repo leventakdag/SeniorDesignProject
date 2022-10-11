@@ -62,6 +62,7 @@ public class Heuristic {
                     for(int k = 0;k<Clist.get(i).size();k++){
 
                         dataTemp.duration[j][k] = data.duration[Clist.get(i).get(j).getID()][Clist.get(i).get(k).getID()];
+                        dataTemp.distance[j][k] = data.duration[Clist.get(i).get(j).getID()][Clist.get(i).get(k).getID()];
                         //System.out.print(dataTemp.duration[j][k]);
                     }
                 }

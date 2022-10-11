@@ -303,7 +303,7 @@ public class ExactSolution {
             for (int k = 0; k < K; k++) {
                 if(y[k].get(GRB.DoubleAttr.X)==1.0){
                     System.out.print("Truck " + (k + 1) + " will go (not route!): ");
-                    for (int j = 0; j < N; j++) {
+                    for (int j = 0; j < N-1; j++) {
                         if (z[j][k].get(GRB.DoubleAttr.X) == 1.0) {
                             //System.out.print(j + "(" + data.indicesOfLocations.get(j) + ")" + "-");
                             System.out.print(data.locations[j].getID()+" ");
