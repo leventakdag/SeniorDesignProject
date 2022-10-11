@@ -198,15 +198,15 @@ public class Clustering {
 						minL = s;
 					}
 				}
-				System.out.println(points[i]);
-				System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
+			//	System.out.println(points[i]);
+			//	System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
 				cList.get(clusterToAssign).add(points[i]);
 
 			}
 
 			for(int i = 0; i < clusterCenters.size(); i++) {
 				clusterCenters.set(i, centroid(cList.get(i)));
-				System.out.println("Cluster "+ i + " will be located at " + clusterCenters.get(i) + " in the next iteration");
+			//	System.out.println("Cluster "+ i + " will be located at " + clusterCenters.get(i) + " in the next iteration");
 			}
 
 			int numbersNotFit = 0;
