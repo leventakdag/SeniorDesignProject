@@ -3,8 +3,8 @@ import gurobi.*;
 public class ExactSolution {
     private Data data;
 
-    ExactSolution(Data Data) {
-        this.data = Data;
+    ExactSolution(Data data) {
+        this.data = data;
 
     }
 
