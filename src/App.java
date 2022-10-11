@@ -14,24 +14,26 @@ public class App {
 
         ArrayList<Data> dataList = new ArrayList<Data>();
         dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
-        ExactSolution exactsolution = new ExactSolution(dataList.get(0));
-        exactsolution.solveExact();
+
 
         //System.out.println(dataList.size());
         //System.out.println(dataList.get(0).locations.length);
 
 
-        /*for(int i=0;i<dataList.size();i++){
+        for(int i=0;i<dataList.size();i++){
             System.out.print(i+": ");
             for(int j=0;j<dataList.get(i).locations.length;j++){
 
-                System.out.print(dataList.get(i).locations[j].getID()+", ");
-                System.out.print("Weights: ");
-                System.out.print(dataList.get(i).weight[j]+", ");
+                System.out.print("++++"+dataList.get(i).locations[j].getID()+", ");
+                //System.out.print("Weights: ");
+                //System.out.print(dataList.get(i).weight[j]+", ");
 
             }
             System.out.println();
-        }*/
+        }
+
+        ExactSolution exactsolution = new ExactSolution(dataList.get(0));
+        exactsolution.solveExact();
 
         /*ArrayList<ArrayList<Point>> arr = heuristic1.limitedClustering(4,12);
 

@@ -181,3 +181,360 @@ Solution count 2: 30 60
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:06:23 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1899 and 1900 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 457 rows, 1913 columns and 8961 nonzeros
+Model fingerprint: 0xa1adaa20
+Variable types: 0 continuous, 1913 integer (1899 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 180.0000000
+Presolve removed 18 rows and 136 columns
+Presolve time: 0.01s
+Presolved: 439 rows, 1777 columns, 8511 nonzeros
+Variable types: 0 continuous, 1777 integer (1764 binary)
+
+Root relaxation: objective 3.000000e+01, 503 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      30.0000000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (2290 simplex iterations) in 0.07 seconds (0.05 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 180 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:08:39 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1197 and 1198 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 334 rows, 1208 columns and 5481 nonzeros
+Model fingerprint: 0xfe655180
+Variable types: 0 continuous, 1208 integer (1197 binary)
+Coefficient statistics:
+  Matrix range     [4e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 90.0000000
+Presolve removed 18 rows and 109 columns
+Presolve time: 0.01s
+Presolved: 316 rows, 1099 columns, 5139 nonzeros
+Variable types: 0 continuous, 1099 integer (1089 binary)
+
+Root relaxation: objective 3.000000e+01, 435 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      30.0000000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (793 simplex iterations) in 0.03 seconds (0.02 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 90 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:09:07 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 657 and 658 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 229 rows, 665 columns and 2847 nonzeros
+Model fingerprint: 0x607e0cd9
+Variable types: 0 continuous, 665 integer (657 binary)
+Coefficient statistics:
+  Matrix range     [7e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 9e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 90.0000000
+Presolve removed 27 rows and 82 columns
+Presolve time: 0.01s
+Presolved: 202 rows, 583 columns, 2181 nonzeros
+Variable types: 0 continuous, 583 integer (576 binary)
+
+Root relaxation: objective 3.000000e+01, 216 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      30.0000000    0.00000   100%     -    0s
+     0     0   30.00000    0   28   30.00000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (216 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 90 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:09:30 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 387 and 388 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 169 rows, 393 columns and 1561 nonzeros
+Model fingerprint: 0x3164b2ec
+Variable types: 0 continuous, 393 integer (387 binary)
+Coefficient statistics:
+  Matrix range     [1e-01, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 7e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 60.0000000
+Presolve removed 27 rows and 64 columns
+Presolve time: 0.01s
+Presolved: 142 rows, 329 columns, 1183 nonzeros
+Variable types: 0 continuous, 329 integer (324 binary)
+
+Root relaxation: objective 3.000000e+01, 125 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   30.00000    0    8   60.00000   30.00000  50.0%     -    0s
+H    0     0                      30.0000000   30.00000  0.00%     -    0s
+     0     0   30.00000    0    8   30.00000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (125 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 60 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:11:40 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1899 and 1900 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 457 rows, 1913 columns and 8961 nonzeros
+Model fingerprint: 0xa1adaa20
+Variable types: 0 continuous, 1913 integer (1899 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 180.0000000
+Presolve removed 18 rows and 136 columns
+Presolve time: 0.01s
+Presolved: 439 rows, 1777 columns, 8511 nonzeros
+Variable types: 0 continuous, 1777 integer (1764 binary)
+
+Root relaxation: objective 3.000000e+01, 503 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0      30.0000000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (2290 simplex iterations) in 0.07 seconds (0.05 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 180 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:12:05 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 657 and 658 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 229 rows, 665 columns and 2847 nonzeros
+Model fingerprint: 0xe9bb6503
+Variable types: 0 continuous, 665 integer (657 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 9e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 90.0000000
+Presolve removed 27 rows and 82 columns
+Presolve time: 0.01s
+Presolved: 202 rows, 583 columns, 2181 nonzeros
+Variable types: 0 continuous, 583 integer (576 binary)
+
+Root relaxation: objective 3.000000e+01, 216 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      30.0000000    0.00000   100%     -    0s
+     0     0   30.00000    0   28   30.00000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (216 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 90 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:13:10 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1197 and 1198 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 334 rows, 1208 columns and 5481 nonzeros
+Model fingerprint: 0x48e7e046
+Variable types: 0 continuous, 1208 integer (1197 binary)
+Coefficient statistics:
+  Matrix range     [4e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 90.0000000
+Presolve removed 18 rows and 109 columns
+Presolve time: 0.01s
+Presolved: 316 rows, 1099 columns, 5139 nonzeros
+Variable types: 0 continuous, 1099 integer (1089 binary)
+
+Root relaxation: objective 3.000000e+01, 310 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      30.0000000    0.00000   100%     -    0s
+     0     0   30.00000    0   22   30.00000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (310 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 90 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:13:36 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1899 and 1900 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 457 rows, 1913 columns and 8961 nonzeros
+Model fingerprint: 0x34745633
+Variable types: 0 continuous, 1913 integer (1899 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 180.0000000
+Presolve removed 18 rows and 136 columns
+Presolve time: 0.01s
+Presolved: 439 rows, 1777 columns, 8511 nonzeros
+Variable types: 0 continuous, 1777 integer (1764 binary)
+
+Root relaxation: objective 3.000000e+01, 528 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                      30.0000000    0.00000   100%     -    0s
+     0     0   30.00000    0   27   30.00000   30.00000  0.00%     -    0s
+
+Explored 1 nodes (528 simplex iterations) in 0.03 seconds (0.02 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 30 180 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 3.000000000000e+01, best bound 3.000000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 13:17:11 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1899 and 1900 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 457 rows, 1913 columns and 8961 nonzeros
+Model fingerprint: 0x0c1bafc6
+Variable types: 0 continuous, 1913 integer (1899 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [3e+01, 3e+01]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 180.0000000
+Presolve removed 9 rows and 136 columns
+Presolve time: 0.01s
+Presolved: 448 rows, 1777 columns, 8619 nonzeros
+Variable types: 0 continuous, 1777 integer (1764 binary)
+
+Root relaxation: objective 3.000000e+01, 637 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   30.00000    0   67  180.00000   30.00000  83.3%     -    0s
+H    0     0                      60.0000000   30.00000  50.0%     -    0s
+     0     0   30.00000    0   54   60.00000   30.00000  50.0%     -    0s
+     0     0 infeasible    0        60.00000   60.00000  0.00%     -    0s
+
+Cutting planes:
+  Cover: 1
+  Implied bound: 3
+  Clique: 15
+  MIR: 4
+
+Explored 1 nodes (4708 simplex iterations) in 0.20 seconds (0.13 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 60 180 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.000000000000e+01, best bound 6.000000000000e+01, gap 0.0000%
