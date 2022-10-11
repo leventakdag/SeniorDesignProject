@@ -20,9 +20,9 @@ public class App {
         //System.out.println(dataList.get(0).locations.length);
 
         //Checking Clusters and DATA!!!
-        for(int i=0;i<data.locations.length;i++){
+        /*for(int i=0;i<data.locations.length;i++){
             System.out.print(data.locations[i].getID()+"-");
-        }
+        }*/
         System.out.println();
         for(int i=0;i<dataList.size();i++){
             System.out.print(i+": ");
@@ -34,10 +34,17 @@ public class App {
             }
             System.out.println();
         }
-/*
-        ExactSolution exactsolution = new ExactSolution(dataList.get(0));
-        exactsolution.solveExact();
-*/
+
+        for(int i =0;i<dataList.size();i++){
+            System.out.println("Cluster "+i);
+            ExactSolution exactsolution = new ExactSolution(dataList.get(i));
+            exactsolution.solveExact();
+
+        }
+
+        //ExactSolution exactsolution = new ExactSolution(data);
+
+
         /*ArrayList<ArrayList<Point>> arr = heuristic1.limitedClustering(4,12);
 
         for(int i = 0; i<arr.size();i++){

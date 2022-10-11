@@ -27,7 +27,7 @@ public class Heuristic {
 
                 Data dataTemp = new Data();
 
-                dataTemp.n = Clist.get(i).size();
+                dataTemp.n = Clist.get(i).size()-1;
                 dataTemp.Cmax = data.Cmax;
                 dataTemp.c = data.c;
                 dataTemp.fixedCost = data.fixedCost;

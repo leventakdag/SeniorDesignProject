@@ -297,13 +297,13 @@ public class ExactSolution {
                 int value = (int) Math.round(y[k].get(GRB.DoubleAttr.X));
                 System.out.println(value);
             }
-            System.out.println();
+            System.out.println(N);
 
             //Writing order load of each truck k - Ljk
             for (int k = 0; k < K; k++) {
                 if(y[k].get(GRB.DoubleAttr.X)==1.0){
                     System.out.print("Truck " + (k + 1) + " will go (not route!): ");
-                    for (int j = 0; j < N-1; j++) {
+                    for (int j = 0; j < N; j++) {
                         if (z[j][k].get(GRB.DoubleAttr.X) == 1.0) {
                             //System.out.print(j + "(" + data.indicesOfLocations.get(j) + ")" + "-");
                             System.out.print(data.locations[j].getID()+" ");
