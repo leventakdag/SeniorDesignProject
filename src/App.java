@@ -8,19 +8,20 @@ public class App {
 
 
         Data data = readData();
-        //ExactSolution exactsolution = new ExactSolution(data);
+
         Heuristic heuristic1 = new Heuristic(data);
 
 
         ArrayList<Data> dataList = new ArrayList<Data>();
         dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
+        ExactSolution exactsolution = new ExactSolution(dataList.get(0));
+        exactsolution.solveExact();
+
+        //System.out.println(dataList.size());
+        //System.out.println(dataList.get(0).locations.length);
 
 
-        System.out.println(dataList.size());
-        System.out.println(dataList.get(0).locations.length);
-
-
-        for(int i=0;i<dataList.size();i++){
+        /*for(int i=0;i<dataList.size();i++){
             System.out.print(i+": ");
             for(int j=0;j<dataList.get(i).locations.length;j++){
 
@@ -30,7 +31,7 @@ public class App {
 
             }
             System.out.println();
-        }
+        }*/
 
         /*ArrayList<ArrayList<Point>> arr = heuristic1.limitedClustering(4,12);
 

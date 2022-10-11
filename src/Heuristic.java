@@ -40,8 +40,12 @@ public class Heuristic {
                 dataTemp.weight = new double[dataTemp.n+1];
                 dataTemp.volume = new double[dataTemp.n+1];
                 dataTemp.vehiclePlates = new String[dataTemp.k];
+                dataTemp.sapLocations = new String[dataTemp.n+1];
+                dataTemp.weightCapacity = data.weightCapacity;
+                dataTemp.volumeCapacity = data.volumeCapacity;
 
-        //        dataTemp.locations[0] = data.locations[0];
+
+            //        dataTemp.locations[0] = data.locations[0];
                 //System.out.println("Locations: "+ i );
                 for(int j = 0;j<Clist.get(i).size();j++){
                     dataTemp.locations[j] = Clist.get(i).get(j);
