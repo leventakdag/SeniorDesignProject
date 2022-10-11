@@ -13,11 +13,8 @@ public class App {
 
 
         ArrayList<Data> dataList = new ArrayList<Data>();
-        dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
+        dataList = heuristic1.createClusterData(heuristic1.limitedClustering(3,4), data);
 
-
-        //System.out.println(dataList.size());
-        //System.out.println(dataList.get(0).locations.length);
 
         //Checking Clusters and DATA!!!
         /*for(int i=0;i<data.locations.length;i++){
@@ -41,27 +38,19 @@ public class App {
             exactsolution.solveExact();
 
         }
+        //ExactSolution exactsolution2 = new ExactSolution(data);
+        //exactsolution2.solveExact();
 
-        //ExactSolution exactsolution = new ExactSolution(data);
 
 
-        /*ArrayList<ArrayList<Point>> arr = heuristic1.limitedClustering(4,12);
 
-        for(int i = 0; i<arr.size();i++){
-            System.out.println("cluster "+i+": ");
-            for(int j=0;j<arr.get(i).size();j++){
-                System.out.print(arr.get(i).get(j).getID()+",");
-            }
-            System.out.println();
-        }*/
-       //ExactSolution exactsolution = new ExactSolution(dataList.get(i));
        // Maps maps = new Maps(data);
 
-        //exactsolution.solveExact();
+
 
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
-     //   String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
+        String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
         String filePathRoutes =  "./outputs/Routes.csv";
 
         //writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
@@ -119,10 +108,10 @@ public class App {
     }
 
     private static Data readData() {
-        int n=40;
+        int n=12;
         int k=9;
         Data data = new Data();
-        data.locations = new Point[41];
+        data.locations = new Point[n+1];
         data.n = n;
         data.k = k;
         data.distance = new double[n+1][n+1];

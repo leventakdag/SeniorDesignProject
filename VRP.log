@@ -1607,3 +1607,2246 @@ Solution count 1: 121
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 1.210000000000e+02, best bound 1.210000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:00:26 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 999 and 1000 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 297 rows, 1009 columns and 4707 nonzeros
+Model fingerprint: 0x91e73e11
+Variable types: 0 continuous, 1009 integer (999 binary)
+Coefficient statistics:
+  Matrix range     [4e-02, 1e+03]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 423.0000000
+Presolve removed 18 rows and 100 columns
+Presolve time: 0.02s
+Presolved: 279 rows, 909 columns, 4275 nonzeros
+Variable types: 0 continuous, 909 integer (900 binary)
+
+Root relaxation: objective 1.531000e+02, 329 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  153.10000    0   10  423.00000  153.10000  63.8%     -    0s
+H    0     0                     410.0000000  153.10000  62.7%     -    0s
+     0     0  153.33333    0   44  410.00000  153.33333  62.6%     -    0s
+H    0     0                     199.0000000  153.33333  22.9%     -    0s
+     0     0  153.53333    0   14  199.00000  153.53333  22.8%     -    0s
+     0     0  155.20800    0   29  199.00000  155.20800  22.0%     -    0s
+H    0     0                     167.0000000  155.20800  7.06%     -    0s
+     0     0  155.56667    0   24  167.00000  155.56667  6.85%     -    0s
+     0     0  155.56667    0   24  167.00000  155.56667  6.85%     -    0s
+     0     0  156.66667    0   22  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   10  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   26  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   20  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   26  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   23  167.00000  156.66667  6.19%     -    0s
+     0     0  159.86667    0   15  167.00000  159.86667  4.27%     -    0s
+     0     0  160.40000    0   24  167.00000  160.40000  3.95%     -    0s
+     0     0  160.40000    0   25  167.00000  160.40000  3.95%     -    0s
+
+Cutting planes:
+  Learned: 4
+  Implied bound: 1
+  MIR: 7
+  Zero half: 1
+  Mod-K: 1
+
+Explored 1 nodes (654 simplex iterations) in 0.17 seconds (0.05 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 167 199 410 423 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.670000000000e+02, best bound 1.670000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:02:24 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0xc4b57f13
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 308.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7365 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.350769e+02, 548 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  135.07692    0   14  308.00000  135.07692  56.1%     -    0s
+H    0     0                     162.0000000  135.07692  16.6%     -    0s
+H    0     0                     157.0000000  135.07692  14.0%     -    0s
+     0     0  136.61538    0   48  157.00000  136.61538  13.0%     -    0s
+     0     0  141.17094    0   33  157.00000  141.17094  10.1%     -    0s
+     0     0  141.17094    0   33  157.00000  141.17094  10.1%     -    0s
+     0     0  141.23529    0   32  157.00000  141.23529  10.0%     -    0s
+     0     0  141.23529    0   14  157.00000  141.23529  10.0%     -    0s
+     0     0  141.23529    0   21  157.00000  141.23529  10.0%     -    0s
+     0     0  141.23529    0   28  157.00000  141.23529  10.0%     -    0s
+     0     0  141.23762    0   32  157.00000  141.23762  10.0%     -    0s
+     0     0  141.64706    0   31  157.00000  141.64706  9.78%     -    0s
+     0     0  141.64706    0   30  157.00000  141.64706  9.78%     -    0s
+     0     2  143.00000    0   30  157.00000  143.00000  8.92%     -    0s
+* 1301   365              22     156.0000000  148.00000  5.13%   5.8    0s
+H 1812   364                     155.0000000  148.30769  4.32%   5.9    0s
+
+Cutting planes:
+  Learned: 6
+  Gomory: 5
+  Cover: 1
+  Implied bound: 22
+  MIR: 9
+  Inf proof: 6
+  Zero half: 2
+  RLT: 1
+  Relax-and-lift: 10
+
+Explored 4056 nodes (24972 simplex iterations) in 0.66 seconds (0.28 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 155 156 157 ... 308
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.550000000000e+02, best bound 1.550000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:04:02 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0xb291dcfd
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [1e-01, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 121.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.160000e+02, 169 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  117.80000    0   18  121.00000  117.80000  2.64%     -    0s
+     0     0  119.00000    0    9  121.00000  119.00000  1.65%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 1
+  Cover: 1
+  Clique: 20
+  MIR: 2
+  RLT: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (348 simplex iterations) in 0.04 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 1: 121 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.210000000000e+02, best bound 1.210000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:04:50 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x75e0f3fe
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 337.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7356 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.718077e+02, 502 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  171.80769    0   18  337.00000  171.80769  49.0%     -    0s
+H    0     0                     255.0000000  171.80769  32.6%     -    0s
+     0     0  175.26923    0   80  255.00000  175.26923  31.3%     -    0s
+H    0     0                     194.0000000  175.26923  9.66%     -    0s
+     0     0  182.13427    0   37  194.00000  182.13427  6.12%     -    0s
+     0     0  182.13427    0   35  194.00000  182.13427  6.12%     -    0s
+     0     0  183.00000    0   29  194.00000  183.00000  5.67%     -    0s
+     0     0  183.00000    0   18  194.00000  183.00000  5.67%     -    0s
+H    0     0                     193.0000000  183.00000  5.18%     -    0s
+H    0     0                     184.0000000  183.00000  0.54%     -    0s
+     0     0 infeasible    0       184.00000  184.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 4
+  Gomory: 1
+  Implied bound: 7
+  MIR: 4
+
+Explored 1 nodes (1129 simplex iterations) in 0.22 seconds (0.09 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 5: 184 193 194 ... 337
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.840000000000e+02, best bound 1.840000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:05:45 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0xb291dcfd
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [1e-01, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 121.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.160000e+02, 169 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  117.80000    0   18  121.00000  117.80000  2.64%     -    0s
+     0     0  119.00000    0    9  121.00000  119.00000  1.65%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 1
+  Cover: 1
+  Clique: 20
+  MIR: 2
+  RLT: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (348 simplex iterations) in 0.04 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 1: 121 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.210000000000e+02, best bound 1.210000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:06:36 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0x58f7ba75
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [8e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 148.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.330000e+02, 166 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  133.00000    0    6  148.00000  133.00000  10.1%     -    0s
+H    0     0                     147.0000000  133.00000  9.52%     -    0s
+H    0     0                     142.0000000  133.00000  6.34%     -    0s
+H    0     0                     139.0000000  133.00000  4.32%     -    0s
+     0     0 infeasible    0       139.00000  139.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 3
+  Implied bound: 3
+  MIR: 6
+  Zero half: 4
+
+Explored 1 nodes (285 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 139 142 147 148 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.390000000000e+02, best bound 1.390000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:08:18 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x7ba7922c
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 314.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7365 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.442821e+02, 534 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  144.28205    0   26  314.00000  144.28205  54.1%     -    0s
+H    0     0                     178.0000000  144.28205  18.9%     -    0s
+H    0     0                     176.0000000  144.28205  18.0%     -    0s
+     0     0  146.00000    0   17  176.00000  146.00000  17.0%     -    0s
+H    0     0                     164.0000000  146.00000  11.0%     -    0s
+     0     0  147.50000    0   16  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   26  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   12  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   26  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   20  164.00000  147.50000  10.1%     -    0s
+     0     0  147.66667    0   19  164.00000  147.66667  10.0%     -    0s
+     0     0  147.80000    0   31  164.00000  147.80000  9.88%     -    0s
+     0     0  148.00000    0   30  164.00000  148.00000  9.76%     -    0s
+H    0     0                     160.0000000  148.00000  7.50%     -    0s
+     0     0  148.00000    0   25  160.00000  148.00000  7.50%     -    0s
+     0     0  148.01465    0   36  160.00000  148.01465  7.49%     -    0s
+     0     0  148.01810    0   40  160.00000  148.01810  7.49%     -    0s
+     0     0  148.01810    0   40  160.00000  148.01810  7.49%     -    0s
+     0     0  148.02941    0   37  160.00000  148.02941  7.48%     -    0s
+     0     0  148.02941    0   37  160.00000  148.02941  7.48%     -    0s
+     0     0  148.02941    0   37  160.00000  148.02941  7.48%     -    0s
+     0     0  148.02941    0   30  160.00000  148.02941  7.48%     -    0s
+     0     2  149.00000    0   30  160.00000  149.00000  6.88%     -    0s
+H   71    79                     156.0000000  149.00000  4.49%   8.6    0s
+H  335   116                     154.0000000  149.50000  2.92%   6.6    0s
+
+Cutting planes:
+  Learned: 6
+  Gomory: 5
+  Implied bound: 13
+  MIR: 27
+  StrongCG: 1
+  Inf proof: 2
+  Zero half: 1
+  Mod-K: 1
+
+Explored 596 nodes (5090 simplex iterations) in 0.51 seconds (0.16 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 154 156 160 ... 314
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.540000000000e+02, best bound 1.540000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:08:36 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0xb291dcfd
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [1e-01, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 121.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.160000e+02, 169 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  117.80000    0   18  121.00000  117.80000  2.64%     -    0s
+     0     0  119.00000    0    9  121.00000  119.00000  1.65%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 1
+  Cover: 1
+  Clique: 20
+  MIR: 2
+  RLT: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (348 simplex iterations) in 0.04 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 1: 121 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.210000000000e+02, best bound 1.210000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:00 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1197 and 1198 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 334 rows, 1208 columns and 5697 nonzeros
+Model fingerprint: 0xd456c140
+Variable types: 0 continuous, 1208 integer (1197 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 411.0000000
+Presolve removed 18 rows and 109 columns
+Presolve time: 0.02s
+Presolved: 316 rows, 1099 columns, 5175 nonzeros
+Variable types: 0 continuous, 1099 integer (1089 binary)
+
+Root relaxation: objective 1.854318e+02, 514 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  185.43182    0   21  411.00000  185.43182  54.9%     -    0s
+H    0     0                     284.0000000  185.43182  34.7%     -    0s
+H    0     0                     269.0000000  185.43182  31.1%     -    0s
+     0     0  186.30682    0   43  269.00000  186.30682  30.7%     -    0s
+     0     0  186.30682    0   69  269.00000  186.30682  30.7%     -    0s
+     0     0  187.36538    0   57  269.00000  187.36538  30.3%     -    0s
+     0     0  187.36538    0   59  269.00000  187.36538  30.3%     -    0s
+     0     0  187.53480    0   86  269.00000  187.53480  30.3%     -    0s
+     0     0  187.61042    0   66  269.00000  187.61042  30.3%     -    0s
+     0     0  187.61042    0   67  269.00000  187.61042  30.3%     -    0s
+     0     0  188.04786    0   91  269.00000  188.04786  30.1%     -    0s
+     0     0  188.41642    0  106  269.00000  188.41642  30.0%     -    0s
+     0     0  188.48109    0  109  269.00000  188.48109  29.9%     -    0s
+     0     0  188.50487    0  107  269.00000  188.50487  29.9%     -    0s
+     0     0  188.50540    0  108  269.00000  188.50540  29.9%     -    0s
+H    0     0                     266.0000000  188.50540  29.1%     -    0s
+     0     0  188.73856    0  163  266.00000  188.73856  29.0%     -    0s
+     0     0  188.75320    0  169  266.00000  188.75320  29.0%     -    0s
+     0     0  188.75612    0  180  266.00000  188.75612  29.0%     -    0s
+     0     0  188.75612    0  180  266.00000  188.75612  29.0%     -    0s
+     0     0  264.18182    0  179  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0  173  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   27  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   41  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   41  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   40  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   65  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   67  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   69  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0  164  266.00000  264.18182  0.68%     -    0s
+     0     0  266.00000    0  189  266.00000  266.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 9
+  Cover: 7
+  Implied bound: 3
+  Clique: 22
+  MIR: 16
+  StrongCG: 3
+  RLT: 15
+  Relax-and-lift: 1
+
+Explored 1 nodes (2728 simplex iterations) in 0.65 seconds (0.22 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 266 269 284 ... 411
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.660000000000e+02, best bound 2.660000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:00 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@c4437c4"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x9fbb5504
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 373.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7347 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.641538e+02, 424 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  164.15385    0   17  373.00000  164.15385  56.0%     -    0s
+H    0     0                     189.0000000  164.15385  13.1%     -    0s
+     0     0  169.76923    0   87  189.00000  169.76923  10.2%     -    0s
+H    0     0                     188.0000000  177.23077  5.73%     -    0s
+     0     0  177.23077    0   21  188.00000  177.23077  5.73%     -    0s
+     0     0  177.23077    0   27  188.00000  177.23077  5.73%     -    0s
+     0     0  178.00000    0    6  188.00000  178.00000  5.32%     -    0s
+     0     0  178.00000    0   17  188.00000  178.00000  5.32%     -    0s
+     0     0  178.00000    0    6  188.00000  178.00000  5.32%     -    0s
+     0     0  178.00000    0    7  188.00000  178.00000  5.32%     -    0s
+     0     0  178.05769    0   32  188.00000  178.05769  5.29%     -    0s
+     0     0  178.50000    0   20  188.00000  178.50000  5.05%     -    0s
+     0     0  178.50000    0   20  188.00000  178.50000  5.05%     -    0s
+H    0     0                     184.0000000  178.50000  2.99%     -    0s
+     0     0  178.50388    0   38  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0   15  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0    9  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0    8  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0    7  184.00000  178.50388  2.99%     -    0s
+H    0     0                     180.0000000  178.50388  0.83%     -    0s
+     0     0  178.51163    0   33  180.00000  178.51163  0.83%     -    0s
+     0     0  179.00000    0   31  180.00000  179.00000  0.56%     -    0s
+
+Cutting planes:
+  Learned: 3
+  Gomory: 3
+  Implied bound: 10
+  MIR: 14
+  StrongCG: 1
+  Zero half: 2
+  Relax-and-lift: 5
+
+Explored 1 nodes (1132 simplex iterations) in 0.25 seconds (0.09 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 180 184 188 ... 373
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.800000000000e+02, best bound 1.800000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:01 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1413 and 1414 have the same name "u_[Lgurobi.GRBVar;@433c675d"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 373 rows, 1425 columns and 6781 nonzeros
+Model fingerprint: 0x4b56fc9c
+Variable types: 0 continuous, 1425 integer (1413 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 419.0000000
+Presolve removed 18 rows and 118 columns
+Presolve time: 0.02s
+Presolved: 355 rows, 1307 columns, 6223 nonzeros
+Variable types: 0 continuous, 1307 integer (1296 binary)
+
+Root relaxation: objective 1.523333e+02, 427 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  152.33333    0   10  419.00000  152.33333  63.6%     -    0s
+H    0     0                     169.0000000  152.33333  9.86%     -    0s
+H    0     0                     164.0000000  152.33333  7.11%     -    0s
+     0     0  154.08333    0   47  164.00000  154.08333  6.05%     -    0s
+     0     0  154.08333    0   10  164.00000  154.08333  6.05%     -    0s
+     0     0  154.29167    0   28  164.00000  154.29167  5.92%     -    0s
+     0     0  154.29167    0   15  164.00000  154.29167  5.92%     -    0s
+     0     0  154.29167    0   28  164.00000  154.29167  5.92%     -    0s
+     0     0  156.50000    0   31  164.00000  156.50000  4.57%     -    0s
+     0     0  156.83333    0   29  164.00000  156.83333  4.37%     -    0s
+     0     0  156.83333    0   30  164.00000  156.83333  4.37%     -    0s
+     0     0  157.66667    0   30  164.00000  157.66667  3.86%     -    0s
+     0     0  157.75000    0   32  164.00000  157.75000  3.81%     -    0s
+H    0     0                     163.0000000  158.00000  3.07%     -    0s
+     0     0  158.11111    0   30  163.00000  158.11111  3.00%     -    0s
+     0     0  158.11111    0   27  163.00000  158.11111  3.00%     -    0s
+     0     2  158.11111    0   27  163.00000  158.11111  3.00%     -    0s
+
+Cutting planes:
+  Learned: 3
+  Gomory: 6
+  Implied bound: 8
+  MIR: 17
+  GUB cover: 1
+  Zero half: 1
+  Relax-and-lift: 5
+
+Explored 250 nodes (2769 simplex iterations) in 0.23 seconds (0.09 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 163 164 169 419 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.630000000000e+02, best bound 1.630000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:01 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 657 and 658 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 229 rows, 665 columns and 3009 nonzeros
+Model fingerprint: 0x29cdc32b
+Variable types: 0 continuous, 665 integer (657 binary)
+Coefficient statistics:
+  Matrix range     [7e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 9e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 217.0000000
+Presolve removed 27 rows and 82 columns
+Presolve time: 0.01s
+Presolved: 202 rows, 583 columns, 2181 nonzeros
+Variable types: 0 continuous, 583 integer (576 binary)
+
+Root relaxation: objective 9.787500e+01, 294 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   97.87500    0   12  217.00000   97.87500  54.9%     -    0s
+H    0     0                     133.0000000   97.87500  26.4%     -    0s
+H    0     0                     117.0000000   97.87500  16.3%     -    0s
+     0     0   99.33333    0   30  117.00000   99.33333  15.1%     -    0s
+     0     0   99.33333    0   16  117.00000   99.33333  15.1%     -    0s
+     0     0  102.25000    0    7  117.00000  102.25000  12.6%     -    0s
+H    0     0                     115.0000000  102.25000  11.1%     -    0s
+     0     0  103.50000    0    8  115.00000  103.50000  10.0%     -    0s
+     0     0  103.50000    0    8  115.00000  103.50000  10.0%     -    0s
+     0     0  103.50000    0   10  115.00000  103.50000  10.0%     -    0s
+     0     0  103.50000    0   12  115.00000  103.50000  10.0%     -    0s
+H    0     0                     114.0000000  103.50000  9.21%     -    0s
+     0     0  103.50000    0   19  114.00000  103.50000  9.21%     -    0s
+     0     0  103.50000    0   14  114.00000  103.50000  9.21%     -    0s
+     0     0  103.50000    0   15  114.00000  103.50000  9.21%     -    0s
+     0     0  103.50000    0   15  114.00000  103.50000  9.21%     -    0s
+     0     0  106.25000    0   10  114.00000  106.25000  6.80%     -    0s
+     0     0  107.75000    0    9  114.00000  107.75000  5.48%     -    0s
+     0     0  109.25000    0   19  114.00000  109.25000  4.17%     -    0s
+     0     0  114.00000    0    6  114.00000  114.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 2
+  MIR: 4
+  Zero half: 2
+  Relax-and-lift: 2
+
+Explored 1 nodes (500 simplex iterations) in 0.09 seconds (0.03 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 114 115 117 ... 217
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.140000000000e+02, best bound 1.140000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:34 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x7ba7922c
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 314.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7365 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.442821e+02, 534 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  144.28205    0   26  314.00000  144.28205  54.1%     -    0s
+H    0     0                     178.0000000  144.28205  18.9%     -    0s
+H    0     0                     176.0000000  144.28205  18.0%     -    0s
+     0     0  146.00000    0   17  176.00000  146.00000  17.0%     -    0s
+H    0     0                     164.0000000  146.00000  11.0%     -    0s
+     0     0  147.50000    0   16  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   26  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   12  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   26  164.00000  147.50000  10.1%     -    0s
+     0     0  147.50000    0   20  164.00000  147.50000  10.1%     -    0s
+     0     0  147.66667    0   19  164.00000  147.66667  10.0%     -    0s
+     0     0  147.80000    0   31  164.00000  147.80000  9.88%     -    0s
+     0     0  148.00000    0   30  164.00000  148.00000  9.76%     -    0s
+H    0     0                     160.0000000  148.00000  7.50%     -    0s
+     0     0  148.00000    0   25  160.00000  148.00000  7.50%     -    0s
+     0     0  148.01465    0   36  160.00000  148.01465  7.49%     -    0s
+     0     0  148.01810    0   40  160.00000  148.01810  7.49%     -    0s
+     0     0  148.01810    0   40  160.00000  148.01810  7.49%     -    0s
+     0     0  148.02941    0   37  160.00000  148.02941  7.48%     -    0s
+     0     0  148.02941    0   37  160.00000  148.02941  7.48%     -    0s
+     0     0  148.02941    0   37  160.00000  148.02941  7.48%     -    0s
+     0     0  148.02941    0   30  160.00000  148.02941  7.48%     -    0s
+     0     2  149.00000    0   30  160.00000  149.00000  6.88%     -    0s
+H   71    79                     156.0000000  149.00000  4.49%   8.6    0s
+H  335   116                     154.0000000  149.50000  2.92%   6.6    0s
+
+Cutting planes:
+  Learned: 6
+  Gomory: 5
+  Implied bound: 13
+  MIR: 27
+  StrongCG: 1
+  Inf proof: 2
+  Zero half: 1
+  Mod-K: 1
+
+Explored 596 nodes (5090 simplex iterations) in 0.50 seconds (0.16 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 154 156 160 ... 314
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.540000000000e+02, best bound 1.540000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:34 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@c4437c4"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0xa00792d9
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 398.0000000
+Presolve removed 9 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 405 rows, 1533 columns, 7464 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.915000e+02, 504 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  191.50000    0   25  398.00000  191.50000  51.9%     -    0s
+H    0     0                     311.0000000  191.50000  38.4%     -    0s
+H    0     0                     310.0000000  191.50000  38.2%     -    0s
+     0     0  192.07692    0   93  310.00000  192.07692  38.0%     -    0s
+     0     0  192.07692    0   53  310.00000  192.07692  38.0%     -    0s
+     0     0  193.00000    0   79  310.00000  193.00000  37.7%     -    0s
+     0     0  193.00000    0   75  310.00000  193.00000  37.7%     -    0s
+     0     0  193.00000    0   75  310.00000  193.00000  37.7%     -    0s
+     0     0  193.00000    0   76  310.00000  193.00000  37.7%     -    0s
+H    0     0                     307.0000000  193.00000  37.1%     -    0s
+     0     0  193.00000    0   32  307.00000  193.00000  37.1%     -    0s
+     0     0  193.00000    0   37  307.00000  193.00000  37.1%     -    0s
+H    0     0                     304.0000000  193.00000  36.5%     -    0s
+     0     0  193.00000    0   79  304.00000  193.00000  36.5%     -    0s
+     0     0  193.00000    0   78  304.00000  193.00000  36.5%     -    0s
+     0     0  193.00000    0   31  304.00000  193.00000  36.5%     -    0s
+     0     0  231.07692    0   72  304.00000  231.07692  24.0%     -    0s
+     0     0  231.50000    0   68  304.00000  231.50000  23.8%     -    0s
+     0     0  231.50000    0   69  304.00000  231.50000  23.8%     -    0s
+     0     0  232.23077    0   68  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   60  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   69  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   72  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   46  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   57  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   38  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   51  304.00000  232.23077  23.6%     -    0s
+     0     0  233.00000    0   29  304.00000  233.00000  23.4%     -    0s
+     0     0  233.00000    0   41  304.00000  233.00000  23.4%     -    0s
+     0     0  233.00000    0   32  304.00000  233.00000  23.4%     -    0s
+     0     0  233.00000    0   32  304.00000  233.00000  23.4%     -    0s
+H    0     0                     297.0000000  233.00000  21.5%     -    1s
+     0     2  233.00000    0   32  297.00000  233.00000  21.5%     -    1s
+H   34    38                     296.0000000  235.00000  20.6%  36.4    1s
+H   37    38                     295.0000000  235.00000  20.3%  38.1    1s
+H   63    74                     291.0000000  235.00000  19.2%  29.3    1s
+H   76    74                     290.0000000  235.00000  19.0%  26.1    1s
+H 1147   807                     287.0000000  237.08437  17.4%  12.6    1s
+  8416  4067  241.21538   30   30  287.00000  241.00000  16.0%   7.8    5s
+ 31285 13399  283.00000   35   25  287.00000  245.23077  14.6%   7.2   10s
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:12:51 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0xa00792d9
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 398.0000000
+Presolve removed 9 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 405 rows, 1533 columns, 7464 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.915000e+02, 504 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  191.50000    0   25  398.00000  191.50000  51.9%     -    0s
+H    0     0                     311.0000000  191.50000  38.4%     -    0s
+H    0     0                     310.0000000  191.50000  38.2%     -    0s
+     0     0  192.07692    0   93  310.00000  192.07692  38.0%     -    0s
+     0     0  192.07692    0   53  310.00000  192.07692  38.0%     -    0s
+     0     0  193.00000    0   79  310.00000  193.00000  37.7%     -    0s
+     0     0  193.00000    0   75  310.00000  193.00000  37.7%     -    0s
+     0     0  193.00000    0   75  310.00000  193.00000  37.7%     -    0s
+     0     0  193.00000    0   76  310.00000  193.00000  37.7%     -    0s
+H    0     0                     307.0000000  193.00000  37.1%     -    0s
+     0     0  193.00000    0   32  307.00000  193.00000  37.1%     -    0s
+     0     0  193.00000    0   37  307.00000  193.00000  37.1%     -    0s
+H    0     0                     304.0000000  193.00000  36.5%     -    0s
+     0     0  193.00000    0   79  304.00000  193.00000  36.5%     -    0s
+     0     0  193.00000    0   78  304.00000  193.00000  36.5%     -    0s
+     0     0  193.00000    0   31  304.00000  193.00000  36.5%     -    0s
+     0     0  231.07692    0   72  304.00000  231.07692  24.0%     -    0s
+     0     0  231.50000    0   68  304.00000  231.50000  23.8%     -    0s
+     0     0  231.50000    0   69  304.00000  231.50000  23.8%     -    0s
+     0     0  232.23077    0   68  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   60  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   69  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   72  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   46  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   57  304.00000  232.23077  23.6%     -    0s
+     0     0  232.23077    0   38  304.00000  232.23077  23.6%     -    1s
+     0     0  232.23077    0   51  304.00000  232.23077  23.6%     -    1s
+     0     0  233.00000    0   29  304.00000  233.00000  23.4%     -    1s
+     0     0  233.00000    0   41  304.00000  233.00000  23.4%     -    1s
+     0     0  233.00000    0   32  304.00000  233.00000  23.4%     -    1s
+     0     0  233.00000    0   32  304.00000  233.00000  23.4%     -    1s
+H    0     0                     297.0000000  233.00000  21.5%     -    1s
+     0     2  233.00000    0   32  297.00000  233.00000  21.5%     -    1s
+H   34    38                     296.0000000  235.00000  20.6%  36.4    1s
+H   37    38                     295.0000000  235.00000  20.3%  38.1    1s
+H   63    74                     291.0000000  235.00000  19.2%  29.3    1s
+H   76    74                     290.0000000  235.00000  19.0%  26.1    1s
+H 1147   807                     287.0000000  237.08437  17.4%  12.6    2s
+  6587  3208  255.26923   34   13  287.00000  240.33333  16.3%   8.2    5s
+ 27781 11988  270.33333   40   14  287.00000  244.98077  14.6%   7.1   10s
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:13:08 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0xb291dcfd
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [1e-01, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 121.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.160000e+02, 169 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  117.80000    0   18  121.00000  117.80000  2.64%     -    0s
+     0     0  119.00000    0    9  121.00000  119.00000  1.65%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 1
+  Cover: 1
+  Clique: 20
+  MIR: 2
+  RLT: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (348 simplex iterations) in 0.04 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 1: 121 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.210000000000e+02, best bound 1.210000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:13:08 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@c4437c4"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x5b31eac2
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 395.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7347 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.987692e+02, 516 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  198.76923    0   13  395.00000  198.76923  49.7%     -    0s
+H    0     0                     222.0000000  198.76923  10.5%     -    0s
+H    0     0                     220.0000000  198.76923  9.65%     -    0s
+     0     0  199.96154    0   87  220.00000  199.96154  9.11%     -    0s
+H    0     0                     213.0000000  199.96154  6.12%     -    0s
+     0     0  204.19780    0   18  213.00000  204.19780  4.13%     -    0s
+     0     0  204.19780    0   31  213.00000  204.19780  4.13%     -    0s
+     0     0  204.57143    0   16  213.00000  204.57143  3.96%     -    0s
+     0     0  204.57143    0   13  213.00000  204.57143  3.96%     -    0s
+     0     0  205.50000    0   27  213.00000  205.50000  3.52%     -    0s
+     0     0  206.00000    0   21  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   20  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   29  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   28  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   23  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   22  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   26  213.00000  206.00000  3.29%     -    0s
+     0     0  206.00000    0   26  213.00000  206.00000  3.29%     -    0s
+     0     0  206.28205    0   25  213.00000  206.28205  3.15%     -    0s
+     0     0  206.84615    0   24  213.00000  206.84615  2.89%     -    0s
+     0     0  206.84615    0   25  213.00000  206.84615  2.89%     -    0s
+     0     0  206.84615    0   25  213.00000  206.84615  2.89%     -    0s
+     0     0  207.00000    0   15  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   25  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   25  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   24  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   28  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   24  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   25  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   24  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   18  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   29  213.00000  207.00000  2.82%     -    0s
+     0     0  207.00000    0   19  213.00000  207.00000  2.82%     -    0s
+     0     2  207.00000    0   15  213.00000  207.00000  2.82%     -    0s
+
+Cutting planes:
+  Learned: 4
+  Gomory: 4
+  Implied bound: 7
+  MIR: 9
+  Zero half: 1
+  Mod-K: 1
+  Relax-and-lift: 7
+
+Explored 587 nodes (5351 simplex iterations) in 0.58 seconds (0.19 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 213 220 222 395 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.130000000000e+02, best bound 2.130000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:13:09 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@433c675d"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x45fd491f
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 290.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7383 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.299231e+02, 549 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  129.92308    0   21  290.00000  129.92308  55.2%     -    0s
+H    0     0                     261.0000000  129.92308  50.2%     -    0s
+     0     0  137.46154    0   62  261.00000  137.46154  47.3%     -    0s
+H    0     0                     161.0000000  137.46154  14.6%     -    0s
+H    0     0                     158.0000000  140.50000  11.1%     -    0s
+     0     0  140.50000    0   21  158.00000  140.50000  11.1%     -    0s
+     0     0  141.07692    0   22  158.00000  141.07692  10.7%     -    0s
+     0     0  141.07692    0   19  158.00000  141.07692  10.7%     -    0s
+     0     0  141.07692    0   19  158.00000  141.07692  10.7%     -    0s
+     0     0  141.07692    0   22  158.00000  141.07692  10.7%     -    0s
+     0     0  141.07692    0   18  158.00000  141.07692  10.7%     -    0s
+     0     0  141.50000    0   19  158.00000  141.50000  10.4%     -    0s
+H    0     0                     151.0000000  141.50000  6.29%     -    0s
+     0     0  141.50000    0   19  151.00000  141.50000  6.29%     -    0s
+     0     0  141.53846    0   16  151.00000  141.53846  6.27%     -    0s
+     0     0  142.00000    0   16  151.00000  142.00000  5.96%     -    0s
+H    0     0                     149.0000000  142.00000  4.70%     -    0s
+     0     0  142.00000    0   25  149.00000  142.00000  4.70%     -    0s
+     0     0  142.00000    0   21  149.00000  142.00000  4.70%     -    0s
+     0     0  142.00000    0   25  149.00000  142.00000  4.70%     -    0s
+     0     0  142.00000    0   26  149.00000  142.00000  4.70%     -    0s
+     0     0  142.00000    0   20  149.00000  142.00000  4.70%     -    0s
+     0     0  142.05769    0   32  149.00000  142.05769  4.66%     -    0s
+     0     0  142.05769    0   32  149.00000  142.05769  4.66%     -    0s
+     0     0  142.16667    0   24  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   28  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   24  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   24  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   27  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   27  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   22  149.00000  142.16667  4.59%     -    0s
+     0     0  142.16667    0   22  149.00000  142.16667  4.59%     -    0s
+     0     2  143.00000    0   22  149.00000  143.00000  4.03%     -    0s
+
+Cutting planes:
+  Learned: 4
+  Gomory: 2
+  Implied bound: 3
+  MIR: 14
+  Mod-K: 1
+  Relax-and-lift: 4
+
+Explored 222 nodes (3137 simplex iterations) in 0.45 seconds (0.15 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 149 151 158 ... 290
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.490000000000e+02, best bound 1.490000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:13:09 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x80e826f7
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 405.0000000
+Presolve removed 9 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 405 rows, 1533 columns, 7464 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.988077e+02, 507 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  198.80769    0   36  405.00000  198.80769  50.9%     -    0s
+H    0     0                     310.0000000  198.80769  35.9%     -    0s
+     0     0  199.82051    0   76  310.00000  199.82051  35.5%     -    0s
+H    0     0                     303.0000000  202.07692  33.3%     -    0s
+     0     0  202.07692    0   76  303.00000  202.07692  33.3%     -    0s
+     0     0  202.07692    0   80  303.00000  202.07692  33.3%     -    0s
+     0     0  203.00000    0   59  303.00000  203.00000  33.0%     -    0s
+H    0     0                     291.0000000  203.00000  30.2%     -    0s
+     0     0  203.00000    0   69  291.00000  203.00000  30.2%     -    0s
+     0     0  203.00000    0   59  291.00000  203.00000  30.2%     -    0s
+     0     0  203.00000    0   25  291.00000  203.00000  30.2%     -    0s
+     0     0  203.16667    0   79  291.00000  203.16667  30.2%     -    0s
+     0     0  203.16667    0  105  291.00000  203.16667  30.2%     -    0s
+     0     0  203.16667    0   76  291.00000  203.16667  30.2%     -    0s
+     0     0  203.16667    0   73  291.00000  203.16667  30.2%     -    0s
+H    0     0                     290.0000000  203.16667  29.9%     -    0s
+     0     0  203.16667    0   58  290.00000  203.16667  29.9%     -    0s
+     0     0  203.16667    0   55  290.00000  203.16667  29.9%     -    0s
+     0     0  249.30769    0   46  290.00000  249.30769  14.0%     -    0s
+     0     0  249.30769    0   46  290.00000  249.30769  14.0%     -    0s
+     0     0  249.61538    0   60  290.00000  249.61538  13.9%     -    0s
+     0     0  249.61538    0   60  290.00000  249.61538  13.9%     -    0s
+     0     0  249.61538    0   44  290.00000  249.61538  13.9%     -    0s
+     0     0  249.61538    0   48  290.00000  249.61538  13.9%     -    0s
+H    0     0                     286.0000000  249.61538  12.7%     -    0s
+     0     0  249.61538    0   57  286.00000  249.61538  12.7%     -    0s
+     0     0  249.61538    0   25  286.00000  249.61538  12.7%     -    0s
+     0     0  249.61538    0   52  286.00000  249.61538  12.7%     -    0s
+     0     0  249.61538    0   65  286.00000  249.61538  12.7%     -    0s
+     0     0  249.61538    0   68  286.00000  249.61538  12.7%     -    0s
+H    0     0                     278.0000000  249.61538  10.2%     -    0s
+     0     0  249.61538    0  153  278.00000  249.61538  10.2%     -    0s
+     0     0  249.61538    0  150  278.00000  249.61538  10.2%     -    0s
+     0     2  250.71302    0  150  278.00000  250.71302  9.82%     -    1s
+H   27    32                     275.0000000  254.00000  7.64%  20.0    1s
+H  139   132                     271.0000000  254.00000  6.27%  14.0    1s
+H  144   132                     269.0000000  254.00000  5.58%  13.7    1s
+H 1961   502                     267.0000000  258.09615  3.33%   9.7    1s
+
+Cutting planes:
+  Learned: 11
+  Gomory: 15
+  Cover: 16
+  Implied bound: 34
+  Clique: 2
+  MIR: 34
+  StrongCG: 1
+  Inf proof: 22
+  Zero half: 4
+  RLT: 31
+  Relax-and-lift: 3
+
+Explored 4403 nodes (44868 simplex iterations) in 2.21 seconds (1.43 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 10: 267 269 271 ... 310
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.670000000000e+02, best bound 2.670000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:14:40 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x9fbb5504
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 373.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7347 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.641538e+02, 424 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  164.15385    0   17  373.00000  164.15385  56.0%     -    0s
+H    0     0                     189.0000000  164.15385  13.1%     -    0s
+     0     0  169.76923    0   87  189.00000  169.76923  10.2%     -    0s
+H    0     0                     188.0000000  177.23077  5.73%     -    0s
+     0     0  177.23077    0   21  188.00000  177.23077  5.73%     -    0s
+     0     0  177.23077    0   27  188.00000  177.23077  5.73%     -    0s
+     0     0  178.00000    0    6  188.00000  178.00000  5.32%     -    0s
+     0     0  178.00000    0   17  188.00000  178.00000  5.32%     -    0s
+     0     0  178.00000    0    6  188.00000  178.00000  5.32%     -    0s
+     0     0  178.00000    0    7  188.00000  178.00000  5.32%     -    0s
+     0     0  178.05769    0   32  188.00000  178.05769  5.29%     -    0s
+     0     0  178.50000    0   20  188.00000  178.50000  5.05%     -    0s
+     0     0  178.50000    0   20  188.00000  178.50000  5.05%     -    0s
+H    0     0                     184.0000000  178.50000  2.99%     -    0s
+     0     0  178.50388    0   38  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0   15  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0    9  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0    8  184.00000  178.50388  2.99%     -    0s
+     0     0  178.50388    0    7  184.00000  178.50388  2.99%     -    0s
+H    0     0                     180.0000000  178.50388  0.83%     -    0s
+     0     0  178.51163    0   33  180.00000  178.51163  0.83%     -    0s
+     0     0  179.00000    0   31  180.00000  179.00000  0.56%     -    0s
+
+Cutting planes:
+  Learned: 3
+  Gomory: 3
+  Implied bound: 10
+  MIR: 14
+  StrongCG: 1
+  Zero half: 2
+  Relax-and-lift: 5
+
+Explored 1 nodes (1132 simplex iterations) in 0.26 seconds (0.09 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 7: 180 184 188 ... 373
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.800000000000e+02, best bound 1.800000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:14:41 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1197 and 1198 have the same name "u_[Lgurobi.GRBVar;@c4437c4"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 334 rows, 1208 columns and 5697 nonzeros
+Model fingerprint: 0xd456c140
+Variable types: 0 continuous, 1208 integer (1197 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 411.0000000
+Presolve removed 18 rows and 109 columns
+Presolve time: 0.02s
+Presolved: 316 rows, 1099 columns, 5175 nonzeros
+Variable types: 0 continuous, 1099 integer (1089 binary)
+
+Root relaxation: objective 1.854318e+02, 514 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  185.43182    0   21  411.00000  185.43182  54.9%     -    0s
+H    0     0                     284.0000000  185.43182  34.7%     -    0s
+H    0     0                     269.0000000  185.43182  31.1%     -    0s
+     0     0  186.30682    0   43  269.00000  186.30682  30.7%     -    0s
+     0     0  186.30682    0   69  269.00000  186.30682  30.7%     -    0s
+     0     0  187.36538    0   57  269.00000  187.36538  30.3%     -    0s
+     0     0  187.36538    0   59  269.00000  187.36538  30.3%     -    0s
+     0     0  187.53480    0   86  269.00000  187.53480  30.3%     -    0s
+     0     0  187.61042    0   66  269.00000  187.61042  30.3%     -    0s
+     0     0  187.61042    0   67  269.00000  187.61042  30.3%     -    0s
+     0     0  188.04786    0   91  269.00000  188.04786  30.1%     -    0s
+     0     0  188.41642    0  106  269.00000  188.41642  30.0%     -    0s
+     0     0  188.48109    0  109  269.00000  188.48109  29.9%     -    0s
+     0     0  188.50487    0  107  269.00000  188.50487  29.9%     -    0s
+     0     0  188.50540    0  108  269.00000  188.50540  29.9%     -    0s
+H    0     0                     266.0000000  188.50540  29.1%     -    0s
+     0     0  188.73856    0  163  266.00000  188.73856  29.0%     -    0s
+     0     0  188.75320    0  169  266.00000  188.75320  29.0%     -    0s
+     0     0  188.75612    0  180  266.00000  188.75612  29.0%     -    0s
+     0     0  188.75612    0  180  266.00000  188.75612  29.0%     -    0s
+     0     0  264.18182    0  179  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0  173  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   27  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   41  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   41  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   40  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   65  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   67  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0   69  266.00000  264.18182  0.68%     -    0s
+     0     0  264.18182    0  164  266.00000  264.18182  0.68%     -    0s
+     0     0  266.00000    0  189  266.00000  266.00000  0.00%     -    0s
+
+Cutting planes:
+  Gomory: 9
+  Cover: 7
+  Implied bound: 3
+  Clique: 22
+  MIR: 16
+  StrongCG: 3
+  RLT: 15
+  Relax-and-lift: 1
+
+Explored 1 nodes (2728 simplex iterations) in 0.64 seconds (0.22 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 6: 266 269 284 ... 411
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.660000000000e+02, best bound 2.660000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:14:41 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@433c675d"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x331cbfee
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 343.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7365 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.613846e+02, 472 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  161.38462    0   18  343.00000  161.38462  52.9%     -    0s
+H    0     0                     189.0000000  161.38462  14.6%     -    0s
+H    0     0                     171.0000000  161.38462  5.62%     -    0s
+     0     0  161.78205    0   23  171.00000  161.78205  5.39%     -    0s
+     0     0  161.78205    0   18  171.00000  161.78205  5.39%     -    0s
+     0     0  166.00000    0    6  171.00000  166.00000  2.92%     -    0s
+     0     0  166.00000    0   18  171.00000  166.00000  2.92%     -    0s
+     0     0  166.00000    0   22  171.00000  166.00000  2.92%     -    0s
+H    0     0                     169.0000000  166.00000  1.78%     -    0s
+     0     0  166.00000    0   22  169.00000  166.00000  1.78%     -    0s
+
+Cutting planes:
+  Learned: 3
+  Gomory: 1
+  Implied bound: 11
+  MIR: 14
+  Relax-and-lift: 3
+
+Explored 1 nodes (1556 simplex iterations) in 0.18 seconds (0.08 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 169 171 189 343 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.690000000000e+02, best bound 1.690000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:14:41 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 513 and 514 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 198 rows, 520 columns and 2301 nonzeros
+Model fingerprint: 0xbcc4cb32
+Variable types: 0 continuous, 520 integer (513 binary)
+Coefficient statistics:
+  Matrix range     [7e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 8e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 110.0000000
+Presolve removed 27 rows and 73 columns
+Presolve time: 0.01s
+Presolved: 171 rows, 447 columns, 1644 nonzeros
+Variable types: 0 continuous, 447 integer (441 binary)
+
+Root relaxation: objective 8.142857e+01, 283 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   81.42857    0    6  110.00000   81.42857  26.0%     -    0s
+H    0     0                     103.0000000   81.42857  20.9%     -    0s
+H    0     0                      98.0000000   81.42857  16.9%     -    0s
+     0     0   85.28571    0   39   98.00000   85.28571  13.0%     -    0s
+     0     0   86.53571    0   13   98.00000   86.53571  11.7%     -    0s
+     0     0   86.53571    0   13   98.00000   86.53571  11.7%     -    0s
+     0     0   88.50000    0    8   98.00000   88.50000  9.69%     -    0s
+     0     0   88.50000    0    6   98.00000   88.50000  9.69%     -    0s
+H    0     0                      97.0000000   88.50000  8.76%     -    0s
+     0     0   88.50000    0   11   97.00000   88.50000  8.76%     -    0s
+     0     0   88.50000    0    8   97.00000   88.50000  8.76%     -    0s
+     0     0   89.00000    0   11   97.00000   89.00000  8.25%     -    0s
+     0     0   92.00000    0   10   97.00000   92.00000  5.15%     -    0s
+     0     0   93.19048    0   16   97.00000   93.19048  3.93%     -    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 2
+  Implied bound: 4
+  MIR: 13
+  StrongCG: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (453 simplex iterations) in 0.07 seconds (0.02 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 5: 97 98 98 ... 110
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 9.700000000000e+01, best bound 9.700000000000e+01, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:18:12 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 15507 and 15508 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 2374 rows, 15548 columns and 79107 nonzeros
+Model fingerprint: 0x51fe816b
+Variable types: 0 continuous, 15548 integer (15507 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e-01, 1e+06]
+  Bounds range     [1e+00, 4e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 1076.7000000
+Presolve removed 0 rows and 379 columns
+Presolve time: 0.19s
+Presolved: 2374 rows, 15169 columns, 63330 nonzeros
+Variable types: 0 continuous, 15169 integer (15129 binary)
+
+Root relaxation: objective 1.961691e+02, 1714 iterations, 0.14 seconds (0.09 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  196.16907    0  133 1076.70000  196.16907  81.8%     -    0s
+H    0     0                     712.0000000  196.16907  72.4%     -    1s
+H    0     0                     695.3000000  196.16907  71.8%     -    1s
+H    0     0                     688.4000000  196.16907  71.5%     -    1s
+     0     0  204.34200    0  281  688.40000  204.34200  70.3%     -    2s
+     0     0  208.33901    0  219  688.40000  208.33901  69.7%     -    2s
+     0     0  208.60507    0  225  688.40000  208.60507  69.7%     -    2s
+     0     0  208.60507    0  223  688.40000  208.60507  69.7%     -    2s
+     0     0  211.34386    0  242  688.40000  211.34386  69.3%     -    3s
+     0     0  211.36354    0  205  688.40000  211.36354  69.3%     -    3s
+     0     0  211.36354    0  189  688.40000  211.36354  69.3%     -    3s
+H    0     0                     682.9000000  211.70978  69.0%     -    4s
+     0     0  211.70978    0  238  682.90000  211.70978  69.0%     -    4s
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:18:50 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@b1bc7ed"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x11f6c404
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [5e-01, 1e+06]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 324.3000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.03s
+Presolved: 396 rows, 1533 columns, 7356 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.482308e+02, 452 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  148.23077    0   41  324.30000  148.23077  54.3%     -    0s
+H    0     0                     236.9000000  148.23077  37.4%     -    0s
+H    0     0                     234.2000000  148.23077  36.7%     -    0s
+     0     0  182.76667    0   30  234.20000  182.76667  22.0%     -    0s
+     0     0  182.76667    0   28  234.20000  182.76667  22.0%     -    0s
+     0     0  182.97179    0   64  234.20000  182.97179  21.9%     -    0s
+     0     0  182.97179    0   65  234.20000  182.97179  21.9%     -    0s
+     0     0  182.97436    0   54  234.20000  182.97436  21.9%     -    0s
+     0     0  182.98462    0   63  234.20000  182.98462  21.9%     -    0s
+     0     0  183.04423    0  112  234.20000  183.04423  21.8%     -    0s
+     0     0  183.18333    0   82  234.20000  183.18333  21.8%     -    0s
+     0     0  183.18333    0   37  234.20000  183.18333  21.8%     -    0s
+     0     0  183.23077    0   37  234.20000  183.23077  21.8%     -    0s
+     0     0  183.23077    0   72  234.20000  183.23077  21.8%     -    0s
+     0     0  183.23077    0   62  234.20000  183.23077  21.8%     -    0s
+     0     0  183.23077    0   77  234.20000  183.23077  21.8%     -    0s
+     0     0  183.23077    0   70  234.20000  183.23077  21.8%     -    0s
+     0     0  183.23077    0   56  234.20000  183.23077  21.8%     -    0s
+     0     2  183.23077    0   54  234.20000  183.23077  21.8%     -    0s
+  2432  1311  189.28205   28   22  234.20000  186.92000  20.2%  11.6    5s
+H 2434  1263                     233.3000000  186.92000  19.9%  11.6    5s
+H 3079  1293                     232.6000000  187.23485  19.5%  10.9    5s
+* 8745  3716              48     229.8000000  188.59715  17.9%   9.0    6s
+H 8856  3756                     229.2000000  188.60000  17.7%   9.0    8s
+ 13833  5913  200.51154   42   22  229.20000  189.00000  17.5%   8.7   10s
+H22503  8792                     227.1000000  189.45253  16.6%   8.4   12s
+ 31380 12330  212.30769   39   20  227.10000  189.87500  16.4%   8.4   15s
+ 36335 13513  217.00000   53   37  227.10000  190.09231  16.3%   8.4   20s
+ 37297 13905  190.09231   49   28  227.10000  190.09231  16.3%   8.5   25s
+ 51563 14892  192.97500   45   31  227.10000  190.09231  16.3%   8.8   30s
+ 63563 14435  196.57692   49   10  227.10000  190.09231  16.3%   9.0   35s
+ 75974 12998  225.51282   49   11  227.10000  190.50000  16.1%   9.2   40s
+ 85066 14612  197.87231   47   31  227.10000  190.84615  16.0%   9.4   45s
+ 99528 16813  206.97692   41   16  227.10000  191.26923  15.8%   9.5   50s
+ 113755 18721  192.81923   39   27  227.10000  191.70000  15.6%   9.6   55s
+ 127769 20265  193.24231   60   17  227.10000  192.11282  15.4%   9.7   60s
+ 141877 21611 infeasible   48       227.10000  192.54615  15.2%   9.8   65s
+ 156241 22755 infeasible   81       227.10000  193.00000  15.0%   9.8   70s
+ 169784 23570  193.62308   61   37  227.10000  193.45385  14.8%   9.9   75s
+ 179745 24085  202.06923   62   12  227.10000  193.80000  14.7%  10.0   80s
+ 192223 24852  195.69231   47   21  227.10000  194.23846  14.5%  10.0   85s
+ 203701 25638 infeasible   70       227.10000  194.68462  14.3%  10.1   90s
+ 216217 26577  200.65385   51    8  227.10000  195.10000  14.1%  10.1   95s
+ 229127 27552  211.00000   61   15  227.10000  195.50000  13.9%  10.1  100s
+ 242042 28511  204.93846   75   12  227.10000  195.88462  13.7%  10.1  105s
+ 256424 29507  216.10000   70   18  227.10000  196.28462  13.6%  10.1  111s
+ 266820 30058  225.91538   44   19  227.10000  196.56667  13.4%  10.1  115s
+ 280277 30782 infeasible   69       227.10000  196.92308  13.3%  10.2  120s
+ 293242 31430 infeasible   81       227.10000  197.26154  13.1%  10.2  125s
+ 307525 31977     cutoff   52       227.10000  197.62308  13.0%  10.2  130s
+ 320616 32348  202.25000   59   24  227.10000  197.94615  12.8%  10.2  135s
+ 333761 32751 infeasible   64       227.10000  198.23077  12.7%  10.2  140s
+ 348036 33015  204.38462   54   12  227.10000  198.55385  12.6%  10.2  145s
+ 361071 33179  215.61795   83   14  227.10000  198.84615  12.4%  10.2  150s
+ 371730 33242 infeasible   75       227.10000  199.08718  12.3%  10.1  155s
+ 382925 33191  226.32308   65   13  227.10000  199.30769  12.2%  10.1  160s
+ 394602 32905 infeasible   61       227.10000  199.60000  12.1%  10.1  165s
+ 406541 32618  206.36154   50   20  227.10000  199.88462  12.0%  10.1  170s
+ 417215 32170 infeasible   62       227.10000  200.11538  11.9%  10.1  175s
+ 428996 31476     cutoff   62       227.10000  200.42308  11.7%  10.1  180s
+ 438223 30958 infeasible   52       227.10000  200.68462  11.6%  10.1  185s
+ 449665 30012  202.06154   59   11  227.10000  201.01538  11.5%  10.1  190s
+ 458130 29155     cutoff   61       227.10000  201.30000  11.4%  10.1  195s
+ 465706 28315  204.46923   61   13  227.10000  201.60000  11.2%  10.1  200s
+ 473358 27333  206.46154   55    8  227.10000  201.93077  11.1%  10.1  205s
+ 482184 26210  212.55385   43    8  227.10000  202.35769  10.9%  10.1  210s
+ 485899 25872  202.75333   34   37  227.10000  202.53077  10.8%  10.1  215s
+ 491874 25268 infeasible   48       227.10000  202.90000  10.7%  10.1  220s
+ 500432 24755  212.45846   46   30  227.10000  203.42308  10.4%  10.1  225s
+ 511659 24775 infeasible   53       227.10000  204.05385  10.1%  10.1  230s
+ 521800 24802  208.51538   66    8  227.10000  204.63077  9.89%  10.1  235s
+ 531129 24920  208.47692   39   15  227.10000  205.10769  9.68%  10.1  240s
+ 540080 25190  208.73077   61   26  227.10000  205.56667  9.48%  10.1  245s
+ 551363 25517  209.65000   35   31  227.10000  206.10000  9.25%  10.1  250s
+ 563392 25597     cutoff   36       227.10000  206.60000  9.03%  10.1  255s
+ 574785 25497  207.30769   81   24  227.10000  207.13590  8.79%  10.0  260s
+ 586618 25786  223.29231   43   21  227.10000  207.64231  8.57%  10.0  265s
+ 599481 25847  210.48974   51   27  227.10000  208.20000  8.32%  10.0  270s
+ 610972 25918  216.66667   47   29  227.10000  208.70000  8.10%  10.0  275s
+ 622909 25658 infeasible   83       227.10000  209.25000  7.86%  10.0  280s
+ 635557 25468  218.40000   73   23  227.10000  209.81538  7.61%  10.0  285s
+ 649111 25274  219.30769   46   25  227.10000  210.43077  7.34%  10.0  290s
+ 656853 25084  221.49744   57   15  227.10000  210.80000  7.18%  10.0  295s
+ 667448 24712  216.53333   50   16  227.10000  211.25455  6.98%   9.9  300s
+ 680133 24343     cutoff   48       227.10000  211.87308  6.70%   9.9  305s
+ 693397 23655  219.13333   45   25  227.10000  212.50000  6.43%   9.9  310s
+ 702548 23190  215.00000   71   24  227.10000  212.95385  6.23%   9.9  315s
+ 711894 22797  220.78462   61    8  227.10000  213.40000  6.03%   9.9  320s
+ 720381 22270  217.59231   92   21  227.10000  213.76875  5.87%   9.9  325s
+ 735403 21056  224.96923  100    6  227.10000  214.46154  5.57%   9.9  330s
+ 749712 19757  216.20513   59   16  227.10000  215.13846  5.27%   9.9  335s
+ 760076 18533  217.35385   59   13  227.10000  215.70000  5.02%   9.9  340s
+ 774391 16976 infeasible   84       227.10000  216.48462  4.67%   9.9  345s
+ 785816 15417 infeasible   59       227.10000  217.20000  4.36%   9.8  350s
+ 798635 13422 infeasible   84       227.10000  218.10000  3.96%   9.8  355s
+ 804999 12502 infeasible   83       227.10000  218.55000  3.76%   9.8  361s
+ 810025 11673 infeasible   86       227.10000  218.90769  3.61%   9.8  365s
+ 822828  9419  221.64103   61    8  227.10000  220.00000  3.13%   9.8  370s
+ 839712  5449  224.73846   72   15  227.10000  222.00000  2.25%   9.8  375s
+
+Cutting planes:
+  Learned: 4
+  Gomory: 45
+  Cover: 87
+  Implied bound: 77
+  MIR: 31
+  Flow cover: 395
+  Inf proof: 427
+  Zero half: 83
+  RLT: 2
+  Relax-and-lift: 7
+
+Explored 854917 nodes (8341505 simplex iterations) in 379.05 seconds (213.18 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 9: 227.1 229.2 229.8 ... 380.8
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.271000000000e+02, best bound 2.271000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:32:01 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0x70b2d259
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [3e-02, 1e+03]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 316.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7356 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.248462e+02, 540 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  124.84615    0   20  316.00000  124.84615  60.5%     -    0s
+H    0     0                     156.0000000  124.84615  20.0%     -    0s
+     0     0  126.92308    0   67  156.00000  126.92308  18.6%     -    0s
+H    0     0                     155.0000000  126.92308  18.1%     -    0s
+     0     0  135.00000    0   22  155.00000  135.00000  12.9%     -    0s
+     0     0  135.00000    0   23  155.00000  135.00000  12.9%     -    0s
+     0     0  135.00000    0   21  155.00000  135.00000  12.9%     -    0s
+     0     0  135.00000    0   22  155.00000  135.00000  12.9%     -    0s
+     0     0  135.00000    0   24  155.00000  135.00000  12.9%     -    0s
+     0     0  135.00000    0   17  155.00000  135.00000  12.9%     -    0s
+     0     0  135.00000    0   24  155.00000  135.00000  12.9%     -    0s
+     0     0  135.23077    0   31  155.00000  135.23077  12.8%     -    0s
+     0     0  135.23529    0   34  155.00000  135.23529  12.8%     -    0s
+     0     0  135.30769    0   31  155.00000  135.30769  12.7%     -    0s
+     0     0  135.30769    0   34  155.00000  135.30769  12.7%     -    0s
+     0     0  137.00000    0   31  155.00000  137.00000  11.6%     -    0s
+     0     0  137.00000    0   28  155.00000  137.00000  11.6%     -    0s
+     0     0  137.66667    0   30  155.00000  137.66667  11.2%     -    0s
+     0     0  137.66667    0   30  155.00000  137.66667  11.2%     -    0s
+     0     0  139.00000    0   29  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   25  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   31  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   29  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   11  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   12  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   13  155.00000  139.00000  10.3%     -    0s
+     0     0  139.00000    0   13  155.00000  139.00000  10.3%     -    0s
+     0     2  139.00000    0   13  155.00000  139.00000  10.3%     -    0s
+H   31    44                     154.0000000  140.00000  9.09%  10.6    0s
+*  943   425              16     153.0000000  143.15385  6.44%   6.4    0s
+
+Cutting planes:
+  Learned: 7
+  Gomory: 7
+  Cover: 1
+  Implied bound: 18
+  MIR: 45
+  StrongCG: 2
+  Inf proof: 6
+  Zero half: 4
+  Mod-K: 1
+  RLT: 2
+  Relax-and-lift: 6
+
+Explored 7340 nodes (44720 simplex iterations) in 0.96 seconds (0.48 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 5: 153 154 155 ... 316
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.530000000000e+02, best bound 1.530000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:32:02 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 999 and 1000 have the same name "u_[Lgurobi.GRBVar;@c4437c4"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 297 rows, 1009 columns and 4707 nonzeros
+Model fingerprint: 0x91e73e11
+Variable types: 0 continuous, 1009 integer (999 binary)
+Coefficient statistics:
+  Matrix range     [4e-02, 1e+03]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 423.0000000
+Presolve removed 18 rows and 100 columns
+Presolve time: 0.01s
+Presolved: 279 rows, 909 columns, 4275 nonzeros
+Variable types: 0 continuous, 909 integer (900 binary)
+
+Root relaxation: objective 1.531000e+02, 329 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  153.10000    0   10  423.00000  153.10000  63.8%     -    0s
+H    0     0                     410.0000000  153.10000  62.7%     -    0s
+     0     0  153.33333    0   44  410.00000  153.33333  62.6%     -    0s
+H    0     0                     199.0000000  153.33333  22.9%     -    0s
+     0     0  153.53333    0   14  199.00000  153.53333  22.8%     -    0s
+     0     0  155.20800    0   29  199.00000  155.20800  22.0%     -    0s
+H    0     0                     167.0000000  155.20800  7.06%     -    0s
+     0     0  155.56667    0   24  167.00000  155.56667  6.85%     -    0s
+     0     0  155.56667    0   24  167.00000  155.56667  6.85%     -    0s
+     0     0  156.66667    0   22  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   10  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   26  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   20  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   26  167.00000  156.66667  6.19%     -    0s
+     0     0  156.66667    0   23  167.00000  156.66667  6.19%     -    0s
+     0     0  159.86667    0   15  167.00000  159.86667  4.27%     -    0s
+     0     0  160.40000    0   24  167.00000  160.40000  3.95%     -    0s
+     0     0  160.40000    0   25  167.00000  160.40000  3.95%     -    0s
+
+Cutting planes:
+  Learned: 4
+  Implied bound: 1
+  MIR: 7
+  Zero half: 1
+  Mod-K: 1
+
+Explored 1 nodes (654 simplex iterations) in 0.14 seconds (0.05 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 167 199 410 423 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.670000000000e+02, best bound 1.670000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:32:02 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 657 and 658 have the same name "u_[Lgurobi.GRBVar;@433c675d"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 229 rows, 665 columns and 3009 nonzeros
+Model fingerprint: 0x74a4b120
+Variable types: 0 continuous, 665 integer (657 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 9e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 273.0000000
+Presolve removed 18 rows and 82 columns
+Presolve time: 0.01s
+Presolved: 211 rows, 583 columns, 2640 nonzeros
+Variable types: 0 continuous, 583 integer (576 binary)
+
+Root relaxation: objective 1.490000e+02, 345 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  149.00000    0    6  273.00000  149.00000  45.4%     -    0s
+H    0     0                     160.0000000  149.00000  6.88%     -    0s
+H    0     0                     152.0000000  149.00000  1.97%     -    0s
+H    0     0                     150.0000000  149.00000  0.67%     -    0s
+     0     0  149.00000    0    6  150.00000  149.00000  0.67%     -    0s
+
+Cutting planes:
+  Implied bound: 3
+  RLT: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (450 simplex iterations) in 0.05 seconds (0.02 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 150 152 160 273 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+02, best bound 1.500000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:32:02 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1647 and 1648 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 414 rows, 1660 columns and 7959 nonzeros
+Model fingerprint: 0xdb9740eb
+Variable types: 0 continuous, 1660 integer (1647 binary)
+Coefficient statistics:
+  Matrix range     [5e-02, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 359.0000000
+Presolve removed 18 rows and 127 columns
+Presolve time: 0.02s
+Presolved: 396 rows, 1533 columns, 7356 nonzeros
+Variable types: 0 continuous, 1533 integer (1521 binary)
+
+Root relaxation: objective 1.677692e+02, 522 iterations, 0.02 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  167.76923    0   16  359.00000  167.76923  53.3%     -    0s
+H    0     0                     184.0000000  167.76923  8.82%     -    0s
+H    0     0                     183.0000000  167.76923  8.32%     -    0s
+     0     0  171.25641    0   87  183.00000  171.25641  6.42%     -    0s
+     0     0  178.41026    0   27  183.00000  178.41026  2.51%     -    0s
+     0     0  178.41026    0   26  183.00000  178.41026  2.51%     -    0s
+     0     0  180.10989    0   23  183.00000  180.10989  1.58%     -    0s
+     0     0  180.10989    0   12  183.00000  180.10989  1.58%     -    0s
+     0     0  180.10989    0   22  183.00000  180.10989  1.58%     -    0s
+H    0     0                     182.0000000  180.10989  1.04%     -    0s
+     0     0  181.00000    0   22  182.00000  181.00000  0.55%     -    0s
+
+Cutting planes:
+  Learned: 4
+  Gomory: 5
+  Implied bound: 3
+  MIR: 17
+  StrongCG: 1
+  Relax-and-lift: 1
+
+Explored 1 nodes (1044 simplex iterations) in 0.17 seconds (0.07 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 182 183 184 359 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.820000000000e+02, best bound 1.820000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:32:11 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 1413 and 1414 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 373 rows, 1425 columns and 6781 nonzeros
+Model fingerprint: 0x0d2867de
+Variable types: 0 continuous, 1425 integer (1413 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 497.0000000
+Presolve removed 9 rows and 118 columns
+Presolve time: 0.02s
+Presolved: 364 rows, 1307 columns, 6331 nonzeros
+Variable types: 0 continuous, 1307 integer (1296 binary)
+
+Root relaxation: objective 1.580417e+02, 382 iterations, 0.01 seconds (0.01 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  158.04167    0   35  497.00000  158.04167  68.2%     -    0s
+H    0     0                     312.0000000  158.04167  49.3%     -    0s
+H    0     0                     292.0000000  158.04167  45.9%     -    0s
+     0     0  158.87500    0  105  292.00000  158.87500  45.6%     -    0s
+     0     0  159.04167    0   67  292.00000  159.04167  45.5%     -    0s
+     0     0  161.12500    0   51  292.00000  161.12500  44.8%     -    0s
+     0     0  161.12500    0   49  292.00000  161.12500  44.8%     -    0s
+     0     0  161.87500    0   78  292.00000  161.87500  44.6%     -    0s
+     0     0  161.87500    0   83  292.00000  161.87500  44.6%     -    0s
+     0     0  161.87500    0   88  292.00000  161.87500  44.6%     -    0s
+     0     0  161.87500    0   80  292.00000  161.87500  44.6%     -    0s
+     0     0  173.04167    0   53  292.00000  173.04167  40.7%     -    0s
+     0     0  206.16667    0   72  292.00000  206.16667  29.4%     -    0s
+H    0     0                     291.0000000  206.16667  29.2%     -    0s
+     0     0  206.16667    0   57  291.00000  206.16667  29.2%     -    0s
+     0     0  206.16667    0   57  291.00000  206.16667  29.2%     -    0s
+     0     0  206.16667    0   32  291.00000  206.16667  29.2%     -    0s
+H    0     0                     276.0000000  206.16667  25.3%     -    0s
+     0     0  206.16667    0   71  276.00000  206.16667  25.3%     -    0s
+H    0     0                     274.0000000  206.16667  24.8%     -    0s
+     0     0  206.16667    0   69  274.00000  206.16667  24.8%     -    0s
+     0     0  206.16667    0   72  274.00000  206.16667  24.8%     -    0s
+     0     0  206.16667    0   56  274.00000  206.16667  24.8%     -    0s
+H    0     0                     268.0000000  206.16667  23.1%     -    0s
+     0     0  206.22917    0   70  268.00000  206.22917  23.0%     -    0s
+     0     0  206.25000    0   89  268.00000  206.25000  23.0%     -    0s
+     0     0  206.25000    0   90  268.00000  206.25000  23.0%     -    0s
+     0     0  209.25000    0   50  268.00000  209.25000  21.9%     -    0s
+     0     0  210.00000    0   64  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   64  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   61  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   72  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   33  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   57  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   21  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   27  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   25  268.00000  210.00000  21.6%     -    0s
+     0     0  210.00000    0   25  268.00000  210.00000  21.6%     -    1s
+     0     2  210.00000    0   18  268.00000  210.00000  21.6%     -    1s
+* 1792   950              40     266.0000000  215.33333  19.0%  11.3    2s
+H 3093  1007                     263.0000000  215.55556  18.0%  11.0    3s
+  7920  2880  243.11111   26   22  263.00000  219.33333  16.6%   9.8    5s
+ 36030  8831  249.91667   27   57  263.00000  229.16667  12.9%   8.4   12s
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:35:06 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 513 and 514 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 198 rows, 520 columns and 2301 nonzeros
+Model fingerprint: 0x21511945
+Variable types: 0 continuous, 520 integer (513 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 8e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 164.0000000
+Presolve removed 18 rows and 73 columns
+Presolve time: 0.01s
+Presolved: 180 rows, 447 columns, 1977 nonzeros
+Variable types: 0 continuous, 447 integer (441 binary)
+
+Root relaxation: objective 1.465714e+02, 304 iterations, 0.01 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  146.57143    0    9  164.00000  146.57143  10.6%     -    0s
+H    0     0                     156.0000000  146.57143  6.04%     -    0s
+H    0     0                     151.0000000  146.57143  2.93%     -    0s
+H    0     0                     150.0000000  146.57143  2.29%     -    0s
+     0     0  149.00000    0   13  150.00000  149.00000  0.67%     -    0s
+     0     0  149.00000    0    8  150.00000  149.00000  0.67%     -    0s
+
+Cutting planes:
+  Learned: 2
+  RLT: 6
+
+Explored 1 nodes (457 simplex iterations) in 0.09 seconds (0.03 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 4: 150 151 156 164 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+02, best bound 1.500000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:35:06 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 54 rows, 28 columns and 27 nonzeros
+Model fingerprint: 0xe8da3633
+Variable types: 0 continuous, 28 integer (27 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e+01, 1e+03]
+  Bounds range     [1e+00, 2e+00]
+  RHS range        [9e+00, 4e+03]
+Found heuristic solution: objective 0.0000000
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds (0.00 work units)
+Thread count was 1 (of 12 available processors)
+
+Solution count 1: 0 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 0.000000000000e+00, best bound 0.000000000000e+00, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:35:06 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 513 and 514 have the same name "u_[Lgurobi.GRBVar;@433c675d"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 198 rows, 520 columns and 2301 nonzeros
+Model fingerprint: 0xb3538d9e
+Variable types: 0 continuous, 520 integer (513 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 8e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 198.0000000
+Presolve removed 18 rows and 73 columns
+Presolve time: 0.01s
+Presolved: 180 rows, 447 columns, 2004 nonzeros
+Variable types: 0 continuous, 447 integer (441 binary)
+
+Root relaxation: objective 1.344286e+02, 218 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  134.42857    0    4  198.00000  134.42857  32.1%     -    0s
+H    0     0                     194.0000000  134.42857  30.7%     -    0s
+     0     0  138.19048    0   43  194.00000  138.19048  28.8%     -    0s
+H    0     0                     190.0000000  138.19048  27.3%     -    0s
+     0     0  139.00000    0   10  190.00000  139.00000  26.8%     -    0s
+     0     0  139.00000    0    4  190.00000  139.00000  26.8%     -    0s
+H    0     0                     168.0000000  139.00000  17.3%     -    0s
+H    0     0                     164.0000000  139.00000  15.2%     -    0s
+     0     0  139.00000    0    8  164.00000  139.00000  15.2%     -    0s
+H    0     0                     159.0000000  139.00000  12.6%     -    0s
+     0     0  139.00000    0   10  159.00000  139.00000  12.6%     -    0s
+     0     0  139.00000    0   10  159.00000  139.00000  12.6%     -    0s
+     0     0  146.52381    0   12  159.00000  146.52381  7.85%     -    0s
+     0     0  155.00000    0   12  159.00000  155.00000  2.52%     -    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 2
+  MIR: 7
+
+Explored 1 nodes (383 simplex iterations) in 0.07 seconds (0.02 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 8: 159 164 168 ... 198
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.590000000000e+02, best bound 1.590000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:36:35 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@7cd84586"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0x14a32515
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 131.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.210000e+02, 202 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                     121.0000000    0.00000   100%     -    0s
+     0     0          -    0       121.00000  121.00000  0.00%     -    0s
+
+Explored 1 nodes (228 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 121 131 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.210000000000e+02, best bound 1.210000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:36:35 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@c4437c4"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0x277b9b77
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+03]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 181.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.310000e+02, 132 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  131.00000    0    4  181.00000  131.00000  27.6%     -    0s
+H    0     0                     174.0000000  131.00000  24.7%     -    0s
+H    0     0                     146.0000000  131.00000  10.3%     -    0s
+     0     0     cutoff    0       146.00000  146.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 1
+  Implied bound: 2
+  MIR: 1
+  Mod-K: 2
+  RLT: 2
+  Relax-and-lift: 1
+
+Explored 1 nodes (149 simplex iterations) in 0.02 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 3: 146 174 181 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.460000000000e+02, best bound 1.460000000000e+02, gap 0.0000%
+
+Gurobi 9.5.1 (mac64[x86], Java) logging started Tue Oct 11 23:36:35 2022
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2023-10-02
+Warning: variables 279 and 280 have the same name "u_[Lgurobi.GRBVar;@433c675d"
+Warning: constraint name "All Orders must be loaded!" has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.5.1 build v9.5.1rc2 (mac64[x86])
+Thread count: 6 physical cores, 12 logical processors, using up to 12 threads
+Optimize a model with 142 rows, 284 columns and 1167 nonzeros
+Model fingerprint: 0xdd6defc4
+Variable types: 0 continuous, 284 integer (279 binary)
+Coefficient statistics:
+  Matrix range     [9e-01, 1e+03]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 6e+00]
+  RHS range        [1e+00, 4e+03]
+Found heuristic solution: objective 149.0000000
+Presolve removed 27 rows and 55 columns
+Presolve time: 0.01s
+Presolved: 115 rows, 229 columns, 798 nonzeros
+Variable types: 0 continuous, 229 integer (225 binary)
+
+Root relaxation: objective 1.470000e+02, 205 iterations, 0.00 seconds (0.00 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+H    0     0                     147.0000000    0.00000   100%     -    0s
+     0     0          -    0       147.00000  147.00000  0.00%     -    0s
+
+Explored 1 nodes (235 simplex iterations) in 0.01 seconds (0.01 work units)
+Thread count was 12 (of 12 available processors)
+
+Solution count 2: 147 149 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.470000000000e+02, best bound 1.470000000000e+02, gap 0.0000%

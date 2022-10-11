@@ -278,7 +278,9 @@ public class ExactSolution {
             System.out.println();
 
             for (int k = 0; k < K; k++) {
-                if(y[k].get(GRB.DoubleAttr.X)==1.0){
+                //if(y[k].get(GRB.DoubleAttr.X)==1.0){
+                    ArrayList<Point> arr = new ArrayList<Point>();
+                    routeOfTrucks.add(arr);
                     routeMatrix = new int[N][N];
                    // System.out.println("Xij Matrix of vehicle " + (k+1) + ": ");
                     for (int i = 0; i < N; i++) {
@@ -295,17 +297,18 @@ public class ExactSolution {
                     }
                     getRoute(routeMatrix,0,k);
                    // System.out.println("------------------");
-                }
+                //}
             }
             //Write route of each truck
             for (int k = 0; k < K; k++){
-                System.out.println("Route of vehicle " + (k+1) + "(with correct order): ");
+                System.out.print("Route of vehicle " + (k+1) + "(with correct order): ");
                 for(int i=0;i<routeOfTrucks.get(k).size();i++){
                     System.out.print( routeOfTrucks.get(k).get(i).getID());
                     if (i != (routeOfTrucks.get(k).size() - 1)) {
                         System.out.print(",");
                     }
                 }
+                System.out.println();
             }
             System.out.println();
 
@@ -399,8 +402,10 @@ public class ExactSolution {
 
     public void getRoute(int[][] routeMatrix, int v,int k){
         routeOfTrucks.get(k).add(data.locations[v]);
+        //System.out.println(k);
         for(int j=0;j<routeMatrix[v].length;j++){
-            if(routeMatrix[v][j]==1){
+            if(routeMatrix[v][j]==1 && j!=0){
+
                 getRoute(routeMatrix,j,k);
             }
         }
