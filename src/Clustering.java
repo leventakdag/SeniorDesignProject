@@ -67,7 +67,7 @@ public class Clustering {
 				//System.out.println(points[i]);
 				//System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
 				cList.get(clusterToAssign).add(points[i]);
-
+				points[i].setCenteroid(clusterCenters.get(clusterToAssign));
 			}
 
 			for(int i = 0; i < clusterCenters.size(); i++) {
@@ -160,8 +160,8 @@ public class Clustering {
 		return cList;
 	}
 
-	public ArrayList<ArrayList<Point>> unlimitedKMeans() {
-
+	public ArrayList<ArrayList<Point>> unlimitedKMeans(int clusterCount) {
+		setClusterCount(clusterCount);
 		Point[] points = data.locations;
 
 // find max-min values of X and Y values of locations
@@ -189,7 +189,7 @@ public class Clustering {
 		while(!isEqual) {
 
 			for(int i = 1; i < points.length; i++) {
-				double minL = 10000;
+				double minL = 1000000;
 				int clusterToAssign = 1000;
 				for(int j = 0; j < clusterCenters.size(); j++) {
 					double s = Math.sqrt((points[i].getY() - clusterCenters.get(j).getY()) * (points[i].getY() - clusterCenters.get(j).getY()) + (points[i].getX() - clusterCenters.get(j).getX()) * (points[i].getX() - clusterCenters.get(j).getX()));
@@ -198,12 +198,11 @@ public class Clustering {
 						minL = s;
 					}
 				}
-			//	System.out.println(points[i]);
-			//	System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
+				//System.out.println(points[i]);
+				//System.out.println("Customer "+ i + " is assigned to " + clusterToAssign);
 				cList.get(clusterToAssign).add(points[i]);
-
+				points[i].setCenteroid(clusterCenters.get(clusterToAssign));
 			}
-
 			for(int i = 0; i < clusterCenters.size(); i++) {
 				clusterCenters.set(i, centroid(cList.get(i)));
 			//	System.out.println("Cluster "+ i + " will be located at " + clusterCenters.get(i) + " in the next iteration");

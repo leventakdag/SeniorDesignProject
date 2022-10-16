@@ -410,5 +410,260 @@ public class ExactSolution {
         }
     }
 
+    public double solveTSP(){
+        double objectiveValue = 0;
+        try {
+
+            GRBEnv env = new GRBEnv("VRP.log");
+            GRBModel model = new GRBModel(env);
+            int N = data.sapLocations.length;
+            int K = 1;
+            int[][] routeMatrix;
+
+            //---------
+            //DVs
+            GRBVar[][][] x = new GRBVar[N][N][K];
+            GRBVar[] y = new GRBVar[K];
+            GRBVar[][] z = new GRBVar[N][K];
+            GRBVar[] u = new GRBVar[N];
+
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    for (int k = 0; k < K; k++) {
+                        x[i][j][k] = model.addVar(0, 1, 0, GRB.BINARY, "x_" + i + "_" + j + "_" + k);
+                    }
+                }
+            }
+            for (int j = 0; j < N; j++) {
+                for (int k = 0; k < K; k++) {
+                    z[j][k] = model.addVar(0, 1, 0, GRB.BINARY, "L_" + j + "_" + k);
+                }
+            }
+            for (int k = 0; k < K; k++) {
+                y[k] = model.addVar(0, 1, 0, GRB.BINARY, "y_" + k);
+            }
+            for (int i = 0; i < N; i++) {
+                u[i] = model.addVar(0, N + 1, 0, GRB.INTEGER, "u_" + u);
+            }
+
+
+            //---------
+            //OBJECTIVE [0]
+            GRBLinExpr exprObj1 = new GRBLinExpr();
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    for (int k = 0; k < K; k++) {
+                        // exprObj1.addTerm(data.c * data.distance[i][j], x[i][j][k]);
+                        exprObj1.addTerm(data.distance[i][j], x[i][j][k]);
+                    }
+                }
+            }
+            model.setObjective(exprObj1, GRB.MINIMIZE);
+
+
+            //---------
+            //S.T.
+
+            //Constraint [1]
+            GRBLinExpr[] exprL = new GRBLinExpr[N];
+            for (int j = 1; j < N; j++) {
+                exprL[j] = new GRBLinExpr();
+                for (int k = 0; k < K; k++) {
+                    exprL[j].addTerm(1, z[j][k]);
+                }
+            }
+            for (int j = 1; j < N; j++) {
+                model.addConstr(exprL[j], GRB.EQUAL, 1, "All Orders must be loaded!");
+            }
+
+            //Constraint [2]
+            GRBLinExpr[][] exprLminus = new GRBLinExpr[N][K];
+            for (int j = 1; j < N; j++) {
+                for (int k = 0; k < K; k++) {
+                    exprLminus[j][k] = new GRBLinExpr();
+                    exprLminus[j][k].addTerm(-1, z[j][k]);
+                }
+            }
+            GRBLinExpr[][] expr2 = new GRBLinExpr[N][K];
+            for (int k = 0; k < K; k++) {
+                for (int j = 1; j < N; j++) {
+                    expr2[j][k] = new GRBLinExpr();
+                    for (int i = 0; i < N; i++) {
+                        expr2[j][k].addTerm(1, x[i][j][k]);
+                    }
+                }
+            }
+
+            for (int j = 1; j < N; j++) {
+                for (int k = 0; k < K; k++) {
+                    expr2[j][k].add(exprLminus[j][k]);
+                    model.addConstr(expr2[j][k], GRB.EQUAL, 0, "If orders of j loaded on vehicle k, then k  must visit location j.");
+                }
+            }
+
+
+            //Constraint [3]
+            GRBLinExpr[][] expr3_1 = new GRBLinExpr[N][K];
+            for (int k = 0; k < K; k++) {
+                for (int j = 0; j < N; j++) {
+                    expr3_1[j][k] = new GRBLinExpr();
+                    for (int i = 0; i < N; i++) {
+                        expr3_1[j][k].addTerm(1, x[i][j][k]);
+                    }
+                }
+            }
+            GRBLinExpr[][] expr3_2 = new GRBLinExpr[N][K];
+            for (int k = 0; k < K; k++) {
+                for (int j = 0; j < N; j++) {
+                    expr3_2[j][k] = new GRBLinExpr();
+                    for (int i = 0; i < N; i++) {
+                        expr3_2[j][k].addTerm(-1, x[j][i][k]);
+                    }
+                }
+            }
+            for (int j = 0; j < N; j++) {
+                for (int k = 0; k < K; k++) {
+                    expr3_1[j][k].add(expr3_2[j][k]);
+                    model.addConstr(expr3_1[j][k], GRB.EQUAL, 0, "If vehicle k comes to j then it must departure from j.");
+                }
+            }
+
+
+            //Constraint [4]
+            GRBLinExpr[] expr4_1 = new GRBLinExpr[K];
+            for (int k = 0; k < K; k++) {
+                expr4_1[k] = new GRBLinExpr();
+                for (int j = 1; j < N; j++) {
+                    expr4_1[k].addTerm(1, z[j][k]);
+                }
+            }
+            GRBLinExpr[] expr4_2 = new GRBLinExpr[K];
+            for (int k = 0; k < K; k++) {
+                expr4_2[k] = new GRBLinExpr();
+                expr4_2[k].addTerm(-(data.Cmax), y[k]);
+            }
+
+            for (int k = 0; k < K; k++) {
+                expr4_1[k].add(expr4_2[k]);
+                model.addConstr(expr4_1[k], GRB.LESS_EQUAL, 0, "If truck k is loaded then it must be used!");
+            }
+
+
+            //Constraint [5] Alternative 1
+            GRBLinExpr expr5_1[] = new GRBLinExpr[K];
+
+            for (int k = 0; k < K; k++) {
+                expr5_1[k] = new GRBLinExpr();
+                for (int j = 1; j < N; j++) {
+                    expr5_1[k].addTerm(1, x[0][j][k]);
+                }
+            }
+            for (int k = 0; k < K; k++) {
+                model.addConstr(expr5_1[k], GRB.EQUAL, y[k], "Max number of departures from 0");
+            }
+
+
+            //Constraint [10]  --SUBTOUR ELIMINATON for (i j)  !!!
+            GRBLinExpr[][] expr10_1 = new GRBLinExpr[N][N];
+            for (int i = 1; i < N; i++) {
+                for (int j = 1; j < N; j++) {
+                    if (i != j) {
+                        expr10_1[i][j] = new GRBLinExpr();
+                        expr10_1[i][j].addTerm(1, u[i]);
+
+                    }
+                }
+            }
+            GRBLinExpr[][] expr10_2 = new GRBLinExpr[N][N];
+            for (int i = 1; i < N; i++) {
+                for (int j = 1; j < N; j++) {
+                    if (i != j) {
+                        expr10_2[i][j] = new GRBLinExpr();
+                        expr10_2[i][j].addTerm(-1, u[j]);
+                    }
+                }
+            }
+            GRBLinExpr[][] expr10_3 = new GRBLinExpr[N][N];
+            for (int i = 1; i < N; i++) {
+                for (int j = 1; j < N; j++) {
+                    expr10_3[i][j] = new GRBLinExpr();
+                    for (int k = 0; k < K; k++) {
+                        if (i != j) {
+                            expr10_3[i][j].addTerm(N, x[i][j][k]);
+                        }
+                    }
+                }
+            }
+            for (int i = 1; i < N; i++) {
+                for (int j = 1; j < N; j++) {
+                    if (i != j) {
+                        expr10_2[i][j].add(expr10_3[i][j]);
+                        expr10_1[i][j].add(expr10_2[i][j]);
+                        model.addConstr(expr10_1[i][j], GRB.LESS_EQUAL, N - 1, "If vehicle k comes to j then it must departure from j.");
+                    }
+                }
+            }
+
+            model.write("vrp_12test.lp");
+            model.optimize();
+
+            //Writing solution matrix of Xij for each vehicle k
+            System.out.println();
+
+            for (int k = 0; k < K; k++) {
+                //if(y[k].get(GRB.DoubleAttr.X)==1.0){
+                ArrayList<Point> arr = new ArrayList<Point>();
+                routeOfTrucks.add(arr);
+                routeMatrix = new int[N][N];
+                // System.out.println("Xij Matrix of vehicle " + (k+1) + ": ");
+                for (int i = 0; i < N; i++) {
+                    for (int j = 0; j < N; j++) {
+                        int value = (int) Math.round(x[i][j][k].get(GRB.DoubleAttr.X));
+                        // System.out.print(value);
+                        routeMatrix[i][j] = value;
+
+                           /* if (j != (N - 1)) {
+                                System.out.print(",");
+                            }*/
+                    }
+                    System.out.println();
+                }
+                getRoute(routeMatrix,0,k);
+                // System.out.println("------------------");
+                //}
+            }
+            //Write route of each truck
+            for (int k = 0; k < K; k++){
+                System.out.print("Route of vehicle " + (k+1) + "(with correct order): ");
+                for(int i=0;i<routeOfTrucks.get(k).size();i++){
+                    System.out.print( routeOfTrucks.get(k).get(i).getID());
+                    if (i != (routeOfTrucks.get(k).size() - 1)) {
+                        System.out.print(",");
+                    }
+                }
+                System.out.println();
+            }
+            System.out.println();
+
+
+
+                    for (int i = 0; i < N; i++) {
+                        for (int j = 0; j < N; j++) {
+                            objectiveValue = objectiveValue + data.duration[i][j] * x[i][j][0].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j][0].get(GRB.DoubleAttr.X);
+                        }
+                    }
+
+            model.dispose();
+            env.dispose();
+
+        }
+
+        catch(GRBException e) {
+            System.out.println("Error code: " + e.getErrorCode() + ". " +
+                    e.getMessage());
+        }
+        return objectiveValue;
+    }
+
 
 }

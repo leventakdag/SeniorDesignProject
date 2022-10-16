@@ -5,16 +5,11 @@ public class App {
 
 	
 	public static void main(String[] args) throws Exception {
-
-
         Data data = readData();
-
         Heuristic heuristic1 = new Heuristic(data);
 
-
         ArrayList<Data> dataList = new ArrayList<Data>();
-        dataList = heuristic1.createClusterData(heuristic1.limitedClustering(4,12), data);
-
+        dataList = heuristic1.createClusterData(heuristic1.unlimitedClustering(4), data);
 
         //Checking Clusters and DATA!!!
         /*for(int i=0;i<data.locations.length;i++){
@@ -27,29 +22,59 @@ public class App {
                 System.out.print("++++"+dataList.get(i).locations[j].getID()+", ");
                 //System.out.print("Weights: ");
                 //System.out.print(dataList.get(i).weight[j]+", ");
-
             }
             System.out.println();
         }*/
-        ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
 
+        //SOLVE EXACT FOR EACH CLUSTER:
+        ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
+        double[] tspDist = new double[4];
         for(int i =0;i<dataList.size();i++){
-            //System.out.println("Cluster "+i);
-            ArrayList<ArrayList<Point>> tempList = new ArrayList<ArrayList<Point>>();
-            sList.add(tempList);
-            ExactSolution exactsolution = new ExactSolution(dataList.get(i));
-            tempList = exactsolution.solveExact();
-            sList.add(tempList);
+            if(dataList.get(i).locations.length>1){
+                //System.out.println("Cluster "+i);
+                ArrayList<ArrayList<Point>> tempList = new ArrayList<ArrayList<Point>>();
+                sList.add(tempList);
+                ExactSolution exactsolution = new ExactSolution(dataList.get(i));
+                /*     tempList = exactsolution.solveExact();
+                sList.add(tempList);*/
+                tspDist[i] = exactsolution.solveTSP();
+            }
+        }
+        for(int i=0;i<tspDist.length;i++){
+            System.out.println("Cluster " + i+": ");
+            System.out.println("Number of customers: " + (dataList.get(i).locations.length-1));
+            double totalDistBtwPoints = 0;
+            double totalDistToCenter = 0;
+            Point centeroid = new Point();
+
+            if(dataList.get(i).locations.length > 1){
+                centeroid = dataList.get(i).locations[1].getCenteroid();
+            }
+
+            for (int x=0;x<dataList.get(i).locations.length;x++){
+                for (int y=0;y<dataList.get(i).locations.length;y++){
+                 //   System.out.println(dataList.get(i).locations[x].getID() + " - " + dataList.get(i).locations[y].getID());
+                  //  System.out.println(dataList.get(i).locations.length);
+                    if(x!=y &&  x!=0 && y!=0){
+                        totalDistBtwPoints = totalDistBtwPoints + dataList.get(i).distance[x][y];
+                    }
+                }
+                double tempDist = (centeroid.getX()-dataList.get(i).locations[x].getX())*(centeroid.getX()-dataList.get(i).locations[x].getX()) + (centeroid.getY()-dataList.get(i).locations[x].getY())*(centeroid.getY()-dataList.get(i).locations[x].getY());
+                totalDistToCenter += Math.sqrt(tempDist);
+            }
+            double averageDistOfPointsToPoints = totalDistBtwPoints / (2 * dataList.get(i).locations.length);
+            double averageDistOfPointsToCenter = totalDistToCenter / dataList.get(i).locations.length;
+            System.out.println("Mean between points: " + averageDistOfPointsToPoints);
+            System.out.println("Mean between points and centeroid: " + (100*averageDistOfPointsToCenter));
+
+
+            System.out.println(tspDist[i]);
+            System.out.println();
         }
         //ExactSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
 
-
-
-
        // Maps maps = new Maps(data);
-
-
 
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
@@ -63,6 +88,7 @@ public class App {
        // writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
         //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
+
     private static void writeTimeMatrix(float[][] timeMatrix, String filePath) {
         try {
             FileWriter fw = new FileWriter(filePath,true);
@@ -167,7 +193,6 @@ public class App {
         FileReader fileReader5;
 
         try {
-
             fileReader1 = new FileReader("./data/distances_40_customer.csv");
             fileReader2 = new FileReader("./data/times_40_customer.csv");
             fileReader3 = new FileReader("./data/orders_40_customer_manipulated.csv");
@@ -179,7 +204,6 @@ public class App {
             BufferedReader bufferedReader3=new BufferedReader(fileReader3);
             BufferedReader bufferedReader4=new BufferedReader(fileReader4);
             BufferedReader bufferedReader5=new BufferedReader(fileReader5);
-
 
             //READING DISTANCE DATA //
             for(int i=0;i<data.distance.length;i++){
@@ -194,7 +218,6 @@ public class App {
                 }
                 System.out.println();
             }*/
-
 
             //READING ORDERS DATA //orders,locations...
             data.sapLocations[0]="SP_1000";

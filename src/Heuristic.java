@@ -14,9 +14,9 @@ public class Heuristic {
         return clustering.limitedKMeans(clusterCount, maxClusterNodes);
 
     }
-    public ArrayList<ArrayList<Point>> unlimitedClustering(){
+    public ArrayList<ArrayList<Point>> unlimitedClustering(int clusterCount){
 
-        return clustering.unlimitedKMeans();
+        return clustering.unlimitedKMeans(clusterCount);
     }
 
     public ArrayList<Data> createClusterData(ArrayList<ArrayList<Point>> Clist, Data data){
