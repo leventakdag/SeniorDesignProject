@@ -237,6 +237,9 @@ public class Clustering {
 			}
 		}
 		//DO NOT limit # of nodes in a cluster
+		for(int i=0;i<cList.size();i++){
+			cList.get(i).add(0,data.locations[0]);
+		}
 
 		return cList;
 	}

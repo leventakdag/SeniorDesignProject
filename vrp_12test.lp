@@ -1,478 +1,233 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
-  1000 x_0_0_0 + 11 x_0_1_0 + 8 x_0_2_0 + 14 x_0_3_0 + 8 x_0_4_0 + 4 x_0_5_0
-   + 10 x_0_6_0 + 9 x_0_7_0 + 11 x_0_8_0 + 10 x_0_9_0 + 12 x_0_10_0
-   + 11 x_0_11_0 + 11 x_0_12_0 + 14 x_1_0_0 + 1000 x_1_1_0 + 12 x_1_2_0
-   + 24 x_1_3_0 + 15 x_1_4_0 + 13 x_1_5_0 + 20 x_1_6_0 + 16 x_1_7_0
-   + 9 x_1_8_0 + 17 x_1_9_0 + 18 x_1_10_0 + 12 x_1_11_0 + 13 x_1_12_0
-   + 7 x_2_0_0 + 11 x_2_1_0 + 1000 x_2_2_0 + 16 x_2_3_0 + 11 x_2_4_0
-   + 2 x_2_5_0 + 12 x_2_6_0 + 10 x_2_7_0 + 9 x_2_8_0 + 10 x_2_9_0
-   + 12 x_2_10_0 + 5 x_2_11_0 + 6 x_2_12_0 + 18 x_3_0_0 + 23 x_3_1_0
-   + 18 x_3_2_0 + 1000 x_3_3_0 + 8 x_3_4_0 + 15 x_3_5_0 + x_3_6_0
-   + 20 x_3_7_0 + 24 x_3_8_0 + 20 x_3_9_0 + 22 x_3_10_0 + 21 x_3_11_0
-   + 22 x_3_12_0 + 11 x_4_0_0 + 14 x_4_1_0 + 11 x_4_2_0 + 9 x_4_3_0
-   + 1000 x_4_4_0 + 8 x_4_5_0 + 5 x_4_6_0 + 13 x_4_7_0 + 14 x_4_8_0
-   + 13 x_4_9_0 + 15 x_4_10_0 + 14 x_4_11_0 + 15 x_4_12_0 + 7 x_5_0_0
-   + 12 x_5_1_0 + 3 x_5_2_0 + 15 x_5_3_0 + 9 x_5_4_0 + 1000 x_5_5_0
-   + 11 x_5_6_0 + 9 x_5_7_0 + 10 x_5_8_0 + 10 x_5_9_0 + 11 x_5_10_0
-   + 6 x_5_11_0 + 7 x_5_12_0 + 14 x_6_0_0 + 19 x_6_1_0 + 14 x_6_2_0
-   + 4 x_6_3_0 + 4 x_6_4_0 + 11 x_6_5_0 + 1000 x_6_6_0 + 16 x_6_7_0
-   + 20 x_6_8_0 + 16 x_6_9_0 + 18 x_6_10_0 + 17 x_6_11_0 + 18 x_6_12_0
-   + 10 x_7_0_0 + 20 x_7_1_0 + 15 x_7_2_0 + 23 x_7_3_0 + 17 x_7_4_0
-   + 13 x_7_5_0 + 19 x_7_6_0 + 1000 x_7_7_0 + 21 x_7_8_0 + 7 x_7_9_0
-   + 3 x_7_10_0 + 19 x_7_11_0 + 19 x_7_12_0 + 14 x_8_0_0 + 9 x_8_1_0
-   + 9 x_8_2_0 + 23 x_8_3_0 + 16 x_8_4_0 + 11 x_8_5_0 + 20 x_8_6_0
-   + 16 x_8_7_0 + 1000 x_8_8_0 + 17 x_8_9_0 + 18 x_8_10_0 + 9 x_8_11_0
-   + 10 x_8_12_0 + 9 x_9_0_0 + 19 x_9_1_0 + 14 x_9_2_0 + 22 x_9_3_0
-   + 16 x_9_4_0 + 12 x_9_5_0 + 18 x_9_6_0 + 7 x_9_7_0 + 19 x_9_8_0
-   + 1000 x_9_9_0 + 10 x_9_10_0 + 18 x_9_11_0 + 18 x_9_12_0 + 11 x_10_0_0
-   + 21 x_10_1_0 + 17 x_10_2_0 + 24 x_10_3_0 + 18 x_10_4_0 + 15 x_10_5_0
-   + 20 x_10_6_0 + 9 x_10_7_0 + 22 x_10_8_0 + 9 x_10_9_0 + 1000 x_10_10_0
-   + 20 x_10_11_0 + 21 x_10_12_0 + 12 x_11_0_0 + 11 x_11_1_0 + 5 x_11_2_0
-   + 21 x_11_3_0 + 15 x_11_4_0 + 6 x_11_5_0 + 17 x_11_6_0 + 14 x_11_7_0
-   + 9 x_11_8_0 + 15 x_11_9_0 + 17 x_11_10_0 + 1000 x_11_11_0 + 3 x_11_12_0
-   + 13 x_12_0_0 + 12 x_12_1_0 + 5 x_12_2_0 + 22 x_12_3_0 + 16 x_12_4_0
-   + 7 x_12_5_0 + 18 x_12_6_0 + 15 x_12_7_0 + 9 x_12_8_0 + 16 x_12_9_0
-   + 17 x_12_10_0 + 3 x_12_11_0 + 1000 x_12_12_0 + 0 L_0_0
-   + 0 u_[Lgurobi.GRBVar;@533ddba
+  1000 x_0_0 + 33 x_0_1 + 39 x_0_2 + 43 x_0_3 + 42 x_0_4 + 40 x_0_5
+   + 41 x_0_6 + 38 x_0_7 + 42 x_0_8 + 43 x_0_9 + 31 x_1_0 + 1000 x_1_1
+   + 9 x_1_2 + 13 x_1_3 + 21 x_1_4 + 16 x_1_5 + 11 x_1_6 + 17 x_1_7
+   + 12 x_1_8 + 13 x_1_9 + 40 x_2_0 + 11 x_2_1 + 1000 x_2_2 + 8 x_2_3
+   + 14 x_2_4 + 8 x_2_5 + 4 x_2_6 + 10 x_2_7 + 9 x_2_8 + 10 x_2_9
+   + 40 x_3_0 + 12 x_3_1 + 7 x_3_2 + 1000 x_3_3 + 16 x_3_4 + 11 x_3_5
+   + 2 x_3_6 + 12 x_3_7 + 10 x_3_8 + 10 x_3_9 + 40 x_4_0 + 22 x_4_1
+   + 18 x_4_2 + 18 x_4_3 + 1000 x_4_4 + 8 x_4_5 + 15 x_4_6 + x_4_7
+   + 20 x_4_8 + 20 x_4_9 + 39 x_5_0 + 15 x_5_1 + 11 x_5_2 + 11 x_5_3
+   + 9 x_5_4 + 1000 x_5_5 + 8 x_5_6 + 5 x_5_7 + 13 x_5_8 + 13 x_5_9
+   + 40 x_6_0 + 12 x_6_1 + 7 x_6_2 + 3 x_6_3 + 15 x_6_4 + 9 x_6_5
+   + 1000 x_6_6 + 11 x_6_7 + 9 x_6_8 + 10 x_6_9 + 36 x_7_0 + 18 x_7_1
+   + 14 x_7_2 + 14 x_7_3 + 4 x_7_4 + 4 x_7_5 + 11 x_7_6 + 1000 x_7_7
+   + 16 x_7_8 + 16 x_7_9 + 43 x_8_0 + 15 x_8_1 + 10 x_8_2 + 15 x_8_3
+   + 23 x_8_4 + 17 x_8_5 + 13 x_8_6 + 19 x_8_7 + 1000 x_8_8 + 7 x_8_9
+   + 42 x_9_0 + 14 x_9_1 + 9 x_9_2 + 14 x_9_3 + 22 x_9_4 + 16 x_9_5
+   + 12 x_9_6 + 18 x_9_7 + 7 x_9_8 + 1000 x_9_9
+   + 0 u_[Lgurobi.GRBVar;@2e0fa5d3
 Subject To
- All_Orders_must_be_loaded!: L_1_0 = 1
- All_Orders_must_be_loaded!: L_2_0 = 1
- All_Orders_must_be_loaded!: L_3_0 = 1
- All_Orders_must_be_loaded!: L_4_0 = 1
- All_Orders_must_be_loaded!: L_5_0 = 1
- All_Orders_must_be_loaded!: L_6_0 = 1
- All_Orders_must_be_loaded!: L_7_0 = 1
- All_Orders_must_be_loaded!: L_8_0 = 1
- All_Orders_must_be_loaded!: L_9_0 = 1
- All_Orders_must_be_loaded!: L_10_0 = 1
- All_Orders_must_be_loaded!: L_11_0 = 1
- All_Orders_must_be_loaded!: L_12_0 = 1
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_1_0 + x_1_1_0 + x_2_1_0 + x_3_1_0 + x_4_1_0 + x_5_1_0 + x_6_1_0
-   + x_7_1_0 + x_8_1_0 + x_9_1_0 + x_10_1_0 + x_11_1_0 + x_12_1_0 - L_1_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_2_0 + x_1_2_0 + x_2_2_0 + x_3_2_0 + x_4_2_0 + x_5_2_0 + x_6_2_0
-   + x_7_2_0 + x_8_2_0 + x_9_2_0 + x_10_2_0 + x_11_2_0 + x_12_2_0 - L_2_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_3_0 + x_1_3_0 + x_2_3_0 + x_3_3_0 + x_4_3_0 + x_5_3_0 + x_6_3_0
-   + x_7_3_0 + x_8_3_0 + x_9_3_0 + x_10_3_0 + x_11_3_0 + x_12_3_0 - L_3_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_4_0 + x_1_4_0 + x_2_4_0 + x_3_4_0 + x_4_4_0 + x_5_4_0 + x_6_4_0
-   + x_7_4_0 + x_8_4_0 + x_9_4_0 + x_10_4_0 + x_11_4_0 + x_12_4_0 - L_4_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_5_0 + x_1_5_0 + x_2_5_0 + x_3_5_0 + x_4_5_0 + x_5_5_0 + x_6_5_0
-   + x_7_5_0 + x_8_5_0 + x_9_5_0 + x_10_5_0 + x_11_5_0 + x_12_5_0 - L_5_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_6_0 + x_1_6_0 + x_2_6_0 + x_3_6_0 + x_4_6_0 + x_5_6_0 + x_6_6_0
-   + x_7_6_0 + x_8_6_0 + x_9_6_0 + x_10_6_0 + x_11_6_0 + x_12_6_0 - L_6_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_7_0 + x_1_7_0 + x_2_7_0 + x_3_7_0 + x_4_7_0 + x_5_7_0 + x_6_7_0
-   + x_7_7_0 + x_8_7_0 + x_9_7_0 + x_10_7_0 + x_11_7_0 + x_12_7_0 - L_7_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_8_0 + x_1_8_0 + x_2_8_0 + x_3_8_0 + x_4_8_0 + x_5_8_0 + x_6_8_0
-   + x_7_8_0 + x_8_8_0 + x_9_8_0 + x_10_8_0 + x_11_8_0 + x_12_8_0 - L_8_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_9_0 + x_1_9_0 + x_2_9_0 + x_3_9_0 + x_4_9_0 + x_5_9_0 + x_6_9_0
-   + x_7_9_0 + x_8_9_0 + x_9_9_0 + x_10_9_0 + x_11_9_0 + x_12_9_0 - L_9_0
-   = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_10_0 + x_1_10_0 + x_2_10_0 + x_3_10_0 + x_4_10_0 + x_5_10_0
-   + x_6_10_0 + x_7_10_0 + x_8_10_0 + x_9_10_0 + x_10_10_0 + x_11_10_0
-   + x_12_10_0 - L_10_0 = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_11_0 + x_1_11_0 + x_2_11_0 + x_3_11_0 + x_4_11_0 + x_5_11_0
-   + x_6_11_0 + x_7_11_0 + x_8_11_0 + x_9_11_0 + x_10_11_0 + x_11_11_0
-   + x_12_11_0 - L_11_0 = 0
- If_orders_of_j_loaded_on_vehicle_k,_then_k__must_visit_location_j.:
-   x_0_12_0 + x_1_12_0 + x_2_12_0 + x_3_12_0 + x_4_12_0 + x_5_12_0
-   + x_6_12_0 + x_7_12_0 + x_8_12_0 + x_9_12_0 + x_10_12_0 + x_11_12_0
-   + x_12_12_0 - L_12_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: - x_0_1_0
-   - x_0_2_0 - x_0_3_0 - x_0_4_0 - x_0_5_0 - x_0_6_0 - x_0_7_0 - x_0_8_0
-   - x_0_9_0 - x_0_10_0 - x_0_11_0 - x_0_12_0 + x_1_0_0 + x_2_0_0 + x_3_0_0
-   + x_4_0_0 + x_5_0_0 + x_6_0_0 + x_7_0_0 + x_8_0_0 + x_9_0_0 + x_10_0_0
-   + x_11_0_0 + x_12_0_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_1_0 - x_1_0_0
-   - x_1_2_0 - x_1_3_0 - x_1_4_0 - x_1_5_0 - x_1_6_0 - x_1_7_0 - x_1_8_0
-   - x_1_9_0 - x_1_10_0 - x_1_11_0 - x_1_12_0 + x_2_1_0 + x_3_1_0 + x_4_1_0
-   + x_5_1_0 + x_6_1_0 + x_7_1_0 + x_8_1_0 + x_9_1_0 + x_10_1_0 + x_11_1_0
-   + x_12_1_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_2_0 + x_1_2_0
-   - x_2_0_0 - x_2_1_0 - x_2_3_0 - x_2_4_0 - x_2_5_0 - x_2_6_0 - x_2_7_0
-   - x_2_8_0 - x_2_9_0 - x_2_10_0 - x_2_11_0 - x_2_12_0 + x_3_2_0 + x_4_2_0
-   + x_5_2_0 + x_6_2_0 + x_7_2_0 + x_8_2_0 + x_9_2_0 + x_10_2_0 + x_11_2_0
-   + x_12_2_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_3_0 + x_1_3_0
-   + x_2_3_0 - x_3_0_0 - x_3_1_0 - x_3_2_0 - x_3_4_0 - x_3_5_0 - x_3_6_0
-   - x_3_7_0 - x_3_8_0 - x_3_9_0 - x_3_10_0 - x_3_11_0 - x_3_12_0 + x_4_3_0
-   + x_5_3_0 + x_6_3_0 + x_7_3_0 + x_8_3_0 + x_9_3_0 + x_10_3_0 + x_11_3_0
-   + x_12_3_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_4_0 + x_1_4_0
-   + x_2_4_0 + x_3_4_0 - x_4_0_0 - x_4_1_0 - x_4_2_0 - x_4_3_0 - x_4_5_0
-   - x_4_6_0 - x_4_7_0 - x_4_8_0 - x_4_9_0 - x_4_10_0 - x_4_11_0 - x_4_12_0
-   + x_5_4_0 + x_6_4_0 + x_7_4_0 + x_8_4_0 + x_9_4_0 + x_10_4_0 + x_11_4_0
-   + x_12_4_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_5_0 + x_1_5_0
-   + x_2_5_0 + x_3_5_0 + x_4_5_0 - x_5_0_0 - x_5_1_0 - x_5_2_0 - x_5_3_0
-   - x_5_4_0 - x_5_6_0 - x_5_7_0 - x_5_8_0 - x_5_9_0 - x_5_10_0 - x_5_11_0
-   - x_5_12_0 + x_6_5_0 + x_7_5_0 + x_8_5_0 + x_9_5_0 + x_10_5_0 + x_11_5_0
-   + x_12_5_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_6_0 + x_1_6_0
-   + x_2_6_0 + x_3_6_0 + x_4_6_0 + x_5_6_0 - x_6_0_0 - x_6_1_0 - x_6_2_0
-   - x_6_3_0 - x_6_4_0 - x_6_5_0 - x_6_7_0 - x_6_8_0 - x_6_9_0 - x_6_10_0
-   - x_6_11_0 - x_6_12_0 + x_7_6_0 + x_8_6_0 + x_9_6_0 + x_10_6_0
-   + x_11_6_0 + x_12_6_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_7_0 + x_1_7_0
-   + x_2_7_0 + x_3_7_0 + x_4_7_0 + x_5_7_0 + x_6_7_0 - x_7_0_0 - x_7_1_0
-   - x_7_2_0 - x_7_3_0 - x_7_4_0 - x_7_5_0 - x_7_6_0 - x_7_8_0 - x_7_9_0
-   - x_7_10_0 - x_7_11_0 - x_7_12_0 + x_8_7_0 + x_9_7_0 + x_10_7_0
-   + x_11_7_0 + x_12_7_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_8_0 + x_1_8_0
-   + x_2_8_0 + x_3_8_0 + x_4_8_0 + x_5_8_0 + x_6_8_0 + x_7_8_0 - x_8_0_0
-   - x_8_1_0 - x_8_2_0 - x_8_3_0 - x_8_4_0 - x_8_5_0 - x_8_6_0 - x_8_7_0
-   - x_8_9_0 - x_8_10_0 - x_8_11_0 - x_8_12_0 + x_9_8_0 + x_10_8_0
-   + x_11_8_0 + x_12_8_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_9_0 + x_1_9_0
-   + x_2_9_0 + x_3_9_0 + x_4_9_0 + x_5_9_0 + x_6_9_0 + x_7_9_0 + x_8_9_0
-   - x_9_0_0 - x_9_1_0 - x_9_2_0 - x_9_3_0 - x_9_4_0 - x_9_5_0 - x_9_6_0
-   - x_9_7_0 - x_9_8_0 - x_9_10_0 - x_9_11_0 - x_9_12_0 + x_10_9_0
-   + x_11_9_0 + x_12_9_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_10_0
-   + x_1_10_0 + x_2_10_0 + x_3_10_0 + x_4_10_0 + x_5_10_0 + x_6_10_0
-   + x_7_10_0 + x_8_10_0 + x_9_10_0 - x_10_0_0 - x_10_1_0 - x_10_2_0
-   - x_10_3_0 - x_10_4_0 - x_10_5_0 - x_10_6_0 - x_10_7_0 - x_10_8_0
-   - x_10_9_0 - x_10_11_0 - x_10_12_0 + x_11_10_0 + x_12_10_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_11_0
-   + x_1_11_0 + x_2_11_0 + x_3_11_0 + x_4_11_0 + x_5_11_0 + x_6_11_0
-   + x_7_11_0 + x_8_11_0 + x_9_11_0 + x_10_11_0 - x_11_0_0 - x_11_1_0
-   - x_11_2_0 - x_11_3_0 - x_11_4_0 - x_11_5_0 - x_11_6_0 - x_11_7_0
-   - x_11_8_0 - x_11_9_0 - x_11_10_0 - x_11_12_0 + x_12_11_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: x_0_12_0
-   + x_1_12_0 + x_2_12_0 + x_3_12_0 + x_4_12_0 + x_5_12_0 + x_6_12_0
-   + x_7_12_0 + x_8_12_0 + x_9_12_0 + x_10_12_0 + x_11_12_0 - x_12_0_0
-   - x_12_1_0 - x_12_2_0 - x_12_3_0 - x_12_4_0 - x_12_5_0 - x_12_6_0
-   - x_12_7_0 - x_12_8_0 - x_12_9_0 - x_12_10_0 - x_12_11_0 = 0
- If_truck_k_is_loaded_then_it_must_be_used!: L_1_0 + L_2_0 + L_3_0 + L_4_0
-   + L_5_0 + L_6_0 + L_7_0 + L_8_0 + L_9_0 + L_10_0 + L_11_0 + L_12_0
-   - 24 y_0 <= 0
- Max_number_of_departures_from_0: x_0_1_0 + x_0_2_0 + x_0_3_0 + x_0_4_0
-   + x_0_5_0 + x_0_6_0 + x_0_7_0 + x_0_8_0 + x_0_9_0 + x_0_10_0 + x_0_11_0
-   + x_0_12_0 - y_0 = 0
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_2_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_3_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_4_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_5_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_6_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_7_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_1_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_3_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_4_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_5_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_6_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_7_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_2_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_4_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_5_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_6_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_7_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_3_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_5_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_6_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_7_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_4_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_6_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_7_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_5_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_7_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_6_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_6_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_8_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_7_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_6_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_7_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_9_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_8_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_6_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_7_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_8_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_10_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_9_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_6_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_7_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_8_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_9_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_11_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_10_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_6_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_7_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_8_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_9_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_10_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_11_12_0
-   + u_[Lgurobi.GRBVar;@533ddba - u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_1_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_2_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_3_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_4_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_5_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_6_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_7_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_8_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_9_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_10_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 13 x_12_11_0
-   - u_[Lgurobi.GRBVar;@533ddba + u_[Lgurobi.GRBVar;@533ddba <= 12
+ c1: x_0_1 + x_0_2 + x_0_3 + x_0_4 + x_0_5 + x_0_6 + x_0_7 + x_0_8 + x_0_9
+   = 1
+ c1: x_1_0 + x_1_2 + x_1_3 + x_1_4 + x_1_5 + x_1_6 + x_1_7 + x_1_8 + x_1_9
+   = 1
+ c1: x_2_0 + x_2_1 + x_2_3 + x_2_4 + x_2_5 + x_2_6 + x_2_7 + x_2_8 + x_2_9
+   = 1
+ c1: x_3_0 + x_3_1 + x_3_2 + x_3_4 + x_3_5 + x_3_6 + x_3_7 + x_3_8 + x_3_9
+   = 1
+ c1: x_4_0 + x_4_1 + x_4_2 + x_4_3 + x_4_5 + x_4_6 + x_4_7 + x_4_8 + x_4_9
+   = 1
+ c1: x_5_0 + x_5_1 + x_5_2 + x_5_3 + x_5_4 + x_5_6 + x_5_7 + x_5_8 + x_5_9
+   = 1
+ c1: x_6_0 + x_6_1 + x_6_2 + x_6_3 + x_6_4 + x_6_5 + x_6_7 + x_6_8 + x_6_9
+   = 1
+ c1: x_7_0 + x_7_1 + x_7_2 + x_7_3 + x_7_4 + x_7_5 + x_7_6 + x_7_8 + x_7_9
+   = 1
+ c1: x_8_0 + x_8_1 + x_8_2 + x_8_3 + x_8_4 + x_8_5 + x_8_6 + x_8_7 + x_8_9
+   = 1
+ c1: x_9_0 + x_9_1 + x_9_2 + x_9_3 + x_9_4 + x_9_5 + x_9_6 + x_9_7 + x_9_8
+   = 1
+ c1: x_1_0 + x_2_0 + x_3_0 + x_4_0 + x_5_0 + x_6_0 + x_7_0 + x_8_0 + x_9_0
+   = 1
+ c1: x_0_1 + x_2_1 + x_3_1 + x_4_1 + x_5_1 + x_6_1 + x_7_1 + x_8_1 + x_9_1
+   = 1
+ c1: x_0_2 + x_1_2 + x_3_2 + x_4_2 + x_5_2 + x_6_2 + x_7_2 + x_8_2 + x_9_2
+   = 1
+ c1: x_0_3 + x_1_3 + x_2_3 + x_4_3 + x_5_3 + x_6_3 + x_7_3 + x_8_3 + x_9_3
+   = 1
+ c1: x_0_4 + x_1_4 + x_2_4 + x_3_4 + x_5_4 + x_6_4 + x_7_4 + x_8_4 + x_9_4
+   = 1
+ c1: x_0_5 + x_1_5 + x_2_5 + x_3_5 + x_4_5 + x_6_5 + x_7_5 + x_8_5 + x_9_5
+   = 1
+ c1: x_0_6 + x_1_6 + x_2_6 + x_3_6 + x_4_6 + x_5_6 + x_7_6 + x_8_6 + x_9_6
+   = 1
+ c1: x_0_7 + x_1_7 + x_2_7 + x_3_7 + x_4_7 + x_5_7 + x_6_7 + x_8_7 + x_9_7
+   = 1
+ c1: x_0_8 + x_1_8 + x_2_8 + x_3_8 + x_4_8 + x_5_8 + x_6_8 + x_7_8 + x_9_8
+   = 1
+ c1: x_0_9 + x_1_9 + x_2_9 + x_3_9 + x_4_9 + x_5_9 + x_6_9 + x_7_9 + x_8_9
+   = 1
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_2
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_3
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_4
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_5
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_6
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_7
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_1_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_3
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_4
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_5
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_6
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_7
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_2_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_4
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_5
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_6
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_7
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_3_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_3
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_5
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_6
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_7
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_4_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_3
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_4
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_6
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_7
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_5_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_3
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_4
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_5
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_7
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_6_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_3
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_4
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_5
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_6
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_8
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_7_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_3
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_4
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_5
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_6
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_7
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_8_9
+   + u_[Lgurobi.GRBVar;@2e0fa5d3 - u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_1
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_2
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_3
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_4
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_5
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_6
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_7
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
+ If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 10 x_9_8
+   - u_[Lgurobi.GRBVar;@2e0fa5d3 + u_[Lgurobi.GRBVar;@2e0fa5d3 <= 9
 Bounds
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
- u_[Lgurobi.GRBVar;@533ddba <= 14
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
+ u_[Lgurobi.GRBVar;@2e0fa5d3 <= 11
 Binaries
- x_0_0_0 x_0_1_0 x_0_2_0 x_0_3_0 x_0_4_0 x_0_5_0 x_0_6_0 x_0_7_0 x_0_8_0
- x_0_9_0 x_0_10_0 x_0_11_0 x_0_12_0 x_1_0_0 x_1_1_0 x_1_2_0 x_1_3_0 x_1_4_0
- x_1_5_0 x_1_6_0 x_1_7_0 x_1_8_0 x_1_9_0 x_1_10_0 x_1_11_0 x_1_12_0 x_2_0_0
- x_2_1_0 x_2_2_0 x_2_3_0 x_2_4_0 x_2_5_0 x_2_6_0 x_2_7_0 x_2_8_0 x_2_9_0
- x_2_10_0 x_2_11_0 x_2_12_0 x_3_0_0 x_3_1_0 x_3_2_0 x_3_3_0 x_3_4_0 x_3_5_0
- x_3_6_0 x_3_7_0 x_3_8_0 x_3_9_0 x_3_10_0 x_3_11_0 x_3_12_0 x_4_0_0 x_4_1_0
- x_4_2_0 x_4_3_0 x_4_4_0 x_4_5_0 x_4_6_0 x_4_7_0 x_4_8_0 x_4_9_0 x_4_10_0
- x_4_11_0 x_4_12_0 x_5_0_0 x_5_1_0 x_5_2_0 x_5_3_0 x_5_4_0 x_5_5_0 x_5_6_0
- x_5_7_0 x_5_8_0 x_5_9_0 x_5_10_0 x_5_11_0 x_5_12_0 x_6_0_0 x_6_1_0 x_6_2_0
- x_6_3_0 x_6_4_0 x_6_5_0 x_6_6_0 x_6_7_0 x_6_8_0 x_6_9_0 x_6_10_0 x_6_11_0
- x_6_12_0 x_7_0_0 x_7_1_0 x_7_2_0 x_7_3_0 x_7_4_0 x_7_5_0 x_7_6_0 x_7_7_0
- x_7_8_0 x_7_9_0 x_7_10_0 x_7_11_0 x_7_12_0 x_8_0_0 x_8_1_0 x_8_2_0 x_8_3_0
- x_8_4_0 x_8_5_0 x_8_6_0 x_8_7_0 x_8_8_0 x_8_9_0 x_8_10_0 x_8_11_0 x_8_12_0
- x_9_0_0 x_9_1_0 x_9_2_0 x_9_3_0 x_9_4_0 x_9_5_0 x_9_6_0 x_9_7_0 x_9_8_0
- x_9_9_0 x_9_10_0 x_9_11_0 x_9_12_0 x_10_0_0 x_10_1_0 x_10_2_0 x_10_3_0
- x_10_4_0 x_10_5_0 x_10_6_0 x_10_7_0 x_10_8_0 x_10_9_0 x_10_10_0 x_10_11_0
- x_10_12_0 x_11_0_0 x_11_1_0 x_11_2_0 x_11_3_0 x_11_4_0 x_11_5_0 x_11_6_0
- x_11_7_0 x_11_8_0 x_11_9_0 x_11_10_0 x_11_11_0 x_11_12_0 x_12_0_0 x_12_1_0
- x_12_2_0 x_12_3_0 x_12_4_0 x_12_5_0 x_12_6_0 x_12_7_0 x_12_8_0 x_12_9_0
- x_12_10_0 x_12_11_0 x_12_12_0 L_0_0 L_1_0 L_2_0 L_3_0 L_4_0 L_5_0 L_6_0
- L_7_0 L_8_0 L_9_0 L_10_0 L_11_0 L_12_0 y_0
+ x_0_0 x_0_1 x_0_2 x_0_3 x_0_4 x_0_5 x_0_6 x_0_7 x_0_8 x_0_9 x_1_0 x_1_1
+ x_1_2 x_1_3 x_1_4 x_1_5 x_1_6 x_1_7 x_1_8 x_1_9 x_2_0 x_2_1 x_2_2 x_2_3
+ x_2_4 x_2_5 x_2_6 x_2_7 x_2_8 x_2_9 x_3_0 x_3_1 x_3_2 x_3_3 x_3_4 x_3_5
+ x_3_6 x_3_7 x_3_8 x_3_9 x_4_0 x_4_1 x_4_2 x_4_3 x_4_4 x_4_5 x_4_6 x_4_7
+ x_4_8 x_4_9 x_5_0 x_5_1 x_5_2 x_5_3 x_5_4 x_5_5 x_5_6 x_5_7 x_5_8 x_5_9
+ x_6_0 x_6_1 x_6_2 x_6_3 x_6_4 x_6_5 x_6_6 x_6_7 x_6_8 x_6_9 x_7_0 x_7_1
+ x_7_2 x_7_3 x_7_4 x_7_5 x_7_6 x_7_7 x_7_8 x_7_9 x_8_0 x_8_1 x_8_2 x_8_3
+ x_8_4 x_8_5 x_8_6 x_8_7 x_8_8 x_8_9 x_9_0 x_9_1 x_9_2 x_9_3 x_9_4 x_9_5
+ x_9_6 x_9_7 x_9_8 x_9_9
 Generals
- u_[Lgurobi.GRBVar;@533ddba u_[Lgurobi.GRBVar;@533ddba
- u_[Lgurobi.GRBVar;@533ddba u_[Lgurobi.GRBVar;@533ddba
- u_[Lgurobi.GRBVar;@533ddba u_[Lgurobi.GRBVar;@533ddba
- u_[Lgurobi.GRBVar;@533ddba u_[Lgurobi.GRBVar;@533ddba
- u_[Lgurobi.GRBVar;@533ddba u_[Lgurobi.GRBVar;@533ddba
- u_[Lgurobi.GRBVar;@533ddba u_[Lgurobi.GRBVar;@533ddba
- u_[Lgurobi.GRBVar;@533ddba
+ u_[Lgurobi.GRBVar;@2e0fa5d3 u_[Lgurobi.GRBVar;@2e0fa5d3
+ u_[Lgurobi.GRBVar;@2e0fa5d3 u_[Lgurobi.GRBVar;@2e0fa5d3
+ u_[Lgurobi.GRBVar;@2e0fa5d3 u_[Lgurobi.GRBVar;@2e0fa5d3
+ u_[Lgurobi.GRBVar;@2e0fa5d3 u_[Lgurobi.GRBVar;@2e0fa5d3
+ u_[Lgurobi.GRBVar;@2e0fa5d3 u_[Lgurobi.GRBVar;@2e0fa5d3
 End

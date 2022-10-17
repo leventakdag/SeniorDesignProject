@@ -49,7 +49,8 @@ public class Heuristic {
                 //System.out.println("Locations: "+ i );
                 for(int j = 0;j<Clist.get(i).size();j++){
                     dataTemp.locations[j] = Clist.get(i).get(j);
-                    //System.out.print(dataTemp.locations[j].getID() + ", ");
+                    System.out.print("ALOOOOOO");
+                    System.out.print(dataTemp.locations[j].getID() + ", ");
 
 
                         dataTemp.weight[j] = data.weight[Clist.get(i).get(j).getID()];

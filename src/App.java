@@ -42,7 +42,7 @@ public class App {
         }
         for(int i=0;i<tspDist.length;i++){
             System.out.println("Cluster " + i+": ");
-            System.out.println("Number of customers: " + (dataList.get(i).locations.length-1));
+            System.out.println("Number of customers: " + (dataList.get(i).locations.length));
             double totalDistBtwPoints = 0;
             double totalDistToCenter = 0;
             Point centeroid = new Point();
