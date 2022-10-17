@@ -9334,3 +9334,659 @@ Solution count 10: 125 126 127 ... 144
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 1.250000000000e+02, best bound 1.250000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:51:59 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 196 and 197 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 184 rows, 210 columns and 832 nonzeros
+Model fingerprint: 0xdbcf9987
+Variable types: 0 continuous, 210 integer (196 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+01]
+Presolve removed 0 rows and 15 columns
+Presolve time: 0.01s
+Presolved: 184 rows, 195 columns, 832 nonzeros
+Variable types: 0 continuous, 195 integer (182 binary)
+Found heuristic solution: objective 249.0000000
+
+Root relaxation: objective 1.409286e+02, 47 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  140.92857    0   18  249.00000  140.92857  43.4%     -    0s
+H    0     0                     190.0000000  140.92857  25.8%     -    0s
+H    0     0                     185.0000000  141.64286  23.4%     -    0s
+     0     0  153.21429    0   24  185.00000  153.21429  17.2%     -    0s
+H    0     0                     176.0000000  153.21429  12.9%     -    0s
+     0     0  153.21429    0   26  176.00000  153.21429  12.9%     -    0s
+     0     0  153.21429    0   27  176.00000  153.21429  12.9%     -    0s
+H    0     0                     166.0000000  153.21429  7.70%     -    0s
+     0     0  155.14448    0   16  166.00000  155.14448  6.54%     -    0s
+     0     0  155.21053    0   24  166.00000  155.21053  6.50%     -    0s
+     0     0  155.21053    0   24  166.00000  155.21053  6.50%     -    0s
+     0     0  155.23275    0   31  166.00000  155.23275  6.49%     -    0s
+     0     0  155.23275    0   31  166.00000  155.23275  6.49%     -    0s
+     0     0  155.24490    0   31  166.00000  155.24490  6.48%     -    0s
+     0     0  155.24490    0   25  166.00000  155.24490  6.48%     -    0s
+     0     0  155.83667    0   18  166.00000  155.83667  6.12%     -    0s
+H    0     0                     161.0000000  155.83667  3.21%     -    0s
+     0     0  155.83667    0    6  161.00000  155.83667  3.21%     -    0s
+     0     0  155.83667    0   17  161.00000  155.83667  3.21%     -    0s
+     0     0  155.83667    0   30  161.00000  155.83667  3.21%     -    0s
+     0     0  155.83667    0   29  161.00000  155.83667  3.21%     -    0s
+H    0     0                     157.0000000  155.83667  0.74%     -    0s
+     0     0  155.83667    0   16  157.00000  155.83667  0.74%     -    0s
+     0     0  156.00000    0   21  157.00000  156.00000  0.64%     -    0s
+     0     0  156.00000    0   15  157.00000  156.00000  0.64%     -    0s
+     0     0  156.00000    0   16  157.00000  156.00000  0.64%     -    0s
+     0     0  156.00000    0   16  157.00000  156.00000  0.64%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 2
+  MIR: 6
+  Zero half: 1
+  Mod-K: 1
+  RLT: 5
+  Relax-and-lift: 5
+
+Explored 1 nodes (414 simplex iterations) in 0.31 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 157 161 166 ... 249
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.570000000000e+02, best bound 1.570000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:51:59 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 121 and 122 have the same name "u_[Lgurobi.GRBVar;@5197848c"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 112 rows, 132 columns and 490 nonzeros
+Model fingerprint: 0x9f48d184
+Variable types: 0 continuous, 132 integer (121 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 1e+01]
+Found heuristic solution: objective 165.0000000
+Presolve removed 0 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 112 rows, 120 columns, 490 nonzeros
+Variable types: 0 continuous, 120 integer (110 binary)
+
+Root relaxation: objective 1.291818e+02, 28 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  129.18182    0   12  165.00000  129.18182  21.7%     -    0s
+H    0     0                     158.0000000  129.18182  18.2%     -    0s
+H    0     0                     139.0000000  129.18182  7.06%     -    0s
+H    0     0                     137.0000000  129.18182  5.71%     -    0s
+     0     0  130.18182    0   15  137.00000  130.18182  4.98%     -    0s
+     0     0  130.18182    0   21  137.00000  130.18182  4.98%     -    0s
+     0     0  131.00000    0   21  137.00000  131.00000  4.38%     -    0s
+     0     0  131.00000    0   21  137.00000  131.00000  4.38%     -    0s
+     0     0  131.27273    0   17  137.00000  131.27273  4.18%     -    0s
+H    0     0                     136.0000000  131.95455  2.97%     -    0s
+     0     0  132.00000    0   16  136.00000  132.00000  2.94%     -    0s
+     0     0  132.00000    0   14  136.00000  132.00000  2.94%     -    0s
+     0     0  132.18182    0   13  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   12  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0    6  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0    9  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   16  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   19  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0    8  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   29  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   32  136.00000  132.18182  2.81%     -    0s
+H    0     0                     135.0000000  132.18182  2.09%     -    0s
+     0     0  132.27273    0   21  135.00000  132.27273  2.02%     -    0s
+     0     0  132.31818    0   20  135.00000  132.31818  1.99%     -    0s
+H    0     0                     133.0000000  132.31818  0.51%     -    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 1
+  Implied bound: 1
+  MIR: 5
+  Zero half: 3
+  RLT: 1
+  Relax-and-lift: 1
+
+Explored 1 nodes (331 simplex iterations) in 0.17 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 133 135 136 ... 165
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.330000000000e+02, best bound 1.330000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:51:59 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 121 and 122 have the same name "u_[Lgurobi.GRBVar;@17f052a3"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 112 rows, 132 columns and 490 nonzeros
+Model fingerprint: 0xd9f824c0
+Variable types: 0 continuous, 132 integer (121 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 1e+01]
+Found heuristic solution: objective 208.0000000
+Presolve removed 0 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 112 rows, 120 columns, 490 nonzeros
+Variable types: 0 continuous, 120 integer (110 binary)
+
+Root relaxation: objective 1.145455e+02, 34 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  114.54545    0   12  208.00000  114.54545  44.9%     -    0s
+H    0     0                     174.0000000  114.54545  34.2%     -    0s
+H    0     0                     137.0000000  114.54545  16.4%     -    0s
+     0     0  117.00000    0   12  137.00000  117.00000  14.6%     -    0s
+H    0     0                     136.0000000  117.00000  14.0%     -    0s
+     0     0  117.00000    0   12  136.00000  117.00000  14.0%     -    0s
+H    0     0                     131.0000000  117.00000  10.7%     -    0s
+     0     0  117.23701    0   31  131.00000  117.23701  10.5%     -    0s
+     0     0  117.23701    0   30  131.00000  117.23701  10.5%     -    0s
+     0     0  118.68750    0   24  131.00000  118.68750  9.40%     -    0s
+     0     0  118.68750    0   27  131.00000  118.68750  9.40%     -    0s
+     0     0  118.94444    0   28  131.00000  118.94444  9.20%     -    0s
+H    0     0                     124.0000000  118.94444  4.08%     -    0s
+     0     0  118.94444    0   29  124.00000  118.94444  4.08%     -    0s
+     0     0  118.94444    0   12  124.00000  118.94444  4.08%     -    0s
+     0     0  118.94444    0   27  124.00000  118.94444  4.08%     -    0s
+     0     0  118.94444    0   27  124.00000  118.94444  4.08%     -    0s
+     0     0  118.94444    0   32  124.00000  118.94444  4.08%     -    0s
+     0     0  119.01741    0   32  124.00000  119.01741  4.02%     -    0s
+     0     0  119.27273    0   33  124.00000  119.27273  3.81%     -    0s
+     0     0  119.27273    0   33  124.00000  119.27273  3.81%     -    0s
+     0     2  119.81308    0   33  124.00000  119.81308  3.38%     -    0s
+
+Cutting planes:
+  Learned: 3
+  MIR: 8
+  GUB cover: 1
+  Zero half: 1
+  RLT: 4
+  Relax-and-lift: 4
+
+Explored 187 nodes (1220 simplex iterations) in 0.24 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 124 131 136 ... 208
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.240000000000e+02, best bound 1.240000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:52:00 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 64 and 65 have the same name "u_[Lgurobi.GRBVar;@2e0fa5d3"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 58 rows, 72 columns and 238 nonzeros
+Model fingerprint: 0xf03ceab8
+Variable types: 0 continuous, 72 integer (64 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 9e+00]
+  RHS range        [1e+00, 7e+00]
+Found heuristic solution: objective 126.0000000
+Presolve removed 0 rows and 9 columns
+Presolve time: 0.00s
+Presolved: 58 rows, 63 columns, 238 nonzeros
+Variable types: 0 continuous, 63 integer (56 binary)
+
+Root relaxation: objective 6.787500e+01, 23 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   67.87500    0   12  126.00000   67.87500  46.1%     -    0s
+H    0     0                     104.0000000   67.87500  34.7%     -    0s
+H    0     0                      90.0000000   67.87500  24.6%     -    0s
+     0     0   69.50000    0    8   90.00000   69.50000  22.8%     -    0s
+H    0     0                      89.0000000   69.50000  21.9%     -    0s
+     0     0   71.66667    0   15   89.00000   71.66667  19.5%     -    0s
+     0     0   71.66667    0   12   89.00000   71.66667  19.5%     -    0s
+H    0     0                      85.0000000   73.00000  14.1%     -    0s
+     0     0   74.00000    0   14   85.00000   74.00000  12.9%     -    0s
+     0     0   77.50000    0   17   85.00000   77.50000  8.82%     -    0s
+     0     0   78.00000    0   19   85.00000   78.00000  8.24%     -    0s
+     0     0   78.75000    0   19   85.00000   78.75000  7.35%     -    0s
+     0     0   79.00000    0   10   85.00000   79.00000  7.06%     -    0s
+     0     0   79.00000    0   12   85.00000   79.00000  7.06%     -    0s
+H    0     0                      84.0000000   79.00000  5.95%     -    0s
+     0     0   79.00000    0   14   84.00000   79.00000  5.95%     -    0s
+     0     0   79.00000    0   13   84.00000   79.00000  5.95%     -    0s
+     0     0   79.00000    0   18   84.00000   79.00000  5.95%     -    0s
+     0     0   83.00000    0   10   84.00000   83.00000  1.19%     -    0s
+     0     0   84.00000    0   10   84.00000   84.00000  0.00%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 2
+  Implied bound: 1
+  MIR: 8
+  Relax-and-lift: 1
+
+Explored 1 nodes (135 simplex iterations) in 0.11 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 6: 84 85 89 ... 126
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.400000000000e+01, best bound 8.400000000000e+01, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:53:25 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 64 and 65 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 58 rows, 72 columns and 238 nonzeros
+Model fingerprint: 0x907752e1
+Variable types: 0 continuous, 72 integer (64 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+00]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 9e+00]
+  RHS range        [1e+00, 7e+00]
+Found heuristic solution: objective 134.0000000
+Presolve removed 0 rows and 9 columns
+Presolve time: 0.00s
+Presolved: 58 rows, 63 columns, 238 nonzeros
+Variable types: 0 continuous, 63 integer (56 binary)
+
+Root relaxation: objective 1.190000e+02, 18 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  119.00000    0    6  134.00000  119.00000  11.2%     -    0s
+H    0     0                     124.0000000  119.00000  4.03%     -    0s
+H    0     0                     122.0000000  119.00000  2.46%     -    0s
+H    0     0                     121.0000000  119.00000  1.65%     -    0s
+H    0     0                     120.0000000  119.00000  0.83%     -    0s
+
+Cutting planes:
+  Implied bound: 3
+  Mod-K: 2
+  Relax-and-lift: 3
+
+Explored 1 nodes (18 simplex iterations) in 0.02 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 5: 120 121 122 ... 134
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.200000000000e+02, best bound 1.200000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:53:25 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 196 and 197 have the same name "u_[Lgurobi.GRBVar;@5197848c"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 184 rows, 210 columns and 832 nonzeros
+Model fingerprint: 0xdbcf9987
+Variable types: 0 continuous, 210 integer (196 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 1e+01]
+Presolve removed 0 rows and 15 columns
+Presolve time: 0.00s
+Presolved: 184 rows, 195 columns, 832 nonzeros
+Variable types: 0 continuous, 195 integer (182 binary)
+Found heuristic solution: objective 249.0000000
+
+Root relaxation: objective 1.409286e+02, 47 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  140.92857    0   18  249.00000  140.92857  43.4%     -    0s
+H    0     0                     190.0000000  140.92857  25.8%     -    0s
+H    0     0                     185.0000000  141.64286  23.4%     -    0s
+     0     0  153.21429    0   24  185.00000  153.21429  17.2%     -    0s
+H    0     0                     176.0000000  153.21429  12.9%     -    0s
+     0     0  153.21429    0   26  176.00000  153.21429  12.9%     -    0s
+     0     0  153.21429    0   27  176.00000  153.21429  12.9%     -    0s
+H    0     0                     166.0000000  153.21429  7.70%     -    0s
+     0     0  155.14448    0   16  166.00000  155.14448  6.54%     -    0s
+     0     0  155.21053    0   24  166.00000  155.21053  6.50%     -    0s
+     0     0  155.21053    0   24  166.00000  155.21053  6.50%     -    0s
+     0     0  155.23275    0   31  166.00000  155.23275  6.49%     -    0s
+     0     0  155.23275    0   31  166.00000  155.23275  6.49%     -    0s
+     0     0  155.24490    0   31  166.00000  155.24490  6.48%     -    0s
+     0     0  155.24490    0   25  166.00000  155.24490  6.48%     -    0s
+     0     0  155.83667    0   18  166.00000  155.83667  6.12%     -    0s
+H    0     0                     161.0000000  155.83667  3.21%     -    0s
+     0     0  155.83667    0    6  161.00000  155.83667  3.21%     -    0s
+     0     0  155.83667    0   17  161.00000  155.83667  3.21%     -    0s
+     0     0  155.83667    0   30  161.00000  155.83667  3.21%     -    0s
+     0     0  155.83667    0   29  161.00000  155.83667  3.21%     -    0s
+H    0     0                     157.0000000  155.83667  0.74%     -    0s
+     0     0  155.83667    0   16  157.00000  155.83667  0.74%     -    0s
+     0     0  156.00000    0   21  157.00000  156.00000  0.64%     -    0s
+     0     0  156.00000    0   15  157.00000  156.00000  0.64%     -    0s
+     0     0  156.00000    0   16  157.00000  156.00000  0.64%     -    0s
+     0     0  156.00000    0   16  157.00000  156.00000  0.64%     -    0s
+
+Cutting planes:
+  Learned: 1
+  Gomory: 2
+  MIR: 6
+  Zero half: 1
+  Mod-K: 1
+  RLT: 5
+  Relax-and-lift: 5
+
+Explored 1 nodes (414 simplex iterations) in 0.26 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 157 161 166 ... 249
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.570000000000e+02, best bound 1.570000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:53:25 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 324 and 325 have the same name "u_[Lgurobi.GRBVar;@17f052a3"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 308 rows, 342 columns and 1428 nonzeros
+Model fingerprint: 0x9f7a4d22
+Variable types: 0 continuous, 342 integer (324 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 2e+01]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 2e+01]
+  RHS range        [1e+00, 2e+01]
+Presolve removed 0 rows and 19 columns
+Presolve time: 0.00s
+Presolved: 308 rows, 323 columns, 1428 nonzeros
+Variable types: 0 continuous, 323 integer (306 binary)
+Found heuristic solution: objective 310.0000000
+
+Root relaxation: objective 1.246111e+02, 61 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  124.61111    0   32  310.00000  124.61111  59.8%     -    0s
+H    0     0                     183.0000000  124.61111  31.9%     -    0s
+     0     0  138.02778    0   39  183.00000  138.02778  24.6%     -    0s
+H    0     0                     175.0000000  138.02778  21.1%     -    0s
+     0     0  138.54286    0   33  175.00000  138.54286  20.8%     -    0s
+     0     0  138.75676    0   38  175.00000  138.75676  20.7%     -    0s
+     0     0  138.75676    0   49  175.00000  138.75676  20.7%     -    0s
+H    0     0                     172.0000000  138.75676  19.3%     -    0s
+     0     0  138.84136    0   52  172.00000  138.84136  19.3%     -    0s
+     0     0  139.00000    0   37  172.00000  139.00000  19.2%     -    0s
+     0     0  139.00000    0   37  172.00000  139.00000  19.2%     -    0s
+H    0     0                     169.0000000  139.00000  17.8%     -    0s
+     0     0  139.50000    0   42  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   42  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   43  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   50  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   25  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   26  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   27  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   27  169.00000  139.50000  17.5%     -    0s
+     0     0  139.50000    0   19  169.00000  139.50000  17.5%     -    0s
+     0     2  140.67143    0   16  169.00000  140.67143  16.8%     -    0s
+H   35    40                     166.0000000  141.00000  15.1%  10.1    0s
+*  176   151              40     155.0000000  141.00000  9.03%   5.2    0s
+*  194   180              47     153.0000000  141.00000  7.84%   5.1    0s
+*  413   274              29     152.0000000  141.31389  7.03%   5.4    0s
+*  586   293              31     150.0000000  141.82540  5.45%   4.9    0s
+
+Cutting planes:
+  Learned: 6
+  Gomory: 2
+  Implied bound: 16
+  MIR: 15
+  StrongCG: 1
+  Inf proof: 10
+  Zero half: 3
+
+Explored 5826 nodes (37741 simplex iterations) in 1.56 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 150 152 153 ... 310
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.500000000000e+02, best bound 1.500000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:53:27 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 16 and 17 have the same name "u_[Lgurobi.GRBVar;@2e0fa5d3"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 14 rows, 20 columns and 42 nonzeros
+Model fingerprint: 0x2f29f84b
+Variable types: 0 continuous, 20 integer (16 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+00]
+  Objective range  [3e+00, 1e+03]
+  Bounds range     [1e+00, 5e+00]
+  RHS range        [1e+00, 3e+00]
+Found heuristic solution: objective 89.0000000
+Presolve removed 0 rows and 5 columns
+Presolve time: 0.00s
+Presolved: 14 rows, 15 columns, 42 nonzeros
+Variable types: 0 continuous, 15 integer (12 binary)
+
+Root relaxation: objective 8.550000e+01, 10 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0   85.50000    0    4   89.00000   85.50000  3.93%     -    0s
+H    0     0                      86.0000000   85.50000  0.58%     -    0s
+     0     0   85.50000    0    4   86.00000   85.50000  0.58%     -    0s
+
+Explored 1 nodes (10 simplex iterations) in 0.01 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 2: 86 89 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.600000000000e+01, best bound 8.600000000000e+01, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:56:23 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 961 and 962 have the same name "u_[Lgurobi.GRBVar;@3f91beef"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 932 rows, 992 columns and 4470 nonzeros
+Model fingerprint: 0xa08d1d37
+Variable types: 0 continuous, 992 integer (961 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 3e+01]
+  Objective range  [1e+00, 1e+03]
+  Bounds range     [1e+00, 3e+01]
+  RHS range        [1e+00, 3e+01]
+Presolve removed 0 rows and 32 columns
+Presolve time: 0.01s
+Presolved: 932 rows, 960 columns, 4470 nonzeros
+Variable types: 0 continuous, 960 integer (930 binary)
+Found heuristic solution: objective 647.0000000
+Found heuristic solution: objective 630.0000000
+
+Root relaxation: objective 1.954194e+02, 103 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  195.41935    0   44  630.00000  195.41935  69.0%     -    0s
+H    0     0                     285.0000000  195.41935  31.4%     -    0s
+     0     0  221.15899    0   62  285.00000  221.15899  22.4%     -    0s
+H    0     0                     276.0000000  221.15899  19.9%     -    0s
+     0     0  221.15899    0   63  276.00000  221.15899  19.9%     -    0s
+     0     0  226.05530    0   37  276.00000  226.05530  18.1%     -    0s
+     0     0  226.06452    0   70  276.00000  226.06452  18.1%     -    0s
+     0     0  226.06452    0   69  276.00000  226.06452  18.1%     -    0s
+     0     0  227.40000    0   52  276.00000  227.40000  17.6%     -    0s
+     0     0  227.40000    0   65  276.00000  227.40000  17.6%     -    0s
+     0     0  227.40000    0   65  276.00000  227.40000  17.6%     -    0s
+     0     0  227.56140    0   69  276.00000  227.56140  17.6%     -    0s
+     0     0  227.56140    0   71  276.00000  227.56140  17.6%     -    0s
+H    0     0                     255.0000000  227.56140  10.8%     -    0s
+     0     0  227.56140    0   69  255.00000  227.56140  10.8%     -    0s
+     0     0  227.56140    0   57  255.00000  227.56140  10.8%     -    0s
+H    0     0                     254.0000000  228.88889  9.89%     -    0s
+     0     2  228.88889    0   57  254.00000  228.88889  9.89%     -    0s
+H   66    72                     253.0000000  229.06277  9.46%   9.4    0s
+H   67    72                     252.0000000  229.06277  9.10%   9.3    0s
+H  161   178                     249.0000000  229.06277  8.01%   7.3    1s
+H  359   297                     244.0000000  229.06277  6.12%   5.9    1s
+H  475   378                     243.0000000  229.23387  5.67%   6.2    1s
+H  488   353                     241.0000000  229.23387  4.88%   6.4    1s
+*  696   479              66     240.0000000  229.31183  4.45%   6.5    1s
+  2894  1386  229.56494   27   28  240.00000  229.56494  4.35%   8.0    5s
+ 10832  6184     cutoff   55       240.00000  231.23404  3.65%   8.6   10s
+ 14770  8205  232.61720   32   67  240.00000  231.48398  3.55%   8.7   15s
+ 18748  9224  235.33051   45   30  240.00000  231.48398  3.55%   9.0   20s
+ 28441 11526  234.49484   44   49  240.00000  232.46575  3.14%   9.0   25s
+*30867 11086              45     239.0000000  232.63736  2.66%   9.0   26s
+H31161 10179                     238.0000000  232.65546  2.25%   9.0   26s
+*35912  4768              39     236.0000000  233.00000  1.27%   9.2   28s
+ 38417  3666  234.94086   33   48  236.00000  233.52823  1.05%   9.4   30s
+
+Cutting planes:
+  Learned: 12
+  Gomory: 21
+  Cover: 11
+  Implied bound: 2
+  Projected implied bound: 1
+  MIR: 13
+  StrongCG: 1
+  Flow cover: 54
+  Inf proof: 26
+  Zero half: 5
+  Mod-K: 1
+  RLT: 2
+  Relax-and-lift: 3
+
+Explored 43761 nodes (416792 simplex iterations) in 31.87 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 10: 236 238 239 ... 253
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.360000000000e+02, best bound 2.360000000000e+02, gap 0.0000%
+
+Gurobi 9.1.0 (win64, Java) logging started Mon Oct 17 20:56:55 2022
+
+Academic license - for non-commercial use only - expires 2023-10-07
+Warning: variables 121 and 122 have the same name "u_[Lgurobi.GRBVar;@5197848c"
+Warning: constraint name "If vehicle k comes to j then it must departure from j." has a space
+Warning: to let Gurobi read it back, use rlp format
+Gurobi Optimizer version 9.1.0 build v9.1.0rc0 (win64)
+Thread count: 4 physical cores, 8 logical processors, using up to 8 threads
+Optimize a model with 112 rows, 132 columns and 490 nonzeros
+Model fingerprint: 0x9f48d184
+Variable types: 0 continuous, 132 integer (121 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+01]
+  Objective range  [2e+00, 1e+03]
+  Bounds range     [1e+00, 1e+01]
+  RHS range        [1e+00, 1e+01]
+Found heuristic solution: objective 165.0000000
+Presolve removed 0 rows and 12 columns
+Presolve time: 0.00s
+Presolved: 112 rows, 120 columns, 490 nonzeros
+Variable types: 0 continuous, 120 integer (110 binary)
+
+Root relaxation: objective 1.291818e+02, 28 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0  129.18182    0   12  165.00000  129.18182  21.7%     -    0s
+H    0     0                     158.0000000  129.18182  18.2%     -    0s
+H    0     0                     139.0000000  129.18182  7.06%     -    0s
+H    0     0                     137.0000000  129.18182  5.71%     -    0s
+     0     0  130.18182    0   15  137.00000  130.18182  4.98%     -    0s
+     0     0  130.18182    0   21  137.00000  130.18182  4.98%     -    0s
+     0     0  131.00000    0   21  137.00000  131.00000  4.38%     -    0s
+     0     0  131.00000    0   21  137.00000  131.00000  4.38%     -    0s
+     0     0  131.27273    0   17  137.00000  131.27273  4.18%     -    0s
+H    0     0                     136.0000000  131.95455  2.97%     -    0s
+     0     0  132.00000    0   16  136.00000  132.00000  2.94%     -    0s
+     0     0  132.00000    0   14  136.00000  132.00000  2.94%     -    0s
+     0     0  132.18182    0   13  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   12  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0    6  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0    9  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   16  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   19  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0    8  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   29  136.00000  132.18182  2.81%     -    0s
+     0     0  132.18182    0   32  136.00000  132.18182  2.81%     -    0s
+H    0     0                     135.0000000  132.18182  2.09%     -    0s
+     0     0  132.27273    0   21  135.00000  132.27273  2.02%     -    0s
+     0     0  132.31818    0   20  135.00000  132.31818  1.99%     -    0s
+H    0     0                     133.0000000  132.31818  0.51%     -    0s
+
+Cutting planes:
+  Learned: 2
+  Gomory: 1
+  Implied bound: 1
+  MIR: 5
+  Zero half: 3
+  RLT: 1
+  Relax-and-lift: 1
+
+Explored 1 nodes (331 simplex iterations) in 0.14 seconds
+Thread count was 8 (of 8 available processors)
+
+Solution count 7: 133 135 136 ... 165
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 1.330000000000e+02, best bound 1.330000000000e+02, gap 0.0000%

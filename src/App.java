@@ -40,42 +40,13 @@ public class App {
                 tspDist[i] = exactsolution.solveTSP();
             }
         }
-        for(int i=0;i<tspDist.length;i++){
-            System.out.println("Cluster " + i+": ");
-            System.out.println("Number of customers: " + (dataList.get(i).locations.length));
-            double totalDistBtwPoints = 0;
-            double totalDistToCenter = 0;
-            Point centeroid = new Point();
-
-            if(dataList.get(i).locations.length > 1){
-                centeroid = dataList.get(i).locations[1].getCenteroid();
-            }
-
-            for (int x=0;x<dataList.get(i).locations.length;x++){
-                for (int y=0;y<dataList.get(i).locations.length;y++){
-                 //   System.out.println(dataList.get(i).locations[x].getID() + " - " + dataList.get(i).locations[y].getID());
-                  //  System.out.println(dataList.get(i).locations.length);
-                    if(x!=y &&  x!=0 && y!=0){
-                        totalDistBtwPoints = totalDistBtwPoints + dataList.get(i).distance[x][y];
-                    }
-                }
-                double tempDist = (centeroid.getX()-dataList.get(i).locations[x].getX())*(centeroid.getX()-dataList.get(i).locations[x].getX()) + (centeroid.getY()-dataList.get(i).locations[x].getY())*(centeroid.getY()-dataList.get(i).locations[x].getY());
-                totalDistToCenter += Math.sqrt(tempDist);
-            }
-            double averageDistOfPointsToPoints = totalDistBtwPoints / (2 * dataList.get(i).locations.length);
-            double averageDistOfPointsToCenter = totalDistToCenter / dataList.get(i).locations.length;
-            System.out.println("Mean between points: " + averageDistOfPointsToPoints);
-            System.out.println("Mean between points and centeroid: " + (100*averageDistOfPointsToCenter));
-
-
-            System.out.println(tspDist[i]);
-            System.out.println();
-        }
         //ExactSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
 
        // Maps maps = new Maps(data);
 
+
+//Write Outputs and etc.
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
         String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
@@ -84,7 +55,8 @@ public class App {
         String filePathClusterAnalysis =  "./outputs/Cluster_analysis.csv";
 
         WriteOperations write = new WriteOperations();
-        write.writeSolutionData(sList, filePathSolution);
+        write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
+        //write.writeSolutionData(sList, filePathSolution);
         //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
         //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
        // write.writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
