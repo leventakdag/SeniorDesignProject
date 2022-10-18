@@ -58,7 +58,7 @@ public class App {
 
 
     private static Data readData() {
-        int n=40;
+        int n=13;
         int k=9;
         Data data = new Data();
         data.locations = new Point[n+1];

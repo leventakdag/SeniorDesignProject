@@ -558,7 +558,10 @@ public class ExactSolution {
 
                     for (int i = 0; i < N; i++) {
                         for (int j = 0; j < N; j++) {
-                            objectiveValue = objectiveValue + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
+                            //Distance objective:
+                             objectiveValue += data.distance[i][j] * x[i][j].get(GRB.DoubleAttr.X);
+                            //Duration objective:
+                            //objectiveValue = objectiveValue + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
                         }
                     }
 

@@ -28,20 +28,24 @@ public class Heuristic {
         ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
         double[] tspDist = new double[4];
         for (int i = 0; i < dataList.size(); i++) {
+            if (dataList.get(i).locations.length > 1) {
+                ExactSolution exactsolution = new ExactSolution(dataList.get(i));
+                tspDist[i] = exactsolution.solveTSP();
+            }
+        }
+
+        for (int i = 0; i < dataList.size(); i++) {
             System.out.println("Cluster "+i);
-            System.out.println("Number of Customers: "+dataList.get(i).locations.length);
+            System.out.println("Number of Customers: "+(dataList.get(i).locations.length-1));
             double totalW=0;
             double totalV=0;
             for(int j=0;j<dataList.get(i).locations.length;j++){
                 totalW += dataList.get(i).weight[j];
                 totalV += dataList.get(i).volume[j];
             }
-            System.out.println("Total Weight of Orders" + totalW);
-            System.out.println("Total Volume of Orders" + totalV);
-            if (dataList.get(i).locations.length > 1) {
-                //ExactSolution exactsolution = new ExactSolution(dataList.get(i));
-              //  tspDist[i] = exactsolution.solveTSP();
-            }
+            System.out.println("Total Weight of Orders: " + totalW);
+            System.out.println("Total Volume of Orders: " + totalV);
+            System.out.println("Objective Dist: " + tspDist[i]);
             System.out.println();
         }
 
