@@ -131,6 +131,7 @@ public class WriteOperations {
                 FileWriter fw = new FileWriter(filePathClusterAnalysis,true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
+                /*
                 pw.print("Cluster" + ",");
                 pw.print("Best TSP value" + ",");
                 pw.print("Number of Customers" + ",");
@@ -138,7 +139,7 @@ public class WriteOperations {
                 pw.print("Mean distance between points and centeroid"+",");
                 pw.print("Dist between WH and Centeroid");
                 pw.println();
-
+*/
                 for(int i = 0; i < dataList.size(); i++) {
                  pw.print( i + ",");
                  pw.print(tspDist[i] + ",");

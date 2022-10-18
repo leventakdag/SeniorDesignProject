@@ -8,10 +8,19 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="googlecode.json.simple" level="project" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://C:/gurobi910/win64/lib/gurobi.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar:///Library/gurobi951/macos_universal2/lib/gurobi.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

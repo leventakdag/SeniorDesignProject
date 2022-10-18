@@ -9,28 +9,14 @@ public class App {
         Heuristic heuristic1 = new Heuristic(data);
 
         ArrayList<Data> dataList = new ArrayList<Data>();
+        for (int itr = 0; itr < 30; itr++) {
         dataList = heuristic1.createClusterData(heuristic1.unlimitedClustering(4), data);
-
-        //Checking Clusters and DATA!!!
-        /*for(int i=0;i<data.locations.length;i++){
-            System.out.print(data.locations[i].getID()+"-");
-        }*/
-        System.out.println();
-        /*for(int i=0;i<dataList.size();i++){
-            System.out.print(i+": ");
-            for(int j=0;j<dataList.get(i).locations.length;j++){
-                System.out.print("++++"+dataList.get(i).locations[j].getID()+", ");
-                //System.out.print("Weights: ");
-                //System.out.print(dataList.get(i).weight[j]+", ");
-            }
-            System.out.println();
-        }*/
 
         //SOLVE EXACT FOR EACH CLUSTER:
         ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
         double[] tspDist = new double[4];
-        for(int i =0;i<dataList.size();i++){
-            if(dataList.get(i).locations.length>1){
+        for (int i = 0; i < dataList.size(); i++) {
+            if (dataList.get(i).locations.length > 1) {
                 //System.out.println("Cluster "+i);
                 ArrayList<ArrayList<Point>> tempList = new ArrayList<ArrayList<Point>>();
                 sList.add(tempList);
@@ -40,22 +26,24 @@ public class App {
                 tspDist[i] = exactsolution.solveTSP();
             }
         }
-        //ExactSolution exactsolution2 = new ExactSolution(data);
+        //ExatSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
 
-       // Maps maps = new Maps(data);
+        // Maps maps = new Maps(data);
 
 
 //Write Outputs and etc.
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
-        String filePathTimeMatrix =  "./outputs/TimeMatrix.csv";
-        String filePathRoutes =  "./outputs/Routes.csv";
-        String filePathSolution =  "./outputs/Solution.csv";
-        String filePathClusterAnalysis =  "./outputs/Cluster_analysis.csv";
+        String filePathTimeMatrix = "./outputs/TimeMatrix.csv";
+        String filePathRoutes = "./outputs/Routes.csv";
+        String filePathSolution = "./outputs/Solution.csv";
+        String filePathClusterAnalysis = "./outputs/Cluster_analysis.csv";
 
         WriteOperations write = new WriteOperations();
         write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
+        dataList.clear();
+    }
         //write.writeSolutionData(sList, filePathSolution);
         //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
         //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
