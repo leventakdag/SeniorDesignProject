@@ -3,29 +3,34 @@ import java.util.ArrayList;
 
 public class App {
 
-	
-	public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) throws Exception {
         Data data = readData();
         Heuristic heuristic1 = new Heuristic(data);
-
+        Solution solutionCapacitatedCLusterTsp = new Solution();
+        solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
+ /*
+//Unlimited CLustering
         ArrayList<Data> dataList = new ArrayList<Data>();
-        for (int itr = 0; itr < 30; itr++) {
         dataList = heuristic1.createClusterData(heuristic1.unlimitedClustering(4), data);
-
         //SOLVE EXACT FOR EACH CLUSTER:
         ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
         double[] tspDist = new double[4];
+
         for (int i = 0; i < dataList.size(); i++) {
             if (dataList.get(i).locations.length > 1) {
                 //System.out.println("Cluster "+i);
                 ArrayList<ArrayList<Point>> tempList = new ArrayList<ArrayList<Point>>();
                 sList.add(tempList);
                 ExactSolution exactsolution = new ExactSolution(dataList.get(i));
-                /*     tempList = exactsolution.solveExact();
-                sList.add(tempList);*/
+          //           tempList = exactsolution.solveExact();
+       //         sList.add(tempList);
                 tspDist[i] = exactsolution.solveTSP();
             }
         }
+  //Unlimited CLustering - END
+    */
+
         //ExatSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
 
@@ -40,15 +45,14 @@ public class App {
         String filePathSolution = "./outputs/Solution.csv";
         String filePathClusterAnalysis = "./outputs/Cluster_analysis.csv";
 
-        WriteOperations write = new WriteOperations();
-        write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
-        dataList.clear();
-    }
-        //write.writeSolutionData(sList, filePathSolution);
-        //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
-        //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
-       // write.writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
-        //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
+        //WriteOperations write = new WriteOperations();
+        //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
+
+    //write.writeSolutionData(sList, filePathSolution);
+    //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
+    //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
+    // write.writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
+    //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
 
 

@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
 public class Heuristic {
-   // private Data data;
+    //private Data data;
     private Clustering clustering;
 
     public Heuristic(Data data) {
-       // this.data = data;
+     //   this.data = data;
         clustering = new Clustering(data);
     }
 
@@ -17,6 +17,35 @@ public class Heuristic {
     public ArrayList<ArrayList<Point>> unlimitedClustering(int clusterCount){
 
         return clustering.unlimitedKMeans(clusterCount);
+    }
+    public Solution capacitatedClusterTSP(Data data){
+        System.out.println("!!! CAPACITATED CLUSTERING is CALLED !!!");
+        Solution solution = new Solution();
+
+        ArrayList<Data> dataList = new ArrayList<Data>();
+        dataList = createClusterData(clustering.capacitatedKMeans(4), data);
+        //SOLVE EXACT FOR EACH CLUSTER:
+        ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
+        double[] tspDist = new double[4];
+        for (int i = 0; i < dataList.size(); i++) {
+            System.out.println("Cluster "+i);
+            System.out.println("Number of Customers: "+dataList.get(i).locations.length);
+            double totalW=0;
+            double totalV=0;
+            for(int j=0;j<dataList.get(i).locations.length;j++){
+                totalW += dataList.get(i).weight[j];
+                totalV += dataList.get(i).volume[j];
+            }
+            System.out.println("Total Weight of Orders" + totalW);
+            System.out.println("Total Volume of Orders" + totalV);
+            if (dataList.get(i).locations.length > 1) {
+                //ExactSolution exactsolution = new ExactSolution(dataList.get(i));
+              //  tspDist[i] = exactsolution.solveTSP();
+            }
+            System.out.println();
+        }
+
+        return solution;
     }
 
     public ArrayList<Data> createClusterData(ArrayList<ArrayList<Point>> Clist, Data data){
@@ -49,8 +78,8 @@ public class Heuristic {
                 //System.out.println("Locations: "+ i );
                 for(int j = 0;j<Clist.get(i).size();j++){
                     dataTemp.locations[j] = Clist.get(i).get(j);
-                    System.out.print("ALOOOOOO");
-                    System.out.print(dataTemp.locations[j].getID() + ", ");
+              //      System.out.print("ALOOOOOO");
+                //    System.out.print(dataTemp.locations[j].getID() + ", ");
 
 
                         dataTemp.weight[j] = data.weight[Clist.get(i).get(j).getID()];

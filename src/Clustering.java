@@ -20,18 +20,163 @@ public class Clustering {
 		this.maxClusterNodes = newMaxCount;
 	}
 
+	public ArrayList<ArrayList<Point>> capacitatedKMeans(int clusterCount) {
+		double weightCapacity = data.weightCapacity[0];
+		double volumeCapacity = data.volumeCapacity[0];
+		setClusterCount(clusterCount);
+		Point[] points = data.locations;
+
+// find max-min values of X and Y values of locations
+//in order to randomize cluster centers!!!
+		ArrayList<Point> clusterCenters = new ArrayList<Point>();
+
+		for(int i = 0; i < this.clusterCount; i++) {
+			clusterCenters.add(new Point(40.4+(Math.random()/5), 49.5+(Math.random())/2, (-i)));
+		}
+		ArrayList<ArrayList<Point> > cList = new ArrayList<ArrayList<Point> >();
+		ArrayList<ArrayList<Point> > formerCList = new ArrayList<ArrayList<Point> >();
+
+		for(int i = 0; i < clusterCenters.size(); i++) {
+			cList.add(new ArrayList<Point>());
+		}
+
+		for(int i = 0; i < clusterCenters.size(); i++) {
+			formerCList.add(new ArrayList<Point>());
+		}
+
+		boolean isEqual = false;
+
+		while(!isEqual) {
+//IF formerCList = cList(current) --> It's the BEST cluster solution !!
+			for(int i = 1; i < points.length; i++) {
+				double minL = 1000000; //M
+				int clusterToAssign = 1000; //M
+				for(int j = 0; j < clusterCenters.size(); j++) {
+					//Check Capacity?
+					double s = Math.sqrt((points[i].getY() - clusterCenters.get(j).getY()) * (points[i].getY() - clusterCenters.get(j).getY()) + (points[i].getX() - clusterCenters.get(j).getX()) * (points[i].getX() - clusterCenters.get(j).getX()));
+					if(s < minL) {
+						clusterToAssign = j;
+						minL = s;
+					}
+				}
+				cList.get(clusterToAssign).add(points[i]);
+				points[i].setCenteroid(clusterCenters.get(clusterToAssign));
+			}
+
+			for(int i = 0; i < clusterCenters.size(); i++) {
+				clusterCenters.set(i, centroid(cList.get(i)));
+			}
+
+			int numbersNotFit = 0;
+			for(int i = 0; i < cList.size(); i++) {
+				for(int j = 0; j < cList.get(i).size(); j++) {
+
+					if(formerCList.get(i).contains(cList.get(i).get(j)) == false) {
+						numbersNotFit++;
+					}
+				}
+			}
+
+			if(numbersNotFit == 0) {
+				isEqual = true;
+			} else{
+				for(int i = 0;i < formerCList.size(); i++) {
+					formerCList.get(i).clear();
+				}
+				for(int i = 0; i < cList.size(); i++) {
+					for(int j = 0; j< cList.get(i).size(); j++) {
+						formerCList.get(i).add(cList.get(i).get(j));
+					}
+				}
+				for(int i = 0;i < cList.size(); i++) {
+					cList.get(i).clear();
+				}
+			}
+		}
+
+		//CAPACITY
+		for(int i=0;i<cList.size();i++){
+			double totalW = 0;
+			double totalV = 0;
+			for(int j = 0; j < cList.get(i).size(); j++) {
+				totalW += data.weight[cList.get(i).get(j).getID()];
+				totalV += data.volume[cList.get(i).get(j).getID()];
+			}
+
+			//CAPACITY removals
+
+			System.out.println("Capacities: " +(weightCapacity + " - " + volumeCapacity));
+
+			while(totalW>weightCapacity || totalV>volumeCapacity){
+				int pointToRelease = 3131;
+				int selectedCluster = 6969;
+				double minDist = 1000000;
+
+				for (int j=0;j<cList.get(i).size();j++){
+					double pointX = cList.get(i).get(j).getX();
+					double pointY = cList.get(i).get(j).getY();
+					double weightOfReleasedPoint = data.weight[cList.get(i).get(j).getID()];
+					double volumeOfReleasedPoint = data.volume[cList.get(i).get(j).getID()];
+
+					System.out.println("W and V of point j: "+(weightOfReleasedPoint +" - " + volumeOfReleasedPoint));
+
+					//nearest cluster(k) center for point "j"
+					double newDist = 1000000;
+					int clusterToAdd = 3131;
+					for (int k=0;k<cList.size();k++) {
+						if(k!=i){
+							//Check other clusters CAPACITY !!!
+							double totalWofOtherCluster = 0;
+							double totalVofOtherCluster = 0;
+							for(int l=0;l<cList.get(k).size();l++){
+								totalWofOtherCluster += data.weight[cList.get(k).get(l).getID()];
+								totalVofOtherCluster += data.volume[cList.get(k).get(l).getID()];
+							}
+
+							System.out.println("W and V of cluster k: "+(totalWofOtherCluster +" - " + totalVofOtherCluster));
+
+							if((totalWofOtherCluster+weightOfReleasedPoint) <= weightCapacity && (totalVofOtherCluster+volumeOfReleasedPoint) <= volumeCapacity){
+
+								double newCenterX = clusterCenters.get(k).getX();
+								double newCenterY = clusterCenters.get(k).getY();
+								double s = Math.sqrt((newCenterX - pointX) * (newCenterX - pointX) + (newCenterY - pointY) * (newCenterY - pointY));
+								if(newDist > s){
+									newDist = s;
+									clusterToAdd = k;
+								}
+							}
+						}
+					}
+					if(newDist < minDist){
+						pointToRelease = j;
+						minDist =newDist;
+						selectedCluster = clusterToAdd;
+					}
+				}
+				totalW = totalW - data.weight[cList.get(i).get(pointToRelease).getID()];
+				totalV = totalV - data.volume[cList.get(i).get(pointToRelease).getID()];
+				cList.get(selectedCluster).add(cList.get(i).get(pointToRelease));
+				cList.get(i).remove(pointToRelease);
+
+			}
+		}
+
+		//ADD WH to the CLIST
+		for(int i=0;i<cList.size();i++){
+			cList.get(i).add(0,data.locations[0]);
+		}
+
+		return cList;
+	}
+
 	public ArrayList<ArrayList<Point>> limitedKMeans(int clusterCount, int maxClusterNodes) {
 		setClusterCount(clusterCount);
 		setMaxClusterCount(maxClusterNodes);
 		Point[] points = data.locations;
-
 		//Point[] points = new Point[1000];
-
-
 
 // find max-min values of X and Y values of locations
 //in order to randomize cluster centers!!!
-
 		ArrayList<Point> clusterCenters = new ArrayList<Point>();
 
 		for(int i = 0; i < this.clusterCount; i++) {
