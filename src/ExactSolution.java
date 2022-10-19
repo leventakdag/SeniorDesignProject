@@ -561,7 +561,7 @@ public class ExactSolution {
                             //Distance objective:
                              objectiveValue += data.distance[i][j] * x[i][j].get(GRB.DoubleAttr.X);
                             //Duration objective:
-                            //objectiveValue = objectiveValue + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
+                          //  objectiveValue = objectiveValue + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
                         }
                     }
 
