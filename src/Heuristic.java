@@ -23,7 +23,7 @@ public class Heuristic {
         Solution solution = new Solution();
 
         ArrayList<Data> dataList = new ArrayList<Data>();
-        dataList = createClusterData(clustering.capacitatedKMeans(5), data);
+        dataList = createClusterData(clustering.capacitatedKMeans(4), data);
         //SOLVE EXACT FOR EACH CLUSTER:
         ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
         double[] tspDist = new double[5];

@@ -96,6 +96,7 @@ public class Clustering {
 
 		//CAPACITY
 		for(int i=0;i<cList.size();i++){
+			boolean isBroken = false;
 			double totalW = 0;
 			double totalV = 0;
 			for(int j = 0; j < cList.get(i).size(); j++) {
@@ -118,7 +119,7 @@ public class Clustering {
 					double weightOfReleasedPoint = data.weight[cList.get(i).get(j).getID()];
 					double volumeOfReleasedPoint = data.volume[cList.get(i).get(j).getID()];
 
-					System.out.println("W and V of point j: "+(weightOfReleasedPoint +" - " + volumeOfReleasedPoint));
+					System.out.println("W and V of point "+j+":"+(weightOfReleasedPoint +" - " + volumeOfReleasedPoint));
 
 					//nearest cluster(k) center for point "j"
 					double newDist = 1000000;
@@ -133,7 +134,7 @@ public class Clustering {
 								totalVofOtherCluster += data.volume[cList.get(k).get(l).getID()];
 							}
 
-							System.out.println("W and V of cluster k: "+(totalWofOtherCluster +" - " + totalVofOtherCluster));
+							System.out.println("W and V of cluster "+k+":"+(totalWofOtherCluster +" - " + totalVofOtherCluster));
 
 							if((totalWofOtherCluster+weightOfReleasedPoint) <= weightCapacity && (totalVofOtherCluster+volumeOfReleasedPoint) <= volumeCapacity){
 
@@ -153,11 +154,19 @@ public class Clustering {
 						selectedCluster = clusterToAdd;
 					}
 				}
-				totalW = totalW - data.weight[cList.get(i).get(pointToRelease).getID()];
-				totalV = totalV - data.volume[cList.get(i).get(pointToRelease).getID()];
-				cList.get(selectedCluster).add(cList.get(i).get(pointToRelease));
-				cList.get(i).remove(pointToRelease);
-
+				//if(selectedCluster!=6969){
+					totalW = totalW - data.weight[cList.get(i).get(pointToRelease).getID()];
+					totalV = totalV - data.volume[cList.get(i).get(pointToRelease).getID()];
+					cList.get(selectedCluster).add(cList.get(i).get(pointToRelease));
+					cList.get(i).remove(pointToRelease);
+			/*	}else{
+					System.out.println("Number of clusters is increased automatically!!! (INF)!!!");
+					capacitatedKMeans((clusterCount+1));
+					i=cList.size()+1;
+					volumeCapacity=totalV;
+					weightCapacity=totalW;
+				}*/
+				//THESE tries to increase # of clusters recursively !!
 			}
 		}
 
