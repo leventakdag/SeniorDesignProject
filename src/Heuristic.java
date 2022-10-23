@@ -15,7 +15,6 @@ public class Heuristic {
 
     }
     public ArrayList<ArrayList<Point>> unlimitedClustering(int clusterCount){
-
         return clustering.unlimitedKMeans(clusterCount);
     }
     public Solution capacitatedClusterTSP(Data data){

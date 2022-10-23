@@ -13,10 +13,6 @@ public class Solution {
         routeOfTrucks = new ArrayList<>();
     }
 
-
-
-
-
     //Set & Get methods:
     public void setObjectiveValue(double objectiveValue){
         this.objectiveValue=objectiveValue;

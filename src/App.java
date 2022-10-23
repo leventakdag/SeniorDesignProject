@@ -7,8 +7,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         Data data = readData();
         Heuristic heuristic1 = new Heuristic(data);
-        Solution solutionCapacitatedCLusterTsp = new Solution();
-        solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
+        ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
+        clarkAndWright1.solveClarkeAndWright();
+        //Solution solutionCapacitatedCLusterTsp = new Solution();
+        //solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
  /*
 //Unlimited CLustering
         ArrayList<Data> dataList = new ArrayList<Data>();
