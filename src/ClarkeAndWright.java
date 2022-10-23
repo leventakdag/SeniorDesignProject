@@ -29,17 +29,18 @@ public class ClarkeAndWright {
             orderedList.add(tempSaving);
             savingsMatrix[tempSaving.getI()][tempSaving.getJ()] = 0;
             savingsMatrix[tempSaving.getJ()][tempSaving.getI()] = 0;
-            System.out.println("I:" + orderedList.get(k).getI() + " J:" + orderedList.get(k).getJ()+" Distance:" + orderedList.get(k).getDistance());
+            System.out.println(k+ "I:" + orderedList.get(k).getI() + " J:" + orderedList.get(k).getJ()+" Distance:" + orderedList.get(k).getDistance());
         }
         return orderedList;
     }
-
     public void solveClarkeAndWright(){
         ArrayList<Saving> savingsList = savingsList();
         ArrayList<Vehicle> finalList = new ArrayList<Vehicle>();
         ArrayList<Integer> assignedPoints = new ArrayList<Integer>();
 
-        for(int k = 0; k < savingsList.size(); k++){
+        int k = 0;
+        boolean stop = false;
+        while(!stop){
             int check = 0;
             int count = 0;
             int routeToAssign = 10000;
@@ -70,9 +71,13 @@ public class ClarkeAndWright {
                 if(!isItAlreadyAssigned){
                     if(assignedPoints.get(0) == savingsList.get(k).getI()){
                         finalList.get(routeToAssign).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
+                        assignedPoints.add(savingsList.get(k).getI());
+                        assignedPoints.add(savingsList.get(k).getJ());
                     }
                     if(assignedPoints.get(assignedPoints.size()-1) == savingsList.get(k).getI()){
                         finalList.get(routeToAssign).getRoute().add(data.locations[savingsList.get(k).getJ()]);
+                        assignedPoints.add(savingsList.get(k).getI());
+                        assignedPoints.add(savingsList.get(k).getJ());
                     }
                 }
             }
@@ -87,9 +92,13 @@ public class ClarkeAndWright {
                 if(!isItAlreadyAssigned){
                     if(assignedPoints.get(0) == savingsList.get(k).getJ()){
                         finalList.get(routeToAssign).getRoute().add(0,data.locations[savingsList.get(k).getI()]);
+                        assignedPoints.add(savingsList.get(k).getI());
+                        assignedPoints.add(savingsList.get(k).getJ());
                     }
                     if(assignedPoints.get(assignedPoints.size()-1) == savingsList.get(k).getJ()){
                         finalList.get(routeToAssign).getRoute().add(data.locations[savingsList.get(k).getI()]);
+                        assignedPoints.add(savingsList.get(k).getI());
+                        assignedPoints.add(savingsList.get(k).getJ());
                     }
                 }
             }
@@ -100,17 +109,22 @@ public class ClarkeAndWright {
                 tempList.add(data.locations[savingsList.get(k).getJ()]);
                 Vehicle v = new Vehicle(0,0,tempList);
                 finalList.add(v);
+                assignedPoints.add(savingsList.get(k).getI());
+                assignedPoints.add(savingsList.get(k).getJ());
             }
-            assignedPoints.add(savingsList.get(k).getI());
-            assignedPoints.add(savingsList.get(k).getJ());
+            System.out.println("Step " + k);
+            for(int i = 0; i < finalList.size(); i++){
+                System.out.print("Route of vehicle " + i + ": ");
+                for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
+                    System.out.print(finalList.get(i).getRoute().get(j).getID() + ",");
+                }
+                System.out.println();
+            }
+            if(assignedPoints.size() == data.n){
+                stop = true;
+            }
+            k++;
         }
 
-        for(int i = 0; i < finalList.size(); i++){
-            System.out.print("Route of vehicle " + i + ": ");
-            for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
-                System.out.print(finalList.get(i).getRoute().get(j).getID() + ",");
-            }
-            System.out.println();
-        }
     }
 }
