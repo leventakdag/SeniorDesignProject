@@ -62,8 +62,8 @@ public class App {
     private static Data readData() {
         int n=13;
         int k=9;
-        int wc = 2000;
-        int vc = 6;
+        int wc=2000;
+        int vc=6;
 
         Data data = new Data();
         data.locations = new Point[n+1];
@@ -171,6 +171,8 @@ public class App {
                 String[] VehicleCells = VehicleLine.split(",");
                 data.vehiclePlates[i]=VehicleCells[0];
                 data.indicesOfVehicles.put(i,VehicleCells[0]);
+                //data.weightCapacity[i]=Double.parseDouble(VehicleCells[1]);
+                //data.volumeCapacity[i]=Double.parseDouble(VehicleCells[2]);
                 data.weightCapacity[i]=wc;
                 data.volumeCapacity[i]=vc;
             }
