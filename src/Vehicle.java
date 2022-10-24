@@ -4,12 +4,14 @@ public class Vehicle {
     private double weightLoaded;
     private double volumeLoaded;
     private int totalTime;
+    private double totalDistance;
     private ArrayList<Point> route;
-    public Vehicle(double weightLoaded, double volumeLoaded, int totalTime, ArrayList<Point> route) {
+    public Vehicle(double weightLoaded, double volumeLoaded, int totalTime, double totalDistance, ArrayList<Point> route) {
 
         setWL(weightLoaded);
         setVL(volumeLoaded);
         setTT(totalTime);
+        setTD(totalDistance);
         setRoute(route);// TODO Auto-generated constructor stub
     }
 
@@ -27,6 +29,11 @@ public class Vehicle {
         this.totalTime = tt;
     }
 
+    public void setTD(double td) {
+        // TODO Auto-generated method stub
+        this.totalDistance = td;
+    }
+
     public void setRoute(ArrayList<Point> r) {
         // TODO Auto-generated method stub
         this.route = r;
@@ -40,6 +47,9 @@ public class Vehicle {
     }
     public int getTotalTime() {
         return totalTime;
+    }
+    public double getTotalDistance() {
+        return totalDistance;
     }
     public ArrayList<Point> getRoute() {
         return route;
