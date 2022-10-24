@@ -60,8 +60,11 @@ public class App {
 
 
     private static Data readData() {
-        int n=40;
+        int n=13;
         int k=9;
+        int wc = 2000;
+        int vc = 6;
+
         Data data = new Data();
         data.locations = new Point[n+1];
         data.n = n;
@@ -83,8 +86,8 @@ public class App {
         FileReader fileReader5;
 
         try {
-            fileReader1 = new FileReader("./data/distances_40_customer.csv");
-            fileReader2 = new FileReader("./data/times_40_customer.csv");
+            fileReader1 = new FileReader("./data/distances_40_customer_symetric.csv");
+            fileReader2 = new FileReader("./data/times_40_customer_symetric.csv");
             fileReader3 = new FileReader("./data/orders_40_customer_manipulated.csv");
             fileReader4 = new FileReader("./data/vehicles_40_customer.csv");
             fileReader5 = new FileReader("./data/locations.csv");
@@ -114,10 +117,8 @@ public class App {
             data.indicesOfLocations.put(0,"SP_1000");
 
             for(int i=0;i<(data.n+1);i++){
-
                 String Locations = bufferedReader5.readLine();
                 String[] LocationCells = Locations.split(",");
-                
                 data.locations[i]= new Point(Double.parseDouble(LocationCells[2]), Double.parseDouble(LocationCells[3]), (Integer.parseInt(LocationCells[1]))-1);
                 //System.out.println(data.locations[i]);
             }
@@ -125,7 +126,6 @@ public class App {
             
 
             for(int i=1;i<data.sapLocations.length;i++){
-
                 String OrderLine = bufferedReader3.readLine();
                 String[] OrderCells = OrderLine.split(",");
                 data.sapLocations[i]=OrderCells[0];
@@ -167,13 +167,12 @@ public class App {
 
             //READING VEHICLES DATA
             for(int i=0;i<data.vehiclePlates.length;i++){
-
                 String VehicleLine = bufferedReader4.readLine();
                 String[] VehicleCells = VehicleLine.split(",");
                 data.vehiclePlates[i]=VehicleCells[0];
                 data.indicesOfVehicles.put(i,VehicleCells[0]);
-                data.weightCapacity[i]=Double.parseDouble(VehicleCells[1]);
-                data.volumeCapacity[i]=Double.parseDouble(VehicleCells[2]);
+                data.weightCapacity[i]=wc;
+                data.volumeCapacity[i]=vc;
             }
             /*for(int i=0;i<data.sapLocations.length;i++){
                 System.out.print(data.vehiclePlates[i]+" - ");

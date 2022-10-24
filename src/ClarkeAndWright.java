@@ -38,8 +38,10 @@ public class ClarkeAndWright {
         ArrayList<Integer> assignedPoints = new ArrayList<Integer>();
         int k = 0;
         boolean stop = false;
+        double obj = 0;
 
         while(!stop){
+            obj = 0;
             System.out.println("---Step " + k + "---");
             System.out.println("Trying to assign Link "+savingsList.get(k).getI()+","+savingsList.get(k).getJ());
             int count = 0;
@@ -47,50 +49,70 @@ public class ClarkeAndWright {
                 for(int i = 0; i < finalList.size(); i++){
                     if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(0).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
-                            finalList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
-                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
-                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
-                            finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
-                            finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[0][savingsList.get(k).getI()]) + (data.distance[0][savingsList.get(k).getJ()]) + (data.distance[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
-                            count++;
-                            assignedPoints.add(savingsList.get(k).getJ());
-                            break;
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i]&&(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]))<=data.T){
+                                finalList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
+                                finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
+                                finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
+                                finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[0][savingsList.get(k).getI()]) + (data.distance[0][savingsList.get(k).getJ()]) + (data.distance[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
+                                count++;
+                                assignedPoints.add(savingsList.get(k).getJ());
+                                break;
+                            }
+                            else{
+                                System.out.println("Could not assign due to limits");
+                            }
                         }
                     }
                     if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
-                            finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getJ()]);
-                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
-                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
-                            finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0]));
-                            finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[savingsList.get(k).getI()][0]) + (data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.distance[savingsList.get(k).getJ()][0]));
-                            count++;
-                            assignedPoints.add(savingsList.get(k).getJ());
-                            break;
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i] && (finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0]))<=data.T){
+                                finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getJ()]);
+                                finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
+                                finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0]));
+                                finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[savingsList.get(k).getI()][0]) + (data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.distance[savingsList.get(k).getJ()][0]));
+                                count++;
+                                assignedPoints.add(savingsList.get(k).getJ());
+                                break;
+                            }
+                            else{
+                                System.out.println("Could not assign due to limits");
+                            }
                         }
                     }
                     if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(0).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
-                            finalList.get(i).getRoute().add(0, data.locations[savingsList.get(k).getI()]);
-                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
-                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
-                            finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]));
-                            finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[0][savingsList.get(k).getJ()]) + (data.distance[0][savingsList.get(k).getI()]) + (data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]));
-                            count++;
-                            assignedPoints.add(savingsList.get(k).getI());
-                            break;
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]))<=data.volumeCapacity[i]&&(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]))<=data.T){
+                                finalList.get(i).getRoute().add(0, data.locations[savingsList.get(k).getI()]);
+                                finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
+                                finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]));
+                                finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[0][savingsList.get(k).getJ()]) + (data.distance[0][savingsList.get(k).getI()]) + (data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]));
+                                count++;
+                                assignedPoints.add(savingsList.get(k).getI());
+                                break;
+                            }
+                            else{
+                                System.out.println("Could not assign due to limits");
+                            }
                         }
                     }
                     if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
-                            finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getI()]);
-                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
-                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
-                            finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0]));
-                            finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[savingsList.get(k).getJ()][0]) + (data.distance[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.distance[savingsList.get(k).getI()][0]));
-                            count++;
-                            assignedPoints.add(savingsList.get(k).getI());
-                            break;
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]))<=data.volumeCapacity[i] && (finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]))<=data.weightCapacity[i]&& (finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0]))<=data.T){
+                                finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getI()]);
+                                finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
+                                finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0]));
+                                finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[savingsList.get(k).getJ()][0]) + (data.distance[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.distance[savingsList.get(k).getI()][0]));
+                                count++;
+                                assignedPoints.add(savingsList.get(k).getI());
+                                break;
+                            }
+                            else{
+                                System.out.println("Could not assign due to limits");
+                            }
                         }
                     }
 
@@ -119,6 +141,7 @@ public class ClarkeAndWright {
             }
 
             for(int i = 0; i < finalList.size(); i++){
+                obj += finalList.get(i).getTotalDistance();
                 System.out.print("Vehicle: " + i + ", Total time: " + finalList.get(i).getTotalTime() + ", Total distance: " + finalList.get(i).getTotalDistance()+ ", Total weight: " + finalList.get(i).getWeightLoaded() + ", Total volume: " + finalList.get(i).getVolumeLoaded());
                 System.out.print(", Route: ");
                 for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
@@ -127,12 +150,14 @@ public class ClarkeAndWright {
                 System.out.println();
             }
 
+            System.out.println("Assigned points count: "+assignedPoints.size());
+            System.out.println("Z: " + obj);
+
             if(assignedPoints.size() == data.n){
                 stop = true;
             }
             k++;
         }
-
     }
     private boolean isItAlreadyAssigned(ArrayList<Vehicle> finalList, int p) {
         int count = 0;
