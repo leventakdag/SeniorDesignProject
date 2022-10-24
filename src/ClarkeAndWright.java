@@ -28,7 +28,7 @@ public class ClarkeAndWright {
             orderedList.add(tempSaving);
             savingsMatrix[tempSaving.getI()][tempSaving.getJ()] = 0;
             savingsMatrix[tempSaving.getJ()][tempSaving.getI()] = 0;
-            System.out.println(k+ "I:" + orderedList.get(k).getI() + " J:" + orderedList.get(k).getJ()+" Distance:" + orderedList.get(k).getDistance());
+            //System.out.println(k+ "I:" + orderedList.get(k).getI() + " J:" + orderedList.get(k).getJ()+" Distance:" + orderedList.get(k).getDistance());
         }
         return orderedList;
     }
@@ -40,14 +40,17 @@ public class ClarkeAndWright {
         boolean stop = false;
 
         while(!stop){
-            System.out.println("Step " + k);
-            System.out.println("Trying to assign Link "+savingsList.get(k).getI()+","+savingsList.get(k).getJ());
+            //System.out.println("Step " + k);
+            //System.out.println("Trying to assign Link "+savingsList.get(k).getI()+","+savingsList.get(k).getJ());
             int count = 0;
             if(finalList.size() != 0){
                 for(int i = 0; i < finalList.size(); i++){
                     if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(0).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
                             finalList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
+                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
+                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
+                            //finalList.get(i).setTT(finalList.get(i).getTotalTime() + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
                             count++;
                             assignedPoints.add(savingsList.get(k).getJ());
                             break;
@@ -56,6 +59,9 @@ public class ClarkeAndWright {
                     if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
                             finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getJ()]);
+                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
+                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
+                            //finalList.get(i).setTT(finalList.get(i).getTotalTime() + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
                             count++;
                             assignedPoints.add(savingsList.get(k).getJ());
                             break;
@@ -64,6 +70,9 @@ public class ClarkeAndWright {
                     if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(0).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
                             finalList.get(i).getRoute().add(0, data.locations[savingsList.get(k).getI()]);
+                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
+                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
+                            //finalList.get(i).setTT(finalList.get(i).getTotalTime() + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
                             count++;
                             assignedPoints.add(savingsList.get(k).getI());
                             break;
@@ -72,6 +81,9 @@ public class ClarkeAndWright {
                     if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
                             finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getI()]);
+                            finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
+                            finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
+                            //finalList.get(i).setTT(finalList.get(i).getTotalTime() + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
                             count++;
                             assignedPoints.add(savingsList.get(k).getI());
                             break;
@@ -88,22 +100,14 @@ public class ClarkeAndWright {
             }
 
             if(count == 0){
-                System.out.println("Creating a new route");
+                //System.out.println("Creating a new route");
                 ArrayList<Point> tempList = new ArrayList<Point>();
                 tempList.add(data.locations[savingsList.get(k).getI()]);
                 tempList.add(data.locations[savingsList.get(k).getJ()]);
-                Vehicle v = new Vehicle(0,0,0,tempList);
+                Vehicle v = new Vehicle((data.weight[savingsList.get(k).getJ()])+(data.weight[savingsList.get(k).getI()]),(data.volume[savingsList.get(k).getJ()])+(data.volume[savingsList.get(k).getI()]),0,tempList);
                 finalList.add(v);
                 assignedPoints.add(savingsList.get(k).getI());
                 assignedPoints.add(savingsList.get(k).getJ());
-            }
-
-            for(int i = 0; i < finalList.size(); i++){
-                System.out.print("Route of vehicle " + i + ": ");
-                for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
-                    System.out.print(finalList.get(i).getRoute().get(j).getID() + ",");
-                }
-                System.out.println();
             }
             if(assignedPoints.size() == data.n){
                 stop = true;
@@ -111,6 +115,14 @@ public class ClarkeAndWright {
             k++;
         }
 
+        for(int i = 0; i < finalList.size(); i++){
+            System.out.print("Vehicle: " + i + ", Total time: " + finalList.get(i).getTotalTime() + ", Total weight: " + finalList.get(i).getWeightLoaded() + ", Total volume: " + finalList.get(i).getVolumeLoaded());
+            System.out.print(", Route: ");
+            for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
+                System.out.print(finalList.get(i).getRoute().get(j).getID() + ",");
+            }
+            System.out.println();
+        }
     }
     private boolean isItAlreadyAssigned(ArrayList<Vehicle> finalList, int p) {
         int count = 0;

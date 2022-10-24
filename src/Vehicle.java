@@ -3,31 +3,31 @@ import java.util.ArrayList;
 public class Vehicle {
     private double weightLoaded;
     private double volumeLoaded;
-    private  double totalTime;
+    private int totalTime;
     private ArrayList<Point> route;
-    public Vehicle(double weightLoaded, double volumeLoaded, double totalTime, ArrayList<Point> route) {
+    public Vehicle(double weightLoaded, double volumeLoaded, int totalTime, ArrayList<Point> route) {
 
-        setWC(weightLoaded);
-        setVC(volumeLoaded);
+        setWL(weightLoaded);
+        setVL(volumeLoaded);
         setTT(totalTime);
         setRoute(route);// TODO Auto-generated constructor stub
     }
 
-    private void setWC(double wc) {
+    public void setWL(double wl) {
         // TODO Auto-generated method stub
-        this.weightLoaded = wc;
+        this.weightLoaded = wl;
     }
 
-    private void setVC(double vc) {
+    public void setVL(double vl) {
         // TODO Auto-generated method stub
-        this.volumeLoaded = vc;
+        this.volumeLoaded = vl;
     }
-    private void setTT(double tt) {
+    public void setTT(int tt) {
         // TODO Auto-generated method stub
         this.totalTime = tt;
     }
 
-    private void setRoute(ArrayList<Point> r) {
+    public void setRoute(ArrayList<Point> r) {
         // TODO Auto-generated method stub
         this.route = r;
     }
@@ -38,7 +38,7 @@ public class Vehicle {
     public double getVolumeLoaded() {
         return volumeLoaded;
     }
-    public double getTotalTime() {
+    public int getTotalTime() {
         return totalTime;
     }
     public ArrayList<Point> getRoute() {
