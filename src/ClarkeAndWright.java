@@ -6,7 +6,6 @@ public class ClarkeAndWright {
         this.data = Data;
     }
     public ArrayList<Saving> savingsList(){
-
         ArrayList<Saving> orderedList = new ArrayList<Saving>();
         double[][] savingsMatrix = new double[data.n+1][data.n+1];
         for(int i = 0; i < data.n+1; i++){
@@ -37,82 +36,68 @@ public class ClarkeAndWright {
         ArrayList<Saving> savingsList = savingsList();
         ArrayList<Vehicle> finalList = new ArrayList<Vehicle>();
         ArrayList<Integer> assignedPoints = new ArrayList<Integer>();
-
         int k = 0;
         boolean stop = false;
+
         while(!stop){
-            int check = 0;
+            System.out.println("Step " + k);
+            System.out.println("Trying to assign Link "+savingsList.get(k).getI()+","+savingsList.get(k).getJ());
             int count = 0;
-            int routeToAssign = 10000;
             if(finalList.size() != 0){
                 for(int i = 0; i < finalList.size(); i++){
+                    if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(0).getID()){
+                        if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
+                            finalList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
+                            count++;
+                            assignedPoints.add(savingsList.get(k).getJ());
+                            break;
+                        }
+                    }
+                    if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
+                        if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
+                            finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getJ()]);
+                            count++;
+                            assignedPoints.add(savingsList.get(k).getJ());
+                            break;
+                        }
+                    }
+                    if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(0).getID()){
+                        if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
+                            finalList.get(i).getRoute().add(0, data.locations[savingsList.get(k).getI()]);
+                            count++;
+                            assignedPoints.add(savingsList.get(k).getI());
+                            break;
+                        }
+                    }
+                    if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
+                        if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
+                            finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getI()]);
+                            count++;
+                            assignedPoints.add(savingsList.get(k).getI());
+                            break;
+                        }
+                    }
+
                     for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
-                        if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(j).getID()){
-                            check = 1;
-                            routeToAssign = i;
+                        if(savingsList.get(k).getI()==finalList.get(i).getRoute().get(j).getID()||savingsList.get(k).getJ()==finalList.get(i).getRoute().get(j).getID()){
                             count++;
+                            break;
                         }
-                        if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(j).getID()){
-                            check = 2;
-                            routeToAssign = i;
-                            count++;
-                        }
-                    }
-                }
-            }
-
-            if(check == 1){
-                boolean isItAlreadyAssigned = false;
-                for(int i = 0; i < assignedPoints.size(); i++){
-                    if(assignedPoints.get(i) == savingsList.get(k).getJ()){
-                        isItAlreadyAssigned = true;
-                    }
-                }
-                if(!isItAlreadyAssigned){
-                    if(assignedPoints.get(0) == savingsList.get(k).getI()){
-                        finalList.get(routeToAssign).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
-                        assignedPoints.add(savingsList.get(k).getI());
-                        assignedPoints.add(savingsList.get(k).getJ());
-                    }
-                    if(assignedPoints.get(assignedPoints.size()-1) == savingsList.get(k).getI()){
-                        finalList.get(routeToAssign).getRoute().add(data.locations[savingsList.get(k).getJ()]);
-                        assignedPoints.add(savingsList.get(k).getI());
-                        assignedPoints.add(savingsList.get(k).getJ());
-                    }
-                }
-            }
-
-            if(check == 2){
-                boolean isItAlreadyAssigned = false;
-                for(int i = 0; i < assignedPoints.size(); i++){
-                    if(assignedPoints.get(i) == savingsList.get(k).getI()){
-                        isItAlreadyAssigned = true;
-                    }
-                }
-                if(!isItAlreadyAssigned){
-                    if(assignedPoints.get(0) == savingsList.get(k).getJ()){
-                        finalList.get(routeToAssign).getRoute().add(0,data.locations[savingsList.get(k).getI()]);
-                        assignedPoints.add(savingsList.get(k).getI());
-                        assignedPoints.add(savingsList.get(k).getJ());
-                    }
-                    if(assignedPoints.get(assignedPoints.size()-1) == savingsList.get(k).getJ()){
-                        finalList.get(routeToAssign).getRoute().add(data.locations[savingsList.get(k).getI()]);
-                        assignedPoints.add(savingsList.get(k).getI());
-                        assignedPoints.add(savingsList.get(k).getJ());
                     }
                 }
             }
 
             if(count == 0){
+                System.out.println("Creating a new route");
                 ArrayList<Point> tempList = new ArrayList<Point>();
                 tempList.add(data.locations[savingsList.get(k).getI()]);
                 tempList.add(data.locations[savingsList.get(k).getJ()]);
-                Vehicle v = new Vehicle(0,0,tempList);
+                Vehicle v = new Vehicle(0,0,0,tempList);
                 finalList.add(v);
                 assignedPoints.add(savingsList.get(k).getI());
                 assignedPoints.add(savingsList.get(k).getJ());
             }
-            System.out.println("Step " + k);
+
             for(int i = 0; i < finalList.size(); i++){
                 System.out.print("Route of vehicle " + i + ": ");
                 for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
@@ -126,5 +111,21 @@ public class ClarkeAndWright {
             k++;
         }
 
+    }
+    private boolean isItAlreadyAssigned(ArrayList<Vehicle> finalList, int p) {
+        int count = 0;
+        for(int i = 0; i < finalList.size(); i++){
+            for(int j = 0; j < finalList.get(i).getRoute().size(); j++){
+                if(finalList.get(i).getRoute().get(j).getID()== p){
+                    count++;
+                }
+            }
+        }
+        if(count == 0){
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
