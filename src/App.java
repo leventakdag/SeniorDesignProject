@@ -7,8 +7,10 @@ public class App {
     public static void main(String[] args) throws Exception {
         Data data = readData();
         Heuristic heuristic1 = new Heuristic(data);
-        ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
-        clarkAndWright1.solveClarkeAndWright();
+
+      //  ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
+      //  clarkAndWright1.solveClarkeAndWright();
+
         //Solution solutionCapacitatedCLusterTsp = new Solution();
         //solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
  /*
@@ -33,8 +35,8 @@ public class App {
   //Unlimited CLustering - END
     */
 
-        //ExatSolution exactsolution2 = new ExactSolution(data);
-        //exactsolution2.solveExact();
+        ExactSolution exactsolution2 = new ExactSolution(data);
+        exactsolution2.solveExact();
 
         // Maps maps = new Maps(data);
 
@@ -70,7 +72,7 @@ public class App {
         data.n = n;
         data.k = k;
         data.distance = new double[n+1][n+1];
-        data.duration = new int[n+1][n+1];
+        data.duration = new double[n+1][n+1];
         data.tu = new double[n+1];
         data.weightCapacity = new double[k];
         data.volumeCapacity = new double[k];
@@ -149,7 +151,7 @@ public class App {
                 String DurationLine=bufferedReader2.readLine();
                 String[] DurationCells=DurationLine.split(",");
                 for(int j=0;j<data.duration.length;j++){
-                    data.duration[i][j] = Integer.parseInt(DurationCells[j]);
+                    data.duration[i][j] = Double.parseDouble(DurationCells[j]);
                     //System.out.print(data.duration[i][j]+",");
                 }
                 //System.out.println();

@@ -67,7 +67,7 @@ public class Heuristic {
                 dataTemp.k = data.k;
                 dataTemp.locations = new Point[Clist.get(i).size()];
                 dataTemp.distance = new double[dataTemp.n+1][dataTemp.n+1];
-                dataTemp.duration = new int[dataTemp.n+1][dataTemp.n+1];
+                dataTemp.duration = new double[dataTemp.n+1][dataTemp.n+1];
                 dataTemp.tu = new double[dataTemp.n+1];
                 dataTemp.weight = new double[dataTemp.n+1];
                 dataTemp.volume = new double[dataTemp.n+1];

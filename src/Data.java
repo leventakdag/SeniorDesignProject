@@ -13,7 +13,7 @@ public class Data {
     //public int Cmax = 24 //Real value is 24
     public Point[] locations;
     public double[][] distance; //dij
-    public int[][] duration; //tij
+    public double[][] duration; //tij
     public double[] tu;
     public double[] weightCapacity; //Wk
     public double[] volumeCapacity; //Vk
