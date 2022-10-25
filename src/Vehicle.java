@@ -3,10 +3,10 @@ import java.util.ArrayList;
 public class Vehicle {
     private double weightLoaded;
     private double volumeLoaded;
-    private int totalTime;
+    private double totalTime;
     private double totalDistance;
     private ArrayList<Point> route;
-    public Vehicle(double weightLoaded, double volumeLoaded, int totalTime, double totalDistance, ArrayList<Point> route) {
+    public Vehicle(double weightLoaded, double volumeLoaded, double totalTime, double totalDistance, ArrayList<Point> route) {
 
         setWL(weightLoaded);
         setVL(volumeLoaded);
@@ -24,7 +24,7 @@ public class Vehicle {
         // TODO Auto-generated method stub
         this.volumeLoaded = vl;
     }
-    public void setTT(int tt) {
+    public void setTT(double tt) {
         // TODO Auto-generated method stub
         this.totalTime = tt;
     }
@@ -45,7 +45,7 @@ public class Vehicle {
     public double getVolumeLoaded() {
         return volumeLoaded;
     }
-    public int getTotalTime() {
+    public double getTotalTime() {
         return totalTime;
     }
     public double getTotalDistance() {

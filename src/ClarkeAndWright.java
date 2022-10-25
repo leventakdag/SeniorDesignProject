@@ -53,7 +53,7 @@ public class ClarkeAndWright {
                                 finalList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
-                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()])+ data.tu[savingsList.get(k).getJ()]);
                                 finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[0][savingsList.get(k).getI()]) + (data.distance[0][savingsList.get(k).getJ()]) + (data.distance[savingsList.get(k).getJ()][savingsList.get(k).getI()]));
                                 count++;
                                 assignedPoints.add(savingsList.get(k).getJ());
@@ -70,7 +70,7 @@ public class ClarkeAndWright {
                                 finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getJ()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
-                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0])+ data.tu[savingsList.get(k).getJ()]);
                                 finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[savingsList.get(k).getI()][0]) + (data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.distance[savingsList.get(k).getJ()][0]));
                                 count++;
                                 assignedPoints.add(savingsList.get(k).getJ());
@@ -87,7 +87,7 @@ public class ClarkeAndWright {
                                 finalList.get(i).getRoute().add(0, data.locations[savingsList.get(k).getI()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
-                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()])+ data.tu[savingsList.get(k).getI()]);
                                 finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[0][savingsList.get(k).getJ()]) + (data.distance[0][savingsList.get(k).getI()]) + (data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]));
                                 count++;
                                 assignedPoints.add(savingsList.get(k).getI());
@@ -104,7 +104,7 @@ public class ClarkeAndWright {
                                 finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getI()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
-                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0]));
+                                finalList.get(i).setTT(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0])+ data.tu[savingsList.get(k).getI()]);
                                 finalList.get(i).setTD(finalList.get(i).getTotalDistance() - (data.distance[savingsList.get(k).getJ()][0]) + (data.distance[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.distance[savingsList.get(k).getI()][0]));
                                 count++;
                                 assignedPoints.add(savingsList.get(k).getI());
@@ -130,8 +130,8 @@ public class ClarkeAndWright {
                 ArrayList<Point> tempList = new ArrayList<Point>();
                 tempList.add(data.locations[savingsList.get(k).getI()]);
                 tempList.add(data.locations[savingsList.get(k).getJ()]);
-                int tempTime = 0;
-                tempTime = data.duration[0][savingsList.get(k).getI()] + data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]+data.duration[savingsList.get(k).getJ()][0];
+                double tempTime = 0;
+                tempTime = data.duration[0][savingsList.get(k).getI()] + data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]+data.duration[savingsList.get(k).getJ()][0]+ data.tu[savingsList.get(k).getJ()]+ data.tu[savingsList.get(k).getI()];
                 double tempDistance = 0;
                 tempDistance = data.distance[0][savingsList.get(k).getI()] + data.distance[savingsList.get(k).getI()][savingsList.get(k).getJ()]+data.distance[savingsList.get(k).getJ()][0];
                 Vehicle v = new Vehicle((data.weight[savingsList.get(k).getJ()])+(data.weight[savingsList.get(k).getI()]),(data.volume[savingsList.get(k).getJ()])+(data.volume[savingsList.get(k).getI()]),tempTime,tempDistance,tempList);
