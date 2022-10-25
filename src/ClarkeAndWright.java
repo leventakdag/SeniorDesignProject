@@ -49,7 +49,7 @@ public class ClarkeAndWright {
                 for(int i = 0; i < finalList.size(); i++){
                     if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(0).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
-                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i]&&(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]))<=data.T){
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i]&&(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + data.tu[savingsList.get(k).getJ()])<=data.T){
                                 finalList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
@@ -66,7 +66,7 @@ public class ClarkeAndWright {
                     }
                     if(savingsList.get(k).getI() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getJ())){
-                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i] && (finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0]))<=data.T){
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i] && (finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getI()][0]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][0]) + data.tu[savingsList.get(k).getJ()])<=data.T){
                                 finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getJ()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]));
@@ -83,7 +83,7 @@ public class ClarkeAndWright {
                     }
                     if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(0).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
-                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]))<=data.volumeCapacity[i]&&(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]))<=data.T){
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]))<=data.volumeCapacity[i]&&(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]))<=data.weightCapacity[i]&&(finalList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[0][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][savingsList.get(k).getJ()]) + data.tu[savingsList.get(k).getI()])<=data.T){
                                 finalList.get(i).getRoute().add(0, data.locations[savingsList.get(k).getI()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));
@@ -100,7 +100,7 @@ public class ClarkeAndWright {
                     }
                     if(savingsList.get(k).getJ() == finalList.get(i).getRoute().get(finalList.get(i).getRoute().size()-1).getID()){
                         if(!isItAlreadyAssigned(finalList, savingsList.get(k).getI())) {
-                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]))<=data.volumeCapacity[i] && (finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]))<=data.weightCapacity[i]&& (finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0]))<=data.T){
+                            if((finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]))<=data.volumeCapacity[i] && (finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]))<=data.weightCapacity[i]&& (finalList.get(i).getTotalTime() - (data.duration[savingsList.get(k).getJ()][0]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + (data.duration[savingsList.get(k).getI()][0]) + data.tu[savingsList.get(k).getI()])<=data.T){
                                 finalList.get(i).getRoute().add(data.locations[savingsList.get(k).getI()]);
                                 finalList.get(i).setVL(finalList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getI()]));
                                 finalList.get(i).setWL(finalList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getI()]));

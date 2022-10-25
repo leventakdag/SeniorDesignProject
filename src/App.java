@@ -62,8 +62,8 @@ public class App {
     private static Data readData() {
         int n=13;
         int k=9;
-        int wc=2000;
-        int vc=6;
+        int wc=4500;
+        int vc=9;
 
         Data data = new Data();
         data.locations = new Point[n+1];
