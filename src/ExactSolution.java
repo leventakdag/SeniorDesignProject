@@ -411,8 +411,8 @@ public class ExactSolution {
         }
     }
 
-    public double solveTSP(){
-        double objectiveValue = 0;
+    public double[] solveTSP(){
+        double[] objectiveValue = new double[2];
         try {
 
             GRBEnv env = new GRBEnv("VRP.log");
@@ -559,9 +559,9 @@ public class ExactSolution {
                     for (int i = 0; i < N; i++) {
                         for (int j = 0; j < N; j++) {
                             //Distance objective:
-                             objectiveValue += data.distance[i][j] * x[i][j].get(GRB.DoubleAttr.X);
+                             objectiveValue[0] += data.distance[i][j] * x[i][j].get(GRB.DoubleAttr.X);
                             //Duration objective:
-                          //  objectiveValue = objectiveValue + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
+                            objectiveValue[1] = objectiveValue[1] + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
                         }
                     }
 

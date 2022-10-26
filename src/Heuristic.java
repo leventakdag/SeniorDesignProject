@@ -25,13 +25,19 @@ public class Heuristic {
         dataList = createClusterData(clustering.capacitatedKMeans(4), data);
         //SOLVE EXACT FOR EACH CLUSTER:
         ArrayList<ArrayList<ArrayList<Point>>> sList = new ArrayList<ArrayList<ArrayList<Point>>>();
-        double[] tspDist = new double[5];
+        double[][] tspSolution = new double[5][2];
+        //tspSolution[i][0] gives distance of cluster i
+        //tspSolution[i][1] gives duration of cluster i
+
         for (int i = 0; i < dataList.size(); i++) {
             if (dataList.get(i).locations.length > 1) {
                 ExactSolution exactsolution = new ExactSolution(dataList.get(i));
-                tspDist[i] = exactsolution.solveTSP();
+                tspSolution[i][0] = exactsolution.solveTSP()[0];
+                tspSolution[i][1] = exactsolution.solveTSP()[1];
             }
         }
+
+
 
         for (int i = 0; i < dataList.size(); i++) {
             System.out.println("Cluster "+i);
@@ -44,7 +50,8 @@ public class Heuristic {
             }
             System.out.println("Total Weight of Orders: " + totalW);
             System.out.println("Total Volume of Orders: " + totalV);
-            System.out.println("Objective Dist: " + tspDist[i]);
+            System.out.println("Objective Distance: " + tspSolution[i][0]);
+            System.out.println("Objective Duration: " + tspSolution[i][1]);
             System.out.println();
         }
 

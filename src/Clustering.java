@@ -94,19 +94,21 @@ public class Clustering {
 			}
 		}
 
-		//CAPACITY
+		//CAPACITY of "cluster" "i"
 		for(int i=0;i<cList.size();i++){
-			boolean isBroken = false;
+			//boolean isBroken = false;
 			double totalW = 0;
 			double totalV = 0;
 			for(int j = 0; j < cList.get(i).size(); j++) {
 				totalW += data.weight[cList.get(i).get(j).getID()];
 				totalV += data.volume[cList.get(i).get(j).getID()];
 			}
+			//check TSP
 
 			//CAPACITY removals
 
-			System.out.println("Capacities: " +(weightCapacity + " - " + volumeCapacity));
+			System.out.println("Total capacities of cluster "+ i + " : " +(weightCapacity + " - " + volumeCapacity));
+			System.out.println("Restricted capacities of cluster "+ i + " : "+(totalW + " - " + totalV));
 
 			while(totalW>weightCapacity || totalV>volumeCapacity){
 				int pointToRelease = 3131;
@@ -119,7 +121,7 @@ public class Clustering {
 					double weightOfReleasedPoint = data.weight[cList.get(i).get(j).getID()];
 					double volumeOfReleasedPoint = data.volume[cList.get(i).get(j).getID()];
 
-					System.out.println("W and V of point "+j+":"+(weightOfReleasedPoint +" - " + volumeOfReleasedPoint));
+					System.out.println("W and V of point "+cList.get(i).get(j).getID()+" : "+(weightOfReleasedPoint +" - " + volumeOfReleasedPoint));
 
 					//nearest cluster(k) center for point "j"
 					double newDist = 1000000;
@@ -134,7 +136,7 @@ public class Clustering {
 								totalVofOtherCluster += data.volume[cList.get(k).get(l).getID()];
 							}
 
-							System.out.println("W and V of cluster "+k+":"+(totalWofOtherCluster +" - " + totalVofOtherCluster));
+							System.out.println("W and V of cluster "+k+" : "+(totalWofOtherCluster +" - " + totalVofOtherCluster));
 
 							if((totalWofOtherCluster+weightOfReleasedPoint) <= weightCapacity && (totalVofOtherCluster+volumeOfReleasedPoint) <= volumeCapacity){
 
@@ -159,6 +161,7 @@ public class Clustering {
 					totalV = totalV - data.volume[cList.get(i).get(pointToRelease).getID()];
 					cList.get(selectedCluster).add(cList.get(i).get(pointToRelease));
 					cList.get(i).remove(pointToRelease);
+					System.out.println("Point "+cList.get(i).get(pointToRelease).getID()+ " released from cluster " + i +" added to cluster " + selectedCluster );
 			/*	}else{
 					System.out.println("Number of clusters is increased automatically!!! (INF)!!!");
 					capacitatedKMeans((clusterCount+1));
@@ -174,6 +177,7 @@ public class Clustering {
 		for(int i=0;i<cList.size();i++){
 			cList.get(i).add(0,data.locations[0]);
 		}
+
 
 		return cList;
 	}
