@@ -157,11 +157,21 @@ public class Clustering {
 					}
 				}
 				//if(selectedCluster!=6969){
+
+				System.out.println("Point "+cList.get(i).get(pointToRelease).getID()+ " released from cluster " + i +" added to cluster " + selectedCluster );
+
 					totalW = totalW - data.weight[cList.get(i).get(pointToRelease).getID()];
 					totalV = totalV - data.volume[cList.get(i).get(pointToRelease).getID()];
 					cList.get(selectedCluster).add(cList.get(i).get(pointToRelease));
 					cList.get(i).remove(pointToRelease);
-					System.out.println("Point "+cList.get(i).get(pointToRelease).getID()+ " released from cluster " + i +" added to cluster " + selectedCluster );
+
+					for(int a=0;a<cList.size();a++){
+					System.out.println("Cluster "+a+" :");
+					for(int b=0;b<cList.get(a).size();b++){
+						System.out.print(cList.get(a).get(b).getID()+", ");
+					}
+					System.out.println();
+				}
 			/*	}else{
 					System.out.println("Number of clusters is increased automatically!!! (INF)!!!");
 					capacitatedKMeans((clusterCount+1));
@@ -177,7 +187,13 @@ public class Clustering {
 		for(int i=0;i<cList.size();i++){
 			cList.get(i).add(0,data.locations[0]);
 		}
-
+		for(int a=0;a<cList.size();a++){
+			System.out.println("Cluster "+a+" after WH added :");
+			for(int b=0;b<cList.get(a).size();b++){
+				System.out.print(cList.get(a).get(b).getID()+", ");
+			}
+			System.out.println();
+		}
 
 		return cList;
 	}

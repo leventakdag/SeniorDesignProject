@@ -1,25 +1,17 @@
 \ LP format - for model browsing. Use MPS format to capture full model detail.
 Minimize
-  1000 x_0_0 + 54 x_0_1 + 46 x_0_2 + 54 x_1_0 + 1000 x_1_1 + 13 x_1_2
-   + 46 x_2_0 + 13 x_2_1 + 1000 x_2_2 + 0 u_[Lgurobi.GRBVar;@69d0a921
+  1000 x_0_0 + 30 x_0_1 + 30 x_1_0 + 1000 x_1_1
+   + 0 u_[Lgurobi.GRBVar;@67424e82 + 0 u_[Lgurobi.GRBVar;@67424e82
 Subject To
- c1: x_0_1 + x_0_2 = 1
- c1: x_1_0 + x_1_2 = 1
- c1: x_2_0 + x_2_1 = 1
- c1: x_1_0 + x_2_0 = 1
- c1: x_0_1 + x_2_1 = 1
- c1: x_0_2 + x_1_2 = 1
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 3 x_1_2
-   + u_[Lgurobi.GRBVar;@69d0a921 - u_[Lgurobi.GRBVar;@69d0a921 <= 2
- If_vehicle_k_comes_to_j_then_it_must_departure_from_j.: 3 x_2_1
-   - u_[Lgurobi.GRBVar;@69d0a921 + u_[Lgurobi.GRBVar;@69d0a921 <= 2
+ c1: x_0_1 = 1
+ c1: x_1_0 = 1
+ c1: x_1_0 = 1
+ c1: x_0_1 = 1
 Bounds
- u_[Lgurobi.GRBVar;@69d0a921 <= 4
- u_[Lgurobi.GRBVar;@69d0a921 <= 4
- u_[Lgurobi.GRBVar;@69d0a921 <= 4
+ u_[Lgurobi.GRBVar;@67424e82 <= 3
+ u_[Lgurobi.GRBVar;@67424e82 <= 3
 Binaries
- x_0_0 x_0_1 x_0_2 x_1_0 x_1_1 x_1_2 x_2_0 x_2_1 x_2_2
+ x_0_0 x_0_1 x_1_0 x_1_1
 Generals
- u_[Lgurobi.GRBVar;@69d0a921 u_[Lgurobi.GRBVar;@69d0a921
- u_[Lgurobi.GRBVar;@69d0a921
+ u_[Lgurobi.GRBVar;@67424e82 u_[Lgurobi.GRBVar;@67424e82
 End
