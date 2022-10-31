@@ -8,11 +8,25 @@ public class App {
         Data data = readData();
         Heuristic heuristic1 = new Heuristic(data);
 
-      ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
-      clarkAndWright1.solveClarkeAndWright();
-//aalo
-        //Solution solutionCapacitatedCLusterTsp = new Solution();
-        //solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
+        //EXACT SOL. from 401
+        //ExactSolution exactsolution2 = new ExactSolution(data);
+        //exactsolution2.solveExact();
+
+        //CLARK & WRIGHT
+        ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
+        clarkAndWright1.solveClarkeAndWright();
+
+        //CLARK & WRIGHT --> TSP
+        ArrayList<Data> dataListForCW = new ArrayList<Data>();
+        dataListForCW = heuristic1.createClusterData(clarkAndWright1.Clist,data);
+        for(int i=0;i<dataListForCW.size();i++){
+            ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
+            exactsolutionCW.solveTSP();
+        }
+
+        //CLUSTER:
+       // heuristic1.capacitatedClusterTSP(data);
+
  /*
 //Unlimited CLustering
         ArrayList<Data> dataList = new ArrayList<Data>();
@@ -34,9 +48,6 @@ public class App {
         }
   //Unlimited CLustering - END
     */
-
-        //ExactSolution exactsolution2 = new ExactSolution(data);
-        //exactsolution2.solveExact();
 
         // Maps maps = new Maps(data);
 

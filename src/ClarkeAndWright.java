@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class ClarkeAndWright {
+    public ArrayList<ArrayList<Point>> Clist;
     private Data data;
     public ClarkeAndWright(Data Data) {
         this.data = Data;

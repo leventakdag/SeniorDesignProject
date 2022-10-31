@@ -17,9 +17,8 @@ public class Heuristic {
     public ArrayList<ArrayList<Point>> unlimitedClustering(int clusterCount){
         return clustering.unlimitedKMeans(clusterCount);
     }
-    public Solution capacitatedClusterTSP(Data data){
+    public void capacitatedClusterTSP(Data data){
         System.out.println("!!! CAPACITATED CLUSTERING is CALLED !!!");
-        Solution solution = new Solution();
 
         ArrayList<Data> dataList = new ArrayList<Data>();
         dataList = createClusterData(clustering.capacitatedKMeans(4), data);
@@ -55,7 +54,6 @@ public class Heuristic {
             System.out.println();
         }
 
-        return solution;
     }
 
     public ArrayList<Data> createClusterData(ArrayList<ArrayList<Point>> Clist, Data data){
