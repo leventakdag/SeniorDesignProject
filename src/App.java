@@ -25,7 +25,7 @@ public class App {
         }
 
         //CLUSTER:
-       // heuristic1.capacitatedClusterTSP(data);
+        //heuristic1.capacitatedClusterTSP(data);
 
  /*
 //Unlimited CLustering
