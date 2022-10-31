@@ -8,11 +8,11 @@ public class App {
         Data data = readData();
         Heuristic heuristic1 = new Heuristic(data);
 
-       // ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
-       // clarkAndWright1.solveClarkeAndWright();
+      ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
+      clarkAndWright1.solveClarkeAndWright();
 
-        Solution solutionCapacitatedCLusterTsp = new Solution();
-        solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
+        //Solution solutionCapacitatedCLusterTsp = new Solution();
+        //solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
  /*
 //Unlimited CLustering
         ArrayList<Data> dataList = new ArrayList<Data>();
@@ -35,9 +35,9 @@ public class App {
   //Unlimited CLustering - END
     */
 
-     //   ExactSolution exactsolution2 = new ExactSolution(data);
+        //ExactSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
-        //exactsolution2.solveTSP();
+
         // Maps maps = new Maps(data);
 
 
@@ -59,10 +59,8 @@ public class App {
     //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
 
-
-
     private static Data readData() {
-        int n=13;
+        int n=40;
         int k=9;
         int wc=4500;
         int vc=9;

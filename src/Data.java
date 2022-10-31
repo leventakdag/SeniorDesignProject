@@ -7,7 +7,7 @@ public class Data {
     public int k; //Number
     public double c = 2.0; //Cost per km of Vehicles
     //public double T=540; //Real time Limit for each vehicle
-    public double T=180;
+    public double T=480;
     public double fixedCost = 30; //Real value is unknown
     public int Cmax = 24;
     //public int Cmax = 24 //Real value is 24
