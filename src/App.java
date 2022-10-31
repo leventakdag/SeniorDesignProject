@@ -10,7 +10,7 @@ public class App {
 
       ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
       clarkAndWright1.solveClarkeAndWright();
-
+//alo
         //Solution solutionCapacitatedCLusterTsp = new Solution();
         //solutionCapacitatedCLusterTsp = heuristic1.capacitatedClusterTSP(data);
  /*
