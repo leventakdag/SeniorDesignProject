@@ -180,7 +180,7 @@ public class ExactSolution {
             }*/
 
 
-        /*    //Constraint [7]
+            //Constraint [7]
             GRBLinExpr[] expr7_1 = new GRBLinExpr[K];
             for (int k = 0; k < K; k++) {
                 expr7_1[k] = new GRBLinExpr();
@@ -201,7 +201,7 @@ public class ExactSolution {
                 expr7_1[k].add(expr7_2[k]);
                 model.addConstr(expr7_1[k], GRB.LESS_EQUAL, data.T, "Time constraint");
             }
-*/
+
 
             //Constraint [8]
             GRBLinExpr[] expr8 = new GRBLinExpr[K];
