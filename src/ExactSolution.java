@@ -365,32 +365,30 @@ public class ExactSolution {
                 }
             }
 
-        System.out.println("---------------");
-        for (int k = 0; k < K; k++) {
-            if(y[k].get(GRB.DoubleAttr.X)==1.0){
-                System.out.println("Used weight capacity of truck " + (k + 1) + " = " + loadedWeightOf[k]);
-                System.out.println("Used volume capacity of truck " + (k + 1) + " = " + loadedVolumeOf[k]);
-                System.out.println("---");
+            System.out.println("---------------");
+            for (int k = 0; k < K; k++) {
+                if(y[k].get(GRB.DoubleAttr.X)==1.0){
+                    System.out.println("Used weight capacity of truck " + (k + 1) + " = " + loadedWeightOf[k]);
+                    System.out.println("Used volume capacity of truck " + (k + 1) + " = " + loadedVolumeOf[k]);
+                    System.out.println("---");
+                }
             }
+
+            //writing Data used
+            System.out.println("Distance cost = " + data.c);
+            System.out.println("fixed cost of using one vehicle = " + data.fixedCost);
+            System.out.println("Time limit of each vehicle = " + data.T);
+            System.out.println("Max number of customer a vehicle can visit = " + data.Cmax);
+
+
+            //Writing optimal solution
+            System.out.println();
+            System.out.println("Optimal: ");
+            System.out.println("Z = " + objectiveValue);
+
+            model.dispose();
+            env.dispose();
         }
-
-        //writing Data used
-        System.out.println("Distance cost = " + data.c);
-        System.out.println("fixed cost of using one vehicle = " + data.fixedCost);
-        System.out.println("Time limit of each vehicle = " + data.T);
-        System.out.println("Max number of customer a vehicle can visit = " + data.Cmax);
-
-
-        //Writing optimal solution
-        System.out.println();
-        System.out.println("Optimal: ");
-        System.out.println("Z = " + objectiveValue);
-
-
-        model.dispose();
-        env.dispose();
-
-    }
 
         catch(GRBException e) {
             System.out.println("Error code: " + e.getErrorCode() + ". " +
@@ -401,11 +399,8 @@ public class ExactSolution {
 
     public void getRoute(int[][] routeMatrix, int v,int k){
         routeOfTrucks.get(k-1).add(data.locations[v]);
-        //"k-1" OR "k" ?????? !!!!!!
-        //System.out.println(k);
         for(int j=0;j<routeMatrix[v].length;j++){
             if(routeMatrix[v][j]==1 && j!=0){
-
                 getRoute(routeMatrix,j,k);
             }
         }
@@ -414,12 +409,10 @@ public class ExactSolution {
     public double[] solveTSP(){
         double[] objectiveValue = new double[2];
         try {
-
             GRBEnv env = new GRBEnv("VRP.log");
             GRBModel model = new GRBModel(env);
             int N = data.sapLocations.length;
             int[][] routeMatrix;
-
             //---------
             //DVs
             GRBVar[][] x = new GRBVar[N][N];
@@ -435,7 +428,6 @@ public class ExactSolution {
                 u[i] = model.addVar(0, N + 1, 0, GRB.INTEGER, "u_" + u);
             }
 
-
             //---------
             //OBJECTIVE [0]
             GRBLinExpr exprObj1 = new GRBLinExpr();
@@ -447,11 +439,10 @@ public class ExactSolution {
             }
             model.setObjective(exprObj1, GRB.MINIMIZE);
 
-
             //---------
             //S.T.
 
-//CONST 1
+            //CONST 1
             GRBLinExpr[] expr1 = new GRBLinExpr[N];
                 for (int i = 0; i < N; i++) {
                     expr1[i] = new GRBLinExpr();
@@ -464,7 +455,7 @@ public class ExactSolution {
             for (int i = 0; i < N; i++) {
                 model.addConstr(expr1[i], GRB.EQUAL, 1, "c1");
             }
-//CONST2
+            //CONST2
             GRBLinExpr[] expr2 = new GRBLinExpr[N];
             for (int i = 0; i < N; i++) {
                 expr2[i] = new GRBLinExpr();
@@ -522,9 +513,6 @@ public class ExactSolution {
 
             //Writing solution matrix of Xij for each vehicle k
             System.out.println();
-
-
-
                 ArrayList<Point> arr = new ArrayList<Point>();
                 routeOfTrucks.add(arr);
                 routeMatrix = new int[N][N];
@@ -534,8 +522,7 @@ public class ExactSolution {
                         int value = (int) Math.round(x[i][j].get(GRB.DoubleAttr.X));
                         // System.out.print(value);
                         routeMatrix[i][j] = value;
-
-                           /* if (j != (N - 1)) {
+                        /* if (j != (N - 1)) {
                                 System.out.print(",");
                             }*/
                     }
@@ -559,23 +546,24 @@ public class ExactSolution {
                     for (int i = 0; i < N; i++) {
                         for (int j = 0; j < N; j++) {
                             //Distance objective:
-                             objectiveValue[0] += data.distance[i][j] * x[i][j].get(GRB.DoubleAttr.X);
+                            objectiveValue[0] += data.distance[i][j] * x[i][j].get(GRB.DoubleAttr.X);
                             //Duration objective:
                             objectiveValue[1] = objectiveValue[1] + data.duration[i][j] * x[i][j].get(GRB.DoubleAttr.X) + data.tu[j]* x[i][j].get(GRB.DoubleAttr.X);
                         }
                     }
 
+                    System.out.println("distance: "+ objectiveValue[0]);
+                    System.out.println("time: "+ objectiveValue[1]);
+
             model.dispose();
             env.dispose();
-
         }
 
         catch(GRBException e) {
             System.out.println("Error code: " + e.getErrorCode() + ". " +
                     e.getMessage());
         }
+        objectiveValue[0]+=+ data.fixedCost;
         return objectiveValue;
     }
-
-
 }

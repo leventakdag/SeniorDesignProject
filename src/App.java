@@ -7,6 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Data data = readData();
         Heuristic heuristic1 = new Heuristic(data);
+        double z = 0;
 
         //EXACT SOL. from 401
         //ExactSolution exactsolution2 = new ExactSolution(data);
@@ -18,12 +19,13 @@ public class App {
 
         //CLARK & WRIGHT --> TSP
         ArrayList<Data> dataListForCW = new ArrayList<Data>();
-        dataListForCW = heuristic1.createClusterData(clarkAndWright1.Clist,data);
+        dataListForCW = heuristic1.createTSPData(clarkAndWright1.cList,data);
         for(int i=0;i<dataListForCW.size();i++){
             ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
-            exactsolutionCW.solveTSP();
+            z = z+ exactsolutionCW.solveTSP()[0];
         }
 
+        System.out.println("Objective is " + z);
         //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
 
@@ -134,8 +136,6 @@ public class App {
                 //System.out.println(data.locations[i]);
             }
             
-            
-
             for(int i=1;i<data.sapLocations.length;i++){
                 String OrderLine = bufferedReader3.readLine();
                 String[] OrderCells = OrderLine.split(",");
@@ -144,16 +144,14 @@ public class App {
                 data.weight[i]=Double.parseDouble(OrderCells[1]);
                 data.volume[i]=Double.parseDouble(OrderCells[2]);
             }
-   
-            
-           /* for(int i=0;i<data.sapLocations.length;i++){
+
+            /* for(int i=0;i<data.sapLocations.length;i++){
                 System.out.print(data.sapLocations[i]+" - ");
                 System.out.print(data.indicesOfVehicles.get(i)+" - ");
                 System.out.print(data.weight[i]+" - ");
                 System.out.print(data.volume[i]+" - ");
                 System.out.println();
             }*/
-
 
             //READING TIME DATA //
             for(int i=0;i<data.duration.length;i++){
@@ -174,7 +172,6 @@ public class App {
                 }
                 System.out.println();
             }*/
-
 
             //READING VEHICLES DATA
             for(int i=0;i<data.vehiclePlates.length;i++){
