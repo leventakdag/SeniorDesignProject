@@ -19,12 +19,13 @@ import javax.swing.*;
 
 public class Maps {
     private static final String API_KEY = "AIzaSyBZ_wraQALtbu8j7A7s1lFC5cPzb20oFQ0";
+    float[][][] m;
     float[][] timeMatrix;
+    float[][] distanceMatrix;
     private Data data;
     public Maps(Data data) {
         this.data = data;
     }
-
     public String getData(String source, String destination)throws Exception{
 
          var url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + source + "&destinations=" + destination + "&key=" + API_KEY;
@@ -34,9 +35,9 @@ public class Maps {
 
          return response;
     }
-
     public void parse(String response,int i,int j){
         long time = -1L;
+        long distance = -1L;
         //parsing json data and updating data
         {
             try {
@@ -49,28 +50,33 @@ public class Maps {
                 JSONObject je = (JSONObject) jo.get("distance");
                 JSONObject jf = (JSONObject) jo.get("duration");
                 time = (long) jf.get("value");
-                timeMatrix[i][j] = time;
-
-            } catch (Exception e) {
-
-            }
+                distance = (long) (je.get("value"));
+                timeMatrix[i][j] = time/60;
+                timeMatrix[j][i] = time/60;
+                distanceMatrix[i][j] = distance/1000;
+                distanceMatrix[j][i] = distance/1000;
+            } catch (Exception e) {}
         }
     }
-
-    public float[][] getTimeMatrix() throws Exception {
+    public float[][][] getMatrix() throws Exception {
         int n = data.locations.length;
+        m = new float[2][n][n];
         timeMatrix = new float[n][n];
-        for (int i =0; i < n; i++) {
+        distanceMatrix = new float[n][n];
+        for (int i =0 ; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i != j) {
                      String response = getData(String.valueOf(data.locations[i].getX())+"," + String.valueOf(data.locations[i].getY()), String.valueOf(data.locations[j].getX())+"," + String.valueOf(data.locations[j].getY()));
                       parse(response,i,j);
                 } else {
                     timeMatrix[i][j] = 1000000;
+                    distanceMatrix[i][j] = 1000000;
                 }
             }
         }
-        return timeMatrix;
+        m[0] = timeMatrix;
+        m[1] = distanceMatrix;
+        return m;
     }
 }
 

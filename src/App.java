@@ -13,19 +13,21 @@ public class App {
         //ExactSolution exactsolution2 = new ExactSolution(data);
         //exactsolution2.solveExact();
 
-        //CLARK & WRIGHT
-        ClarkeAndWright clarkAndWright1 = new ClarkeAndWright(data);
-        clarkAndWright1.solveClarkeAndWright();
+
+        //CLARKE & WRIGHT
+        ClarkeAndWright2 cW = new ClarkeAndWright2(data);
+        cW.solveClarkeAndWright();
 
         //CLARK & WRIGHT --> TSP
-        ArrayList<Data> dataListForCW = new ArrayList<Data>();
-        dataListForCW = heuristic1.createTSPData(clarkAndWright1.cList,data);
+        /*ArrayList<Data> dataListForCW = new ArrayList<Data>();
+        dataListForCW = heuristic1.createTSPData(cW.cList,data);
         for(int i=0;i<dataListForCW.size();i++){
             ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
-            z = z+ exactsolutionCW.solveTSP()[0];
+            z = z+ exactsolutionCW.solveTSP()[2];
         }
+        System.out.println();
+        System.out.println("Objective is " + z);*/
 
-        System.out.println("Objective is " + z);
         //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
 
@@ -51,32 +53,34 @@ public class App {
   //Unlimited CLustering - END
     */
 
-        // Maps maps = new Maps(data);
-
+        //Maps maps = new Maps(data);
+        //float[][][] m = maps.getMatrix();
 
 //Write Outputs and etc.
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
         String filePathTimeMatrix = "./outputs/TimeMatrix.csv";
+        String filePathDistanceMatrix = "./outputs/DistanceMatrix.csv";
         String filePathRoutes = "./outputs/Routes.csv";
         String filePathSolution = "./outputs/Solution.csv";
         String filePathClusterAnalysis = "./outputs/Cluster_analysis.csv";
 
-        //WriteOperations write = new WriteOperations();
+        WriteOperations write = new WriteOperations();
         //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
 
     //write.writeSolutionData(sList, filePathSolution);
     //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
     //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
-    // write.writeTimeMatrix(maps.getTimeMatrix(), filePathTimeMatrix);
+    //write.writeMatrix(m[0], filePathTimeMatrix);
+    //write.writeMatrix(m[1], filePathDistanceMatrix);
     //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
 
     private static Data readData() {
         int n=40;
         int k=9;
-        int wc=4500;
-        int vc=9;
+        int wc=9000;
+        int vc=20;
 
         Data data = new Data();
         data.locations = new Point[n+1];
@@ -99,8 +103,8 @@ public class App {
         FileReader fileReader5;
 
         try {
-            fileReader1 = new FileReader("./data/distances_40_customer_symetric.csv");
-            fileReader2 = new FileReader("./data/times_40_customer_symetric.csv");
+            fileReader1 = new FileReader("./outputs/DistanceMatrix.csv");
+            fileReader2 = new FileReader("./outputs/TimeMatrix.csv");
             fileReader3 = new FileReader("./data/orders_40_customer_manipulated.csv");
             fileReader4 = new FileReader("./data/vehicles_40_customer.csv");
             fileReader5 = new FileReader("./data/locations.csv");
@@ -111,31 +115,32 @@ public class App {
             BufferedReader bufferedReader4=new BufferedReader(fileReader4);
             BufferedReader bufferedReader5=new BufferedReader(fileReader5);
 
+            for(int i=0;i<(data.n+1);i++){
+                String Locations = bufferedReader5.readLine();
+                String[] LocationCells = Locations.split(",");
+                data.locations[i]= new Point(Double.parseDouble(LocationCells[2]), Double.parseDouble(LocationCells[3]), (Integer.parseInt(LocationCells[1]))-1);
+            }
+
             //READING DISTANCE DATA //
-            for(int i=0;i<data.distance.length;i++){
+            //Real distance
+            /*for(int i=0;i<data.distance.length;i++){
                 String DistanceLine=bufferedReader1.readLine();
                 String[] DistanceCells=DistanceLine.split(",");
                 for(int j=0;j<data.distance.length;j++){
                     data.distance[i][j] = Double.parseDouble(DistanceCells[j]);
                 }
-            } /*for(int i=0;i<data.distance.length;i++){
-                for(int j=0;j<data.distance.length;j++){
-                    System.out.print(data.distance[i][j]+",");
-                }
-                System.out.println();
             }*/
+            //Euclidean distance
+            for(int i=0;i<data.distance.length;i++){
+                for(int j=0;j<data.distance.length;j++){
+                    data.distance[i][j] = 400 * Math.sqrt((data.locations[i].getY() - data.locations[j].getY()) * (data.locations[i].getY() - data.locations[j].getY()) + (data.locations[i].getX() - data.locations[j].getX()) * (data.locations[i].getX() - data.locations[j].getX()));
+                }
+            }
 
             //READING ORDERS DATA //orders,locations...
             data.sapLocations[0]="SP_1000";
             data.indicesOfLocations.put(0,"SP_1000");
 
-            for(int i=0;i<(data.n+1);i++){
-                String Locations = bufferedReader5.readLine();
-                String[] LocationCells = Locations.split(",");
-                data.locations[i]= new Point(Double.parseDouble(LocationCells[2]), Double.parseDouble(LocationCells[3]), (Integer.parseInt(LocationCells[1]))-1);
-                //System.out.println(data.locations[i]);
-            }
-            
             for(int i=1;i<data.sapLocations.length;i++){
                 String OrderLine = bufferedReader3.readLine();
                 String[] OrderCells = OrderLine.split(",");
@@ -154,24 +159,24 @@ public class App {
             }*/
 
             //READING TIME DATA //
-            for(int i=0;i<data.duration.length;i++){
+            //Real time
+            /*for(int i=0;i<data.duration.length;i++){
                 String DurationLine=bufferedReader2.readLine();
                 String[] DurationCells=DurationLine.split(",");
                 for(int j=0;j<data.duration.length;j++){
                     data.duration[i][j] = Double.parseDouble(DurationCells[j]);
-                    //System.out.print(data.duration[i][j]+",");
                 }
-                //System.out.println();
+            }*/
+            //Euclidean time
+            for(int i = 0; i<data.duration.length;i++){
+                for(int j=0;j<data.duration.length;j++){
+                    data.duration[i][j] = data.distance[i][j];
+                }
             }
+
             for(int j=1;j<data.sapLocations.length;j++){
                 data.tu[j]=data.volume[j]*15;
             }
-          /*  for(int i=0;i<data.duration.length;i++){
-                for(int j=0;j<data.duration.length;j++){
-                    System.out.print(data.duration[i][j]+",");
-                }
-                System.out.println();
-            }*/
 
             //READING VEHICLES DATA
             for(int i=0;i<data.vehiclePlates.length;i++){
@@ -184,13 +189,7 @@ public class App {
                 data.weightCapacity[i]=wc;
                 data.volumeCapacity[i]=vc;
             }
-            /*for(int i=0;i<data.sapLocations.length;i++){
-                System.out.print(data.vehiclePlates[i]+" - ");
-                System.out.print(data.indicesOfVehicles.get(i)+" - ");
-                System.out.print(data.weightCapacity[i]+" - ");
-                System.out.print(data.volumeCapacity[i]+" - ");
-                System.out.println();
-            }*/
+
         } catch (FileNotFoundException e) {
             System.out.println(e);
         } catch (IOException e) {

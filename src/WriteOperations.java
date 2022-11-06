@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class WriteOperations {
 
-    public static void writeTimeMatrix(float[][] timeMatrix, String filePath) {
+    public static void writeMatrix(float[][] m, String filePath) {
         try {
             FileWriter fw = new FileWriter(filePath,true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
 
-            for(int i = 0; i < timeMatrix.length; i++) {
-                for(int j = 0; j < timeMatrix[i].length; j++) {
-                    pw.print(timeMatrix[i][j]);
+            for(int i = 0; i < m.length; i++) {
+                for(int j = 0; j < m[i].length; j++) {
+                    pw.print(m[i][j]);
                     pw.print(",");
                 }
                 pw.println();

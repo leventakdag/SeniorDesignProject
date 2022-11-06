@@ -60,6 +60,7 @@ public class ClarkeAndWright {
                 if(tempVehicleList.size() != 0){
                     for(int i = 0; i < tempVehicleList.size(); i++){
                         if(savingsList.get(k).getI() == tempVehicleList.get(i).getRoute().get(0).getID()){
+                            //If only one point is assigned
                             if(!isItAlreadyAssigned(tempVehicleList, savingsList.get(k).getJ())){
                                 if((tempVehicleList.get(i).getVolumeLoaded() + (data.volume[savingsList.get(k).getJ()]))<=data.volumeCapacity[i]&&(tempVehicleList.get(i).getWeightLoaded() + (data.weight[savingsList.get(k).getJ()]))<=data.weightCapacity[i]&&(tempVehicleList.get(i).getTotalTime() - (data.duration[0][savingsList.get(k).getI()]) + (data.duration[0][savingsList.get(k).getJ()]) + (data.duration[savingsList.get(k).getJ()][savingsList.get(k).getI()]) + data.tu[savingsList.get(k).getJ()])<=data.T){
                                     tempVehicleList.get(i).getRoute().add(0,data.locations[savingsList.get(k).getJ()]);
@@ -75,6 +76,7 @@ public class ClarkeAndWright {
                                     //System.out.println("Could not assign due to limits");
                                 }
                             }
+
                         }
                         if(savingsList.get(k).getI() == tempVehicleList.get(i).getRoute().get(tempVehicleList.get(i).getRoute().size()-1).getID()){
                             if(!isItAlreadyAssigned(tempVehicleList, savingsList.get(k).getJ())){

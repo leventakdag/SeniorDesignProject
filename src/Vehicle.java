@@ -25,9 +25,7 @@ public class Vehicle {
     public void setTD(double td) {
         this.totalDistance = td;
     }
-    public void setRoute(ArrayList<Point> r) {
-        this.route = r;
-    }
+    public void setRoute(ArrayList<Point> r) {this.route = r;}
     public double getWeightLoaded() {
         return weightLoaded;
     }

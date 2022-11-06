@@ -5,7 +5,7 @@ public class Data {
     public int n;//number of customers
     public int k; //Number
     public double c = 1.0; //Cost per km of Vehicles
-    public double T=180;
+    public double T=700;
     public double fixedCost = 30; //Real value is unknown
     public int Cmax = 24;
     public Point[] locations;

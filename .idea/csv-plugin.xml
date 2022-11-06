@@ -52,6 +52,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/data/times_40_customer_symetric.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/data/vehicles_40_customer.csv">
           <value>
             <Attribute>
@@ -60,6 +67,13 @@
           </value>
         </entry>
         <entry key="/outputs/Cluster_analysis.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/outputs/DistanceMatrix.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
