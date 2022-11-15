@@ -66,13 +66,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/outputs/Cluster_analysis.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/outputs/DistanceMatrix.csv">
           <value>
             <Attribute>
