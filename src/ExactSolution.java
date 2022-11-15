@@ -15,7 +15,7 @@ public class ExactSolution {
         try {
             GRBEnv env = new GRBEnv("VRP.log");
             GRBModel model = new GRBModel(env);
-            int N = data.sapLocations.length;
+            int N = data.locations.length;
             int K = data.vehiclePlates.length;
             int[][] routeMatrix;
 
@@ -312,11 +312,15 @@ public class ExactSolution {
             System.out.println();
 
             //Writing Yk
+            int numberOfVehiclesUsed = 0;
             System.out.println("Is vehicle k is used? (Yk)");
             for (int k = 0; k < K; k++) {
                 System.out.print("Y" + (k + 1) + ": ");
                 int value = (int) Math.round(y[k].get(GRB.DoubleAttr.X));
                 System.out.println(value);
+                if(value==1){
+                    numberOfVehiclesUsed ++;
+                }
             }
             System.out.println(N);
 
@@ -347,6 +351,9 @@ public class ExactSolution {
                     for (int i = 0; i < N; i++) {
                         for (int j = 0; j < N; j++) {
                             distanceOf[k] = distanceOf[k] + data.distance[i][j] * (x[i][j][k].get(GRB.DoubleAttr.X));
+                            if((x[i][j][k].get(GRB.DoubleAttr.X) > 0)){
+                                System.out.println(data.distance[i][j] + " - " + data.duration[i][j]);
+                            }
                             durationOf[k] = durationOf[k] + (data.duration[i][j] * (x[i][j][k].get(GRB.DoubleAttr.X)));
                             objectiveValue = objectiveValue + data.distance[i][j] * x[i][j][k].get(GRB.DoubleAttr.X);
                         }
@@ -384,6 +391,8 @@ public class ExactSolution {
             //Writing optimal solution
             System.out.println();
             System.out.println("Optimal: ");
+
+            objectiveValue = objectiveValue + (data.fixedCost*numberOfVehiclesUsed);
             System.out.println("Z = " + objectiveValue);
 
             model.dispose();

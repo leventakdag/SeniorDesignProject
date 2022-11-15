@@ -1,32 +1,36 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class App {
 
 
     public static void main(String[] args) throws Exception {
-        Data data = readData();
+        //Data data = readData();
+        Data data = createRandomData();
         Heuristic heuristic1 = new Heuristic(data);
-        double z = 0;
 
         //EXACT SOL. from 401
-        //ExactSolution exactsolution2 = new ExactSolution(data);
-        //exactsolution2.solveExact();
+        ExactSolution exactsolution2 = new ExactSolution(data);
+        exactsolution2.solveExact();
 
+        System.out.println("----------------------------------------");
+        System.out.println("Ve Huzurlarinizda... CLARKE & WRIGHT !!!");
 
         //CLARKE & WRIGHT
         ClarkeAndWright2 cW = new ClarkeAndWright2(data);
         cW.solveClarkeAndWright();
+        double z = 0;
 
         //CLARK & WRIGHT --> TSP
-        /*ArrayList<Data> dataListForCW = new ArrayList<Data>();
+        ArrayList<Data> dataListForCW = new ArrayList<Data>();
         dataListForCW = heuristic1.createTSPData(cW.cList,data);
         for(int i=0;i<dataListForCW.size();i++){
             ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
             z = z+ exactsolutionCW.solveTSP()[2];
         }
         System.out.println();
-        System.out.println("Objective is " + z);*/
+        System.out.println("Objective is " + z);
 
         //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
@@ -76,11 +80,12 @@ public class App {
     //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
 
+
     private static Data readData() {
         int n=40;
         int k=9;
-        int wc=9000;
-        int vc=20;
+        int wc=4500;
+        int vc=9;
 
         Data data = new Data();
         data.locations = new Point[n+1];
@@ -195,6 +200,69 @@ public class App {
         } catch (IOException e) {
             System.out.println(e);
         }
+        return data;
+    }
+
+
+    //RANDOM DATA
+    private static Data createRandomData(){
+        int n=13;
+        int k=5;
+        int wc=4500;
+        int vc=9;
+
+        Data data = new Data();
+        data.locations = new Point[n+1];
+        data.n = n;
+        data.k = k;
+        data.distance = new double[n+1][n+1];
+        data.duration = new double[n+1][n+1];
+        data.tu = new double[n+1];
+        data.weightCapacity = new double[k];
+        data.volumeCapacity = new double[k];
+        data.weight = new double[n+1];
+        data.volume = new double[n+1];
+        data.sapLocations = new String[n+1];
+        data.vehiclePlates = new String[k];
+
+        data.c = 1;
+
+        //Creating LOCCATIONS
+        data.locations[0] = new Point(40.25+(Math.random()/2),49.25+(Math.random()/2),0);
+        for(int i=1;i<n+1;i++){
+            double x = 40 + Math.random();
+            double y = 49 + Math.random();
+            data.locations[i]= new Point(x,y,i);
+        }
+
+        //DISTANCE
+        for(int i=0;i<n+1;i++){
+            for(int j=0;j<n+1;j++){
+                double distX = 72.2 * (data.locations[i].getX() - data.locations[j].getX());
+                double distY = 111 * (data.locations[i].getY() - data.locations[j].getY());
+                data.distance[i][j] =  Math.sqrt(distX*distX + distY*distY);
+            }
+        }
+
+        //Create random ORDERs
+        for(int i=1;i<n+1;i++){
+            data.weight[i] = 270 + 600 * Math.random();
+            data.volume[i] = 0.798 + 0.59 * Math.random();
+            data.tu[i] = data.volume[i]*15;
+        }
+
+        for(int i = 0; i<data.duration.length;i++){
+            for(int j=0;j<data.duration.length;j++){
+                data.duration[i][j] = 2 * data.distance[i][j];
+            }
+        }
+
+        for(int i=0;i<data.k;i++) {
+            data.weightCapacity[i] = wc;
+            data.volumeCapacity[i] = vc;
+        }
+
+
         return data;
     }
 
