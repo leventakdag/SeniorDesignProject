@@ -1,11 +1,11 @@
 import gurobi.*;
 
-import java.nio.channels.Pipe;
 import java.util.ArrayList;
 
 public class ExactSolution {
     private Data data;
     public ArrayList<ArrayList<Point>> routeOfTrucks= new ArrayList<ArrayList<Point>>();
+    double objectiveValueOfVRP;
 
     ExactSolution(Data data) {
         this.data = data;
@@ -344,18 +344,16 @@ public class ExactSolution {
             double[] durationOf = new double[K];
             double[] loadedWeightOf = new double[K];
             double[] loadedVolumeOf = new double[K];
-            double objectiveValue = 0;
+            //double objectiveValue = 0;
+            objectiveValueOfVRP = 0;
 
             for (int k = 0; k < K; k++) {
                 if(y[k].get(GRB.DoubleAttr.X)==1.0){
                     for (int i = 0; i < N; i++) {
                         for (int j = 0; j < N; j++) {
                             distanceOf[k] = distanceOf[k] + data.distance[i][j] * (x[i][j][k].get(GRB.DoubleAttr.X));
-                            if((x[i][j][k].get(GRB.DoubleAttr.X) > 0)){
-                                System.out.println(data.distance[i][j] + " - " + data.duration[i][j]);
-                            }
                             durationOf[k] = durationOf[k] + (data.duration[i][j] * (x[i][j][k].get(GRB.DoubleAttr.X)));
-                            objectiveValue = objectiveValue + data.distance[i][j] * x[i][j][k].get(GRB.DoubleAttr.X);
+                            objectiveValueOfVRP = objectiveValueOfVRP + data.distance[i][j] * x[i][j][k].get(GRB.DoubleAttr.X);
                         }
                         durationOf[k] = durationOf[k] + (data.tu[i] * (z[i][k].get(GRB.DoubleAttr.X)));
                         loadedWeightOf[k] = loadedWeightOf[k] + data.weight[i] * z[i][k].get(GRB.DoubleAttr.X);
@@ -392,8 +390,8 @@ public class ExactSolution {
             System.out.println();
             System.out.println("Optimal: ");
 
-            objectiveValue = objectiveValue + (data.fixedCost*numberOfVehiclesUsed);
-            System.out.println("Z = " + objectiveValue);
+            objectiveValueOfVRP = objectiveValueOfVRP + (data.fixedCost*numberOfVehiclesUsed);
+            System.out.println("Z = " + objectiveValueOfVRP);
 
             model.dispose();
             env.dispose();

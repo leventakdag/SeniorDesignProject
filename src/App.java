@@ -32,6 +32,8 @@ public class App {
         System.out.println();
         System.out.println("Objective is " + z);
 
+        double optimalFromExact = exactsolution2.objectiveValueOfVRP;
+
         //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
 
@@ -206,7 +208,7 @@ public class App {
 
     //RANDOM DATA
     private static Data createRandomData(){
-        int n=13;
+        int n=17;
         int k=5;
         int wc=4500;
         int vc=9;
@@ -227,7 +229,7 @@ public class App {
 
         data.c = 1;
 
-        //Creating LOCCATIONS
+        //Creating LOCATIONS
         data.locations[0] = new Point(40.25+(Math.random()/2),49.25+(Math.random()/2),0);
         for(int i=1;i<n+1;i++){
             double x = 40 + Math.random();
@@ -238,9 +240,13 @@ public class App {
         //DISTANCE
         for(int i=0;i<n+1;i++){
             for(int j=0;j<n+1;j++){
-                double distX = 72.2 * (data.locations[i].getX() - data.locations[j].getX());
-                double distY = 111 * (data.locations[i].getY() - data.locations[j].getY());
-                data.distance[i][j] =  Math.sqrt(distX*distX + distY*distY);
+                if(i==j){
+                    data.distance[i][j] = 100000;
+                }else{
+                    double distX = 72.2 * (data.locations[i].getX() - data.locations[j].getX());
+                    double distY = 111 * (data.locations[i].getY() - data.locations[j].getY());
+                    data.distance[i][j] =  Math.sqrt(distX*distX + distY*distY);
+                }
             }
         }
 
