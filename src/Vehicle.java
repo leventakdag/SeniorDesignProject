@@ -20,7 +20,8 @@ public class Vehicle {
         this.volumeLoaded = vl;
     }
     public void setTT(double tt) {
-        this.totalTime = tt;
+        this.totalTime
+                = tt;
     }
     public void setTD(double td) {
         this.totalDistance = td;

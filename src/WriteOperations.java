@@ -5,6 +5,35 @@ import java.util.ArrayList;
 
 public class WriteOperations {
 
+    public static void writeRandomCW_TSP_Solutions(Data data, String filePathCW, double optimalFromExact, double optimalFromCW, double optimalFromCW_TSP){
+        try {
+            FileWriter fw = new FileWriter(filePathCW,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+                /*
+                pw.print("Number of Nodes" + ",");
+                pw.print("Exact Sol." + ",");
+                pw.print("CW Sol." + ",");
+                pw.print("CW + TSP Sol." + ",");
+                pw.print("Time to solve ..."+",");
+                pw.println();
+*/
+
+                pw.print( data.n + ",");
+                pw.print(optimalFromExact + ",");
+                pw.print(optimalFromCW + ",");
+                pw.print(optimalFromCW_TSP + ",");
+
+                pw.println();
+
+
+            pw.flush();
+            pw.close();
+        } catch (Exception E) {
+
+        }
+    }
+
     public static void writeMatrix(float[][] m, String filePath) {
         try {
             FileWriter fw = new FileWriter(filePath,true);

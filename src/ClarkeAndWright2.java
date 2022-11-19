@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 public class ClarkeAndWright2 {
+    public double netObjective;
     public ArrayList<ArrayList<Point>> cList = new ArrayList<>();
     private Data data;
     public ClarkeAndWright2(Data Data) {
@@ -194,6 +195,8 @@ public class ClarkeAndWright2 {
         }
         System.out.println();
         System.out.println("Total cost is: " + z);
+
+        netObjective = z;
 
         //filling cList
         for(int i = 0; i < vehicleList.size(); i++) {

@@ -8,23 +8,29 @@ public class App {
     public static void main(String[] args) throws Exception {
         //Data data = readData();
         Data data = createRandomData();
+
         Heuristic heuristic1 = new Heuristic(data);
 
         //EXACT SOL. from 401
         ExactSolution exactsolution2 = new ExactSolution(data);
         exactsolution2.solveExact();
 
+        double optimalFromExact = exactsolution2.objectiveValueOfVRP;
+        int routeNumberExact = exactsolution2.routeOfTrucks.size();
+
         System.out.println("----------------------------------------");
-        System.out.println("Ve Huzurlarinizda... CLARKE & WRIGHT !!!");
+        System.out.println("=============CLARKE & WRIGHT !!!=============");
 
         //CLARKE & WRIGHT
         ClarkeAndWright2 cW = new ClarkeAndWright2(data);
         cW.solveClarkeAndWright();
+        double optimalFromCW = cW.netObjective;
         double z = 0;
 
         //CLARK & WRIGHT --> TSP
         ArrayList<Data> dataListForCW = new ArrayList<Data>();
         dataListForCW = heuristic1.createTSPData(cW.cList,data);
+
         for(int i=0;i<dataListForCW.size();i++){
             ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
             z = z+ exactsolutionCW.solveTSP()[2];
@@ -32,7 +38,8 @@ public class App {
         System.out.println();
         System.out.println("Objective is " + z);
 
-        double optimalFromExact = exactsolution2.objectiveValueOfVRP;
+        double optimalFromCW_TSP = z;
+
 
         //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
@@ -63,6 +70,7 @@ public class App {
         //float[][][] m = maps.getMatrix();
 
 //Write Outputs and etc.
+        String filePathRandomDataAnalysis = "./outputs/Random_Data_Analysis.csv";
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
         String filePathTimeMatrix = "./outputs/TimeMatrix.csv";
@@ -72,6 +80,7 @@ public class App {
         String filePathClusterAnalysis = "./outputs/Cluster_analysis.csv";
 
         WriteOperations write = new WriteOperations();
+        write.writeRandomCW_TSP_Solutions(data, filePathRandomDataAnalysis, optimalFromExact, optimalFromCW,optimalFromCW_TSP);
         //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
 
     //write.writeSolutionData(sList, filePathSolution);
