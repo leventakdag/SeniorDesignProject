@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class ExactSolution {
     private Data data;
     public ArrayList<ArrayList<Point>> routeOfTrucks= new ArrayList<ArrayList<Point>>();
-    double objectiveValueOfVRP;
+    public double objectiveValueOfVRP;
+    public int numberOfVehiclesUsed ;
 
     ExactSolution(Data data) {
         this.data = data;
@@ -312,7 +313,7 @@ public class ExactSolution {
             System.out.println();
 
             //Writing Yk
-            int numberOfVehiclesUsed = 0;
+            numberOfVehiclesUsed = 0;
             System.out.println("Is vehicle k is used? (Yk)");
             for (int k = 0; k < K; k++) {
                 System.out.print("Y" + (k + 1) + ": ");

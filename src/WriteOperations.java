@@ -5,27 +5,46 @@ import java.util.ArrayList;
 
 public class WriteOperations {
 
-    public static void writeRandomCW_TSP_Solutions(Data data, String filePathCW, double optimalFromExact, double optimalFromCW, double optimalFromCW_TSP){
+    public static void writeRandomCW_TSP_Solutions(Data data, String filePathCW, double optimalFromExact, double optimalFromCW, double optimalFromCW_TSP,int routeNumberExact,int routeNumberCW, long timeExact,long timeCW, long timeTSP){
         try {
             FileWriter fw = new FileWriter(filePathCW,true);
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
-                /*
+/*
                 pw.print("Number of Nodes" + ",");
+                pw.print("Number of Routes in Exact" + ",");
                 pw.print("Exact Sol." + ",");
-                pw.print("CW Sol." + ",");
-                pw.print("CW + TSP Sol." + ",");
-                pw.print("Time to solve ..."+",");
+                pw.print("Exact Runtime" + ",");
+                pw.print("Number of Routes in C.W." + ",");
+                pw.print("C.W. Sol." + ",");
+                pw.print("C.W. Runtime" + ",");
+                pw.print("C.W.+TSP Sol." + ",");
+                pw.print("C.W.+TSP Runtime" + ",");
                 pw.println();
 */
 
-                pw.print( data.n + ",");
-                pw.print(optimalFromExact + ",");
-                pw.print(optimalFromCW + ",");
-                pw.print(optimalFromCW_TSP + ",");
+            pw.print( data.n + ",");
+            pw.print(routeNumberExact + ",");
+            pw.print(optimalFromExact + ",");
+            pw.print(timeExact + ",");
+            pw.print(routeNumberCW + ",");
+            pw.print(optimalFromCW + ",");
+            pw.print(timeCW + ",");
+            pw.print(optimalFromCW_TSP + ",");
+            pw.print((timeCW+timeTSP) + ",");
 
-                pw.println();
-
+            pw.println();
+            System.out.println("-------  -------");
+            System.out.println("TEST OUTPUTS:");
+            System.out.println("n: "+data.n);
+            System.out.println("k_Exact: " + routeNumberExact);
+            System.out.println("Z_exact: " + optimalFromExact);
+            System.out.println("T_exact: " + timeExact);
+            System.out.println("k_CW: " + routeNumberCW);
+            System.out.println("Z_CW: " + optimalFromCW);
+            System.out.println("T_CW: " + timeCW);
+            System.out.println("Z_CW_TSP: " + optimalFromCW_TSP);
+            System.out.println("T_CW_TSP: " + timeCW+timeTSP);
 
             pw.flush();
             pw.close();

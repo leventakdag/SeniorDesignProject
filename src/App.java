@@ -6,42 +6,11 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
-        //Data data = readData();
-        Data data = createRandomData();
-
-        Heuristic heuristic1 = new Heuristic(data);
-
-        //EXACT SOL. from 401
-        ExactSolution exactsolution2 = new ExactSolution(data);
-        exactsolution2.solveExact();
-
-        double optimalFromExact = exactsolution2.objectiveValueOfVRP;
-        int routeNumberExact = exactsolution2.routeOfTrucks.size();
-
-        System.out.println("----------------------------------------");
-        System.out.println("=============CLARKE & WRIGHT !!!=============");
-
-        //CLARKE & WRIGHT
-        ClarkeAndWright2 cW = new ClarkeAndWright2(data);
-        cW.solveClarkeAndWright();
-        double optimalFromCW = cW.netObjective;
-        double z = 0;
-
-        //CLARK & WRIGHT --> TSP
-        ArrayList<Data> dataListForCW = new ArrayList<Data>();
-        dataListForCW = heuristic1.createTSPData(cW.cList,data);
-
-        for(int i=0;i<dataListForCW.size();i++){
-            ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
-            z = z+ exactsolutionCW.solveTSP()[2];
+        for(int i=0;i<40;i++){
+            testSolver();
         }
-        System.out.println();
-        System.out.println("Objective is " + z);
 
-        double optimalFromCW_TSP = z;
-
-
-        //CLUSTER:
+ //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
 
  /*
@@ -63,14 +32,16 @@ public class App {
                 tspDist[i] = exactsolution.solveTSP();
             }
         }
-  //Unlimited CLustering - END
+//Unlimited CLustering - END
     */
 
+
+//???
         //Maps maps = new Maps(data);
         //float[][][] m = maps.getMatrix();
 
+
 //Write Outputs and etc.
-        String filePathRandomDataAnalysis = "./outputs/Random_Data_Analysis.csv";
         String filePathLimited = "./outputs/OutputLimited.csv";
         String filePathUnlimited = "./outputs/OutputUnlimited.csv";
         String filePathTimeMatrix = "./outputs/TimeMatrix.csv";
@@ -79,9 +50,7 @@ public class App {
         String filePathSolution = "./outputs/Solution.csv";
         String filePathClusterAnalysis = "./outputs/Cluster_analysis.csv";
 
-        WriteOperations write = new WriteOperations();
-        write.writeRandomCW_TSP_Solutions(data, filePathRandomDataAnalysis, optimalFromExact, optimalFromCW,optimalFromCW_TSP);
-        //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
+     //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
 
     //write.writeSolutionData(sList, filePathSolution);
     //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
@@ -89,6 +58,59 @@ public class App {
     //write.writeMatrix(m[0], filePathTimeMatrix);
     //write.writeMatrix(m[1], filePathDistanceMatrix);
     //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
+    }
+
+
+    private static void testSolver(){
+        //Data data = readData();
+        Data data = createRandomData();
+
+        Heuristic heuristic1 = new Heuristic(data);
+
+        //EXACT SOL. from 401
+        long start_timeExact = System.currentTimeMillis();
+        ExactSolution exactsolution2 = new ExactSolution(data);
+        exactsolution2.solveExact();
+        long end_timeExact = System.currentTimeMillis();
+        long timeExact = (end_timeExact - start_timeExact)/1000;
+        double optimalFromExact = exactsolution2.objectiveValueOfVRP;
+        int routeNumberExact = exactsolution2.numberOfVehiclesUsed;
+
+
+        System.out.println("----------------------------------------");
+        System.out.println("=============CLARKE & WRIGHT !!!=============");
+
+        //CLARKE & WRIGHT
+        long start_timeCW = System.currentTimeMillis();
+        ClarkeAndWright2 cW = new ClarkeAndWright2(data);
+        cW.solveClarkeAndWright();
+        long end_timeCW = System.currentTimeMillis();
+        long timeCW = (end_timeCW - start_timeCW)/1000;
+        double optimalFromCW = cW.netObjective;
+        int routeNumberCW = cW.cList.size();
+        double z = 0;
+
+
+        //CLARK & WRIGHT --> TSP
+        long start_timeTSP = System.currentTimeMillis();
+        ArrayList<Data> dataListForCW = new ArrayList<Data>();
+        dataListForCW = heuristic1.createTSPData(cW.cList,data);
+
+        for(int i=0;i<dataListForCW.size();i++){
+            ExactSolution exactsolutionCW = new ExactSolution(dataListForCW.get(i));
+            z = z+ exactsolutionCW.solveTSP()[2];
+        }
+        System.out.println();
+        System.out.println("Objective is " + z);
+        long end_timeTSP = System.currentTimeMillis();
+        long timeTSP = (end_timeTSP - start_timeTSP)/1000;
+        double optimalFromCW_TSP = z;
+
+        String filePathRandomDataAnalysis = "./outputs/Random_Data_Analysis.csv";
+        WriteOperations write = new WriteOperations();
+        write.writeRandomCW_TSP_Solutions(data, filePathRandomDataAnalysis,
+                optimalFromExact, optimalFromCW,optimalFromCW_TSP, routeNumberExact, routeNumberCW,
+                timeExact,timeCW,timeTSP);
     }
 
 
@@ -217,7 +239,7 @@ public class App {
 
     //RANDOM DATA
     private static Data createRandomData(){
-        int n=17;
+        int n=15;
         int k=5;
         int wc=4500;
         int vc=9;
