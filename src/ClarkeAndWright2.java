@@ -180,7 +180,8 @@ public class ClarkeAndWright2 {
         }
         //printing the list
         for(int i = 0; i < vehicleList.size(); i++){
-            z += data.c * vehicleList.get(i).getTotalDistance() + data.fixedCost;
+            z += data.c * vehicleList.get(i).getTotalDistance();
+            z += data.fixedCost;
 
             System.out.println("Vehicle " + i);
             System.out.println("Vehicle weight: " + vehicleList.get(i).getWeightLoaded());

@@ -58,11 +58,11 @@ public class ExactSolution {
                     }
                 }
             }
-           /* GRBLinExpr exprObj2 = new GRBLinExpr();
+            GRBLinExpr exprObj2 = new GRBLinExpr();
             for (int k = 0; k < K; k++) {
                 exprObj2.addTerm(data.fixedCost, y[k]);
             }
-            exprObj1.add(exprObj2);*/
+            exprObj1.add(exprObj2);
             model.setObjective(exprObj1, GRB.MINIMIZE);
 
 

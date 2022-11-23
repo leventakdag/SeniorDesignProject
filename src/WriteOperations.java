@@ -5,6 +5,29 @@ import java.util.ArrayList;
 
 public class WriteOperations {
 
+    public static void writeRandomCoordinates(String filePathCoordinates, int i, double x, double y){
+        try {
+            FileWriter fw = new FileWriter(filePathCoordinates,true);
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+/*
+                pw.print("Point id" + ",");
+                pw.print("X" + ",");
+                pw.print("Y" + ",");
+                pw.println();
+*/
+            pw.print( i + ",");
+            pw.print(x + ",");
+            pw.print(y + ",");
+            pw.println();
+
+            pw.flush();
+            pw.close();
+        } catch (Exception E) {
+
+        }
+    }
+
     public static void writeRandomCW_TSP_Solutions(Data data, String filePathCW, double optimalFromExact, double optimalFromCW, double optimalFromCW_TSP,int routeNumberExact,int routeNumberCW, long timeExact,long timeCW, long timeTSP){
         try {
             FileWriter fw = new FileWriter(filePathCW,true);

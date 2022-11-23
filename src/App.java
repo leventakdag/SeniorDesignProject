@@ -6,9 +6,9 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
-        for(int i=0;i<40;i++){
+        //for(int i=0;i<5;i++){
             testSolver();
-        }
+       // }
 
  //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
@@ -261,11 +261,17 @@ public class App {
         data.c = 1;
 
         //Creating LOCATIONS
-        data.locations[0] = new Point(40.25+(Math.random()/2),49.25+(Math.random()/2),0);
+        double x_WH = 40.25+(Math.random()/2);
+        double y_WH = 49.25+(Math.random()/2);
+        data.locations[0] = new Point(x_WH,y_WH,0);
+        String filePathLimited = "./outputs/OutputRandomCoordinates.csv";
+        WriteOperations writeOperations = new WriteOperations();
+        writeOperations.writeRandomCoordinates(filePathLimited,0,x_WH,y_WH);
         for(int i=1;i<n+1;i++){
             double x = 40 + Math.random();
             double y = 49 + Math.random();
             data.locations[i]= new Point(x,y,i);
+            writeOperations.writeRandomCoordinates(filePathLimited,i,x,y);
         }
 
         //DISTANCE
