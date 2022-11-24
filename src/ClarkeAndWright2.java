@@ -41,6 +41,7 @@ public class ClarkeAndWright2 {
         int n = 0;
         ArrayList<Vehicle> vehicleList = new ArrayList<Vehicle>();
         ArrayList<Saving> savingsList = savingsList();
+        ArrayList<Integer> assignedPoints = new ArrayList<Integer>();
         //ArrayList<Integer> assignedPoints = new ArrayList<Integer>();
         boolean stop = false;
         while(!stop && n < savingsList.size()) {
@@ -69,6 +70,8 @@ public class ClarkeAndWright2 {
                 Vehicle v = new Vehicle((data.weight[pJ])+(data.weight[pI]),(data.volume[pJ]) + (data.volume[pI]), tempTime, tempDistance, tempList);
                 vehicleList.add(v);
                 //System.out.println("Creating a new vehicle!");
+                assignedPoints.add(pI);
+                assignedPoints.add(pJ);
             }
 
             //if only one point is assigned to a vehicle and it is not interior, add other point to the vehicle
@@ -80,6 +83,7 @@ public class ClarkeAndWright2 {
                     vehicleList.get(vI).setTT(vehicleList.get(vI).getTotalTime() - data.duration[0][pI] + data.duration[0][pJ] + data.duration[pJ][pI] + data.tu[pJ]);
                     vehicleList.get(vI).setTD(vehicleList.get(vI).getTotalDistance() - data.distance[0][pI] + data.distance[0][pJ] + data.distance[pJ][pI]);
                     //System.out.println("case 1");
+                    assignedPoints.add(pJ);
                 }
             }
             if(oI == 2 && vJ == -1){
@@ -90,6 +94,7 @@ public class ClarkeAndWright2 {
                     vehicleList.get(vI).setTT(vehicleList.get(vI).getTotalTime() - data.duration[pI][0] + data.duration[pI][pJ] + data.duration[pJ][0] + data.tu[pJ]);
                     vehicleList.get(vI).setTD(vehicleList.get(vI).getTotalDistance() - data.distance[pI][0] + data.distance[pI][pJ] + data.distance[pJ][0]);
                     //System.out.println("case 2");
+                    assignedPoints.add(pJ);
                 }
             }
             if(oJ == 1 && vI == -1){
@@ -100,6 +105,7 @@ public class ClarkeAndWright2 {
                     vehicleList.get(vJ).setTT(vehicleList.get(vJ).getTotalTime() - data.duration[0][pJ] + data.duration[0][pI] + data.duration[pI][pJ] + data.tu[pI]);
                     vehicleList.get(vJ).setTD(vehicleList.get(vJ).getTotalDistance() - data.distance[0][pJ] + data.distance[0][pI] + data.distance[pI][pJ]);
                     //System.out.println("case 3");
+                    assignedPoints.add(pI);
                 }
             }
             if(oJ == 2 && vI == -1){
@@ -110,6 +116,7 @@ public class ClarkeAndWright2 {
                     vehicleList.get(vJ).setTT(vehicleList.get(vJ).getTotalTime() - data.duration[pJ][0] + data.duration[pJ][pI] + data.duration[pI][0] + data.tu[pI]);
                     vehicleList.get(vJ).setTD(vehicleList.get(vJ).getTotalDistance() - data.distance[pJ][0] + data.distance[pJ][pI] + data.distance[pI][0]);
                     //System.out.println("case 4");
+                    assignedPoints.add(pI);
                 }
             }
 
@@ -178,6 +185,26 @@ public class ClarkeAndWright2 {
             }*/
             n++;
         }
+        //if there is an unassigned point, create a new vehicle
+        for(int i = 0; i < data.n+1; i++){
+            boolean isItAssigned = false;
+            for(int j = 0; j < assignedPoints.size()+1; j++){
+                if(i == assignedPoints.get(j)){
+                    isItAssigned = true;
+                }
+            }
+            if(isItAssigned == false){
+                ArrayList<Point> tempList = new ArrayList<Point>();
+                tempList.add(data.locations[i]);
+                double tempTime = 0;
+                tempTime = data.duration[0][i] +  + data.duration[i][0] + data.tu[i];
+                double tempDistance = 0;
+                tempDistance = data.distance[0][i] + data.distance[0][i];
+                Vehicle v = new Vehicle((data.weight[i]),(data.volume[i]), tempTime, tempDistance, tempList);
+                vehicleList.add(v);
+            }
+        }
+
         //printing the list
         for(int i = 0; i < vehicleList.size(); i++){
             z += data.c * vehicleList.get(i).getTotalDistance();
