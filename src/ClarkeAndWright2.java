@@ -186,14 +186,10 @@ public class ClarkeAndWright2 {
             n++;
         }
         //if there is an unassigned point, create a new vehicle
-        for(int i = 0; i < data.n+1; i++){
-            boolean isItAssigned = false;
-            for(int j = 0; j < assignedPoints.size()+1; j++){
-                if(i == assignedPoints.get(j)){
-                    isItAssigned = true;
-                }
-            }
-            if(isItAssigned == false){
+        for(int i = 1; i < data.n+1; i++){
+            if(!assignedPoints.contains(i)) {
+                System.out.println("alo");
+                System.out.println(i);
                 ArrayList<Point> tempList = new ArrayList<Point>();
                 tempList.add(data.locations[i]);
                 double tempTime = 0;
