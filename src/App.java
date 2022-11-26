@@ -62,8 +62,8 @@ public class App {
 
 
     private static void testSolver(){
-        //Data data = readData();
-        Data data = createRandomData();
+        Data data = readData();
+        //Data data = createRandomData();
 
         Heuristic heuristic1 = new Heuristic(data);
 
@@ -115,7 +115,7 @@ public class App {
 
 
     private static Data readData() {
-        int n=40;
+        int n=10;
         int k=9;
         int wc=4500;
         int vc=9;
