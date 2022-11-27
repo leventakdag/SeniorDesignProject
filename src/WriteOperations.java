@@ -28,7 +28,7 @@ public class WriteOperations {
         }
     }
 
-    public static void writeRandomCW_TSP_Solutions(Data data, String filePathCW, double optimalFromExact, double optimalFromCW, double optimalFromCW_TSP,int routeNumberExact,int routeNumberCW, long timeExact,long timeCW, long timeTSP){
+    public static void writeRandomCW_TSP_Solutions(Data data, String filePathCW, double optimalFromExact, double optimalFromCW, double optimalFromCW_TSP,int routeNumberExact,int routeNumberCW, double timeExact,double timeCW, double timeTSP){
         try {
             FileWriter fw = new FileWriter(filePathCW,true);
             BufferedWriter bw = new BufferedWriter(fw);
@@ -54,7 +54,8 @@ public class WriteOperations {
             pw.print(optimalFromCW + ",");
             pw.print(timeCW + ",");
             pw.print(optimalFromCW_TSP + ",");
-            pw.print((timeCW+timeTSP) + ",");
+            double time_CW_TSP = timeCW+timeTSP;
+            pw.print(time_CW_TSP + ",");
 
             pw.println();
             System.out.println("-------  -------");
@@ -67,7 +68,7 @@ public class WriteOperations {
             System.out.println("Z_CW: " + optimalFromCW);
             System.out.println("T_CW: " + timeCW);
             System.out.println("Z_CW_TSP: " + optimalFromCW_TSP);
-            System.out.println("T_CW_TSP: " + timeCW+timeTSP);
+            System.out.println("T_CW_TSP: " + time_CW_TSP);
 
             pw.flush();
             pw.close();

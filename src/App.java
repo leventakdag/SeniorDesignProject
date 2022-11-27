@@ -6,11 +6,11 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
-        //for(int i=0;i<5;i++){
-            testSolver();
-       // }
+         for(int i=0;i<40;i++){
+        testSolver();
+         }
 
- //CLUSTER:
+        //CLUSTER:
         //heuristic1.capacitatedClusterTSP(data);
 
  /*
@@ -50,29 +50,32 @@ public class App {
         String filePathSolution = "./outputs/Solution.csv";
         String filePathClusterAnalysis = "./outputs/Cluster_analysis.csv";
 
-     //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
+        //  write.writeClusterAnalysis(dataList, tspDist, filePathClusterAnalysis);
 
-    //write.writeSolutionData(sList, filePathSolution);
-    //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
-    //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
-    //write.writeMatrix(m[0], filePathTimeMatrix);
-    //write.writeMatrix(m[1], filePathDistanceMatrix);
-    //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
+        //write.writeSolutionData(sList, filePathSolution);
+        //write.writePointData(heuristic1.limitedClustering(4,12), filePathLimited);
+        //write.writePointData(heuristic1.unlimitedClustering(), filePathUnlimited);
+        //write.writeMatrix(m[0], filePathTimeMatrix);
+        //write.writeMatrix(m[1], filePathDistanceMatrix);
+        //writeRoutes(maps.getTimeMatrix(), filePathTimeMatrix);
     }
 
 
     private static void testSolver(){
-        Data data = readData();
-        //Data data = createRandomData();
+       // Data data = readData();
+        Data data = createRandomData();
+        System.out.println(data.n);
+        System.out.println(data.distance[0][1]);
 
         Heuristic heuristic1 = new Heuristic(data);
 
         //EXACT SOL. from 401
-        long start_timeExact = System.currentTimeMillis();
+        double start_timeExact = System.currentTimeMillis();
         ExactSolution exactsolution2 = new ExactSolution(data);
-        exactsolution2.solveExact();
-        long end_timeExact = System.currentTimeMillis();
-        long timeExact = (end_timeExact - start_timeExact)/1000;
+       // exactsolution2.solveExact();
+        double end_timeExact = System.currentTimeMillis();
+        // long timeExact = (end_timeExact - start_timeExact)/1000;
+        double timeExact = (end_timeExact - start_timeExact)/1000;
         double optimalFromExact = exactsolution2.objectiveValueOfVRP;
         int routeNumberExact = exactsolution2.numberOfVehiclesUsed;
 
@@ -81,18 +84,18 @@ public class App {
         System.out.println("=============CLARKE & WRIGHT !!!=============");
 
         //CLARKE & WRIGHT
-        long start_timeCW = System.currentTimeMillis();
+        double start_timeCW = System.currentTimeMillis();
         ClarkeAndWright2 cW = new ClarkeAndWright2(data);
         cW.solveClarkeAndWright();
-        long end_timeCW = System.currentTimeMillis();
-        long timeCW = (end_timeCW - start_timeCW)/1000;
+        double end_timeCW = System.currentTimeMillis();
+        double timeCW = (end_timeCW - start_timeCW)/1000;
         double optimalFromCW = cW.netObjective;
         int routeNumberCW = cW.cList.size();
         double z = 0;
 
 
         //CLARK & WRIGHT --> TSP
-        long start_timeTSP = System.currentTimeMillis();
+        double start_timeTSP = System.currentTimeMillis();
         ArrayList<Data> dataListForCW = new ArrayList<Data>();
         dataListForCW = heuristic1.createTSPData(cW.cList,data);
 
@@ -102,11 +105,12 @@ public class App {
         }
         System.out.println();
         System.out.println("Objective is " + z);
-        long end_timeTSP = System.currentTimeMillis();
-        long timeTSP = (end_timeTSP - start_timeTSP)/1000;
+        double end_timeTSP = System.currentTimeMillis();
+        double timeTSP = (end_timeTSP - start_timeTSP)/1000;
         double optimalFromCW_TSP = z;
 
-        String filePathRandomDataAnalysis = "./outputs/Random_Data_Analysis.csv";
+        // String filePathRandomDataAnalysis = "./outputs/Random_Data_Analysis.csv";
+        String filePathRandomDataAnalysis = "./outputs/Random_Data_Analysis_WH_is_out.csv";
         WriteOperations write = new WriteOperations();
         write.writeRandomCW_TSP_Solutions(data, filePathRandomDataAnalysis,
                 optimalFromExact, optimalFromCW,optimalFromCW_TSP, routeNumberExact, routeNumberCW,
@@ -115,8 +119,8 @@ public class App {
 
 
     private static Data readData() {
-        int n=10;
-        int k=9;
+        int n=8;
+        int k=8;
         int wc=4500;
         int vc=9;
 
@@ -161,19 +165,26 @@ public class App {
 
             //READING DISTANCE DATA //
             //Real distance
-            /*for(int i=0;i<data.distance.length;i++){
+            for(int i=0;i<data.distance.length;i++){
                 String DistanceLine=bufferedReader1.readLine();
                 String[] DistanceCells=DistanceLine.split(",");
                 for(int j=0;j<data.distance.length;j++){
                     data.distance[i][j] = Double.parseDouble(DistanceCells[j]);
                 }
-            }*/
-            //Euclidean distance
-            for(int i=0;i<data.distance.length;i++){
-                for(int j=0;j<data.distance.length;j++){
-                    data.distance[i][j] = 400 * Math.sqrt((data.locations[i].getY() - data.locations[j].getY()) * (data.locations[i].getY() - data.locations[j].getY()) + (data.locations[i].getX() - data.locations[j].getX()) * (data.locations[i].getX() - data.locations[j].getX()));
+            }
+
+       /*     //Euclidean distance
+             for(int i=0;i<n+1;i++){
+            for(int j=0;j<n+1;j++){
+                if(i==j){
+                    data.distance[i][j] = 100000;
+                }else{
+                    double distX = 72.2 * (data.locations[i].getX() - data.locations[j].getX());
+                    double distY = 111 * (data.locations[i].getY() - data.locations[j].getY());
+                    data.distance[i][j] =  Math.sqrt(distX*distX + distY*distY);
                 }
             }
+        }*/
 
             //READING ORDERS DATA //orders,locations...
             data.sapLocations[0]="SP_1000";
@@ -198,19 +209,20 @@ public class App {
 
             //READING TIME DATA //
             //Real time
-            /*for(int i=0;i<data.duration.length;i++){
+            for(int i=0;i<data.duration.length;i++){
                 String DurationLine=bufferedReader2.readLine();
                 String[] DurationCells=DurationLine.split(",");
                 for(int j=0;j<data.duration.length;j++){
                     data.duration[i][j] = Double.parseDouble(DurationCells[j]);
                 }
-            }*/
+            }
+/*
             //Euclidean time
             for(int i = 0; i<data.duration.length;i++){
                 for(int j=0;j<data.duration.length;j++){
-                    data.duration[i][j] = data.distance[i][j];
+                    data.duration[i][j] = 1.5 * data.distance[i][j];
                 }
-            }
+            }*/
 
             for(int j=1;j<data.sapLocations.length;j++){
                 data.tu[j]=data.volume[j]*15;
@@ -239,8 +251,8 @@ public class App {
 
     //RANDOM DATA
     private static Data createRandomData(){
-        int n=15;
-        int k=5;
+        int n=40;
+        int k=8;
         int wc=4500;
         int vc=9;
 
@@ -261,8 +273,10 @@ public class App {
         data.c = 1;
 
         //Creating LOCATIONS
-        double x_WH = 40.25+(Math.random()/2);
-        double y_WH = 49.25+(Math.random()/2);
+        /*double x_WH = 40.25+(Math.random()/2);
+        double y_WH = 49.25+(Math.random()/2);*/
+        double x_WH = 39.90 + (Math.random()/10);
+        double y_WH = 49.25 + (Math.random()/2);
         data.locations[0] = new Point(x_WH,y_WH,0);
         String filePathLimited = "./outputs/OutputRandomCoordinates.csv";
         WriteOperations writeOperations = new WriteOperations();
