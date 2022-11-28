@@ -18,7 +18,7 @@ import javax.swing.*;
 
 
 public class Maps {
-    private static final String API_KEY = "AIzaSyBZ_wraQALtbu8j7A7s1lFC5cPzb20oFQ0";
+    private static final String API_KEY = "YOURAPIKEY";
     float[][][] m;
     float[][] timeMatrix;
     float[][] distanceMatrix;
